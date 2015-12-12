@@ -19,7 +19,7 @@ public class Unit : MonoBehaviour {
     }
     public enum UNIT_STATES
     {
-        UNIT_STATE_IDLE, UNIT_STATE_GOING_TO, UNIT_STATE_ATTACKING, UNIT_STATE_DYING, MAX_UNIT_STATES
+        UNIT_STATE_IDLE, UNIT_STATE_GOING_TO, UNIT_STATE_ATTACKING, UNIT_STATE_DYING, UNIT_STATE_BUILDING, MAX_UNIT_STATES
     }
     public static int maxNeutralUnitsTypes = (int)NEUTRAL_UNIT_TYPES.MAX_NEUTRAL_UNIT_TYPES;
     public static int maxUnitsTypes = (int)UNIT_TYPES.MAX_UNIT_TYPES;
