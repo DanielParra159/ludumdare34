@@ -10,6 +10,7 @@ public class Selectable : MonoBehaviour {
         SELECTABLE_TYPE_UNIT, SELECTABLE_TYPE_BUILDING, SELECTABLE_TYPE_OTHER, MAX_SELECTABLE_TYPES
     }
 
+    public Transform modelTransform;
     public AudioClip m_selectedSound;
     //private static EventPlaySound eventSound; //estatico para que todos los objetos reciclen el evento
 
@@ -34,19 +35,19 @@ public class Selectable : MonoBehaviour {
             m_teamColor = TeamManager.instance.m_teamColors[(int)teamAux];
         }
         m_selected = false;
-        Transform transformTemp = transform.FindChild("Model");
+        //Transform transformTemp = transform.FindChild("Model");
 
-        if (transformTemp != null)
+        if (modelTransform != null)
         {
-            m_model = transformTemp.GetComponent<Renderer>();//Se puede reemplazar por una variable publica
+            m_model = modelTransform.GetComponent<Renderer>();//Se puede reemplazar por una variable publica
         }
         if (m_model)
         {
             m_type = SELECTABLE_TYPES.SELECTABLE_TYPE_UNIT;
             // if there is a "model" children in the object it is a unit
             m_numOfMaterials = m_model.materials.Length;
-            m_outlineWidth = m_model.material.GetFloat("_OutlineWidth");
-            m_model.material.SetFloat("_OutlineWidth", 0.0f);
+            m_outlineWidth = m_model.material.GetFloat("_Outline");
+            m_model.material.SetFloat("_Outline", 0.0f);
             for (int i = 0; i < m_numOfMaterials; ++i)
             {
                 m_model.materials[i].SetColor("_OutlineColor", m_teamColor);
@@ -88,7 +89,7 @@ public class Selectable : MonoBehaviour {
         switch (m_type)
         {
             case SELECTABLE_TYPES.SELECTABLE_TYPE_UNIT:
-                m_model.material.SetFloat("_OutlineWidth", m_outlineWidth);
+                m_model.material.SetFloat("_Outline", m_outlineWidth);
                 /*for (int i = 0; i < numOfMaterials; ++i)
                 {
                     model.materials[i].SetColor("_OutlineColor", m_teamColor);
@@ -108,7 +109,7 @@ public class Selectable : MonoBehaviour {
         switch (m_type)
         {
             case SELECTABLE_TYPES.SELECTABLE_TYPE_UNIT:
-                m_model.material.SetFloat("_OutlineWidth", 0.0f);
+                m_model.material.SetFloat("_Outline", 0.0f);
                 /*for (int i = 0; i < numOfMaterials; ++i)
                 {
                     model.materials[i].SetColor("_OutlineColor", Color.black);
