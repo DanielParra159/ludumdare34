@@ -275,7 +275,8 @@ public class GameManager : MonoBehaviour {
                 }
             }
             //nos movemos con la selección o movemos el punto de encuentro si es un edificio, además si es un aldeado cancelamos la construcción
-            changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL); //@todo: se tiene que notificar al aldeano para que cambie su interfaz?
+            //SI SE HACE LA LINEA DE ABAJO SE PIERDE EL PANEL DE LOS EDIFICIOS SELECCIONADOS AL ASIGNAR UN MEETING POINT
+            //changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL); //@todo: se tiene que notificar al aldeano para que cambie su interfaz?
             //lanzar evento de boton derecho para que se avise a armymanager y buildingmanager
         }
         else if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL )
