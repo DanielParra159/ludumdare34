@@ -43,8 +43,11 @@ public class Unit : MonoBehaviour {
 
     void Awake()
     {
-        m_pausable = new Pausable(onPause, onResume);
         m_transform = transform;
+        m_pausable = new Pausable(onPause, onResume);
+
+        m_navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+        m_speed = m_navMeshAgent.speed;
     }
 
 	void Start () {
@@ -55,8 +58,7 @@ public class Unit : MonoBehaviour {
         lifeTemp.registerOnDead(onDead);
         lifeTemp.registerOnDamage(onDamage);
 
-        m_navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
-        m_speed = m_navMeshAgent.speed;
+        
 	}
 	
     public void init()

@@ -7,6 +7,7 @@ public class EventManager {
 		EVENT_PLAY_SOUND,
         EVENT_MOUSE_DOWN,
         EVENT_MOUSE_UP,
+        EVENT_SPAWN_UNIT,
 		MAX_EVENTS
 	};
 
@@ -45,6 +46,12 @@ public class EventManager {
         {
             EventMouseClick eventMouseClick = (EventMouseClick)hEvent;
             gameManager.onMouseUp(eventMouseClick.m_button, eventMouseClick.m_screenPosition);
+            break;
+        }
+            case EVENTS.EVENT_SPAWN_UNIT:
+        {
+            EventSpawnUnit eventSpawnUnit = (EventSpawnUnit)hEvent;
+            armyManager.spawnUnit(eventSpawnUnit.m_team, eventSpawnUnit.m_type, eventSpawnUnit.m_position, eventSpawnUnit.m_meetingPoint);
             break;
         }
 

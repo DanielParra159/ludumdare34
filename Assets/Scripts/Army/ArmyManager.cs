@@ -89,4 +89,12 @@ public class ArmyManager : MonoBehaviour {
 	
 	}
 
+    public void spawnUnit(TeamManager.TEAMS team, Unit.UNIT_TYPES type, Vector3 position, Vector3 meetingPoint)
+    {
+        Unit unitAux = poolOfUnits[(int)team][(int)type].getObject(true).GetComponent<Unit>();
+        unitAux.init();
+        unitAux.setPosition(position);
+        unitAux.goTo(meetingPoint);
+    }
+
 }

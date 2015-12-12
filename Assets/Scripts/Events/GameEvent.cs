@@ -21,3 +21,11 @@ public class EventMouseClick : GameEvent
     public Vector3 m_screenPosition;
     public EventMouseClick() { type = EventManager.EVENTS.EVENT_MOUSE_DOWN; }
 }
+public class EventSpawnUnit : GameEvent
+{
+    public TeamManager.TEAMS m_team;
+    public Unit.UNIT_TYPES m_type;
+    public Vector3 m_position;
+    public Vector3 m_meetingPoint;
+    public EventSpawnUnit() { type = EventManager.EVENTS.EVENT_SPAWN_UNIT; }
+}

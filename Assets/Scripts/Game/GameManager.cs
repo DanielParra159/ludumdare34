@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour {
             Destroy(this.gameObject);
         }
 	}
+
+    void Start()
+    {
+        EventManager.Start();
+    }
 	
 	// Update is called once per frame
 	void Update () {

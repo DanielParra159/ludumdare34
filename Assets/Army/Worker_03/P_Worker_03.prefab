@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11469694}
   - 114: {fileID: 11420362}
   - 114: {fileID: 11452480}
+  - 195: {fileID: 19574010}
   m_Layer: 8
   m_Name: P_Worker_03
   m_TagString: Unit
@@ -93,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxLife: 100
   m_regeneration: 0
+  m_slider: {fileID: 0}
 --- !u!114 &11452480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15884f80719765478b4a47043d577af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  m_type: 0
 --- !u!114 &11469694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +144,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_myTeam: 3
   m_team: 0
+--- !u!195 &19574010
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182598}
+  m_Enabled: 1
+  m_Radius: .5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: .99999994
+  m_BaseOffset: .49999997
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
