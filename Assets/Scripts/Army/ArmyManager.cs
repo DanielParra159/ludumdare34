@@ -183,4 +183,50 @@ public class ArmyManager : MonoBehaviour {
             m_selectedUnits[i].goToRepair(building);
         }
     }
+
+    void Update()
+    {
+        Map map = Map.instance;
+        for (int i = 0; i < units[0].Count;++i )
+        {
+            float radius = units[0][i].getDetectionRadius();
+            Vector3 position = units[0][i].getPosition();
+            int xMin = (int)((position.x - radius) / map.fogQuadScale);
+            int zMin = (int)((position.z - radius) / map.fogQuadScale);
+
+            int xMax = (int)((position.x + radius) / map.fogQuadScale);
+            int zMax = (int)((position.z + radius) / map.fogQuadScale);
+            for (int x = xMin; x < xMax; ++x)
+            {
+                for (int z = zMin; z < zMax; ++z)
+                {
+                    if (x < map.m_xFogCell && z < map.m_zFogCell)
+                    {
+                        map.m_visited[x][z] = true;
+                        map.m_visiting[x][z] = true;
+                    }
+                }
+            }
+        }
+
+        for (uint x = 0; x < map.m_xFogCell; ++x)
+        {
+            for (uint z = 0; z < map.m_zFogCell; ++z)
+            {
+                if (map.m_visited[x][z] && map.m_visiting[x][z])
+                {
+                    map.m_Quads[x][z].material.color = new Color(0, 0, 0, 0);
+                }
+                else if (map.m_visited[x][z])
+                {
+                    map.m_Quads[x][z].material.color = new Color(0, 0, 0, 0.3f);
+                }
+                else
+                {
+                    map.m_Quads[x][z].material.color = new Color(0, 0, 0, 1.0f);
+                }
+                map.m_visiting[x][z] = false;
+            }
+        }
+    }
 }

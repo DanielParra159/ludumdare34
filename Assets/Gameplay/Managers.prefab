@@ -1205,7 +1205,11 @@ MonoBehaviour:
   m_zCell: 10
   m_xSize: 8
   m_zSize: 8
-  draw: 1
+  m_xFogCell: 4
+  m_zFogCell: 4
+  draw: 0
+  fogQuad: {fileID: 133960, guid: 8488c65c422bafb49b956842762a9bfb, type: 2}
+  fogQuadScale: 4
 --- !u!114 &11430144
 MonoBehaviour:
   m_ObjectHideFlags: 1
