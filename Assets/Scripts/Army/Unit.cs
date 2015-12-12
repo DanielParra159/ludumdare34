@@ -11,7 +11,7 @@ public class Unit : MonoBehaviour {
 
     public enum UNIT_TYPES
     {
-        /*BORRAR*/UNIT_TYPE_POTATO,/*BORRAR*/ UNIT_TYPE_WORKER, MAX_UNIT_TYPES
+        /*BORRAR*/UNIT_TYPE_POTATO,/*BORRAR*/ UNIT_TYPE_WORKER, UNIT_TYPE_ARMY, MAX_UNIT_TYPES
     }
     public enum NEUTRAL_UNIT_TYPES
     {

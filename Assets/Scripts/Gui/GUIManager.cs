@@ -6,10 +6,14 @@ public class GUIManager : MonoBehaviour {
     public static GUIManager instance = null;
     public enum ACTION_TYPES
     {
-        ACTION_BUILD, ACTION_ESCAPE, MAX_ACTIONS
+        ACTION_BUILD, ACTION_ESCAPE, ACTION_PATROL, ACTION_STOP, ACTION_MOVE_ATTACKING, ACTION_REPAIR, MAX_ACTIONS
     }
-
+    public enum PANELS
+    {
+        NOTHING_PANEL, BUILDER_PANEL, BUILDINGS_PANEL, ARMY_PANEL, MAX_PANELS
+    }
     public static int maxActionTypes = (int)GUIManager.ACTION_TYPES.MAX_ACTIONS;
+    public static int maxPanels = (int)GUIManager.PANELS.MAX_PANELS;
 
     public EventTypeBuildingClicked eventTypeBuildingClicked;
     public EventActionButtonClicked eventActionButtonClicked;
@@ -53,11 +57,15 @@ public class GUIManager : MonoBehaviour {
         eventActionButtonClicked.SendEvent();
     }
     
-    public void activatePanel(int panelToActivate)
-    {   
-        foreach(GameObject panel in panels)
-            if(panel!=panels[panelToActivate])
-                panel.SetActive(false);
-        panels[panelToActivate].SetActive(true);
+    public void activatePanel(PANELS panelToActivate)
+    {
+        for (int i = 0; i < panels.Length; ++i )
+        {
+            if (i != (int)panelToActivate)
+            {
+                panels[i].SetActive(false);
+            }
+        }
+        panels[(int)panelToActivate].SetActive(true);
     }
 }

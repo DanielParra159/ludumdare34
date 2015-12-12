@@ -22,7 +22,14 @@ public class GameManager : MonoBehaviour {
     }
     public enum SUB_LEVEL_STATES
     {
-        SUBGAME_STATE_NORMAL, SUBGAME_STATE_CHOOSE_TO_BUILD, SUBGAME_STATE_WHERE_TO_BUILD, SUBGAME_STATE_START_SELECTION, SUBGAME_STATE_MAX
+        SUBGAME_STATE_NORMAL, 
+        SUBGAME_STATE_CHOOSE_TO_BUILD, 
+        SUBGAME_STATE_WHERE_TO_BUILD, 
+        SUBGAME_STATE_START_SELECTION, 
+        SUBGAME_STATE_PATROL_WHERE,
+        SUBGAME_STATE_MOVE_ATTACKING_WHERE,
+        SUBGAME_STATE_REPAIR_WHAT,
+        SUBGAME_STATE_MAX
     }
     public static int maxGameStates = (int)GAME_STATES.GAME_STATE_MAX;
     public static int maxSubGameStates = (int)SUB_LEVEL_STATES.SUBGAME_STATE_MAX;
@@ -36,8 +43,8 @@ public class GameManager : MonoBehaviour {
 
     private BuildingManager m_buildingManager;
     private GUIManager m_guiManager;
-    private ArmyManager m_armygManager;
-    private Unit m_typeLeaderUnit;
+    private ArmyManager m_armyManager;
+    private Unit m_typeLeaderUnit = null;
 
     private Vector3 m_startSelectPosition;
     public GameObject m_selectRect;
@@ -68,7 +75,7 @@ public class GameManager : MonoBehaviour {
     {
         EventManager.Start();
         m_buildingManager = BuildingManager.instance;
-        m_armygManager = ArmyManager.instance;
+        m_armyManager = ArmyManager.instance;
         m_inputManager = InputManager.instance;
         m_guiManager = GUIManager.instance;
     }
@@ -181,23 +188,28 @@ public class GameManager : MonoBehaviour {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
                 m_selectRect.SetActive(false);
 
-                if (m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_WORKER)
+                if (m_typeLeaderUnit != null && m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_WORKER)
                 {
-                    m_guiManager.activatePanel(1);
+                    m_guiManager.activatePanel(GUIManager.PANELS.BUILDER_PANEL);
                 }
-                else
+                if (m_typeLeaderUnit == null)
                 {
-                    m_guiManager.activatePanel(0);
+                    m_guiManager.activatePanel(GUIManager.PANELS.NOTHING_PANEL);
+                }
+                if (m_typeLeaderUnit != null && m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_ARMY)
+                                                                //LUEGO HA DESER MODIFICADO PARA LA FUTURA MODIFICACIO NDE UNIT_TYPES
+                {
+                    m_guiManager.activatePanel(GUIManager.PANELS.ARMY_PANEL);
                 }
 
                 //CAMBIAR GUI Y MOSTRAR ACCIONES DE NADA SELECCIONADO SI ALDEANO NO SELECCIONADO
                 //O ACCIONES DE ALDEANO SI ALDEANO SELECCIONADO
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD:
-                //CAMBIAR GUI AL DE MOSTRAR GUI DE CONSTRUCCIONES
+                m_guiManager.activatePanel(GUIManager.PANELS.BUILDINGS_PANEL);
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
-                m_guiManager.activatePanel(0);
+                m_guiManager.activatePanel(GUIManager.PANELS.NOTHING_PANEL);
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION:
                 m_selectRect.SetActive(true);
@@ -229,7 +241,7 @@ public class GameManager : MonoBehaviour {
                 //tenemos una construcción activa? Solo podemos cambiar el meetingpoint
                 m_buildingManager.setMeetingPoint(position);
             }
-            else if ((unitAuxPressed = m_armygManager.isSelectedAnyUnit()) != null)
+            else if ((unitAuxPressed = m_armyManager.isSelectedAnyUnit()) != null)
             {
                 //tenemos seleccionado alguna unidad? comprobamos si se ha pulsado sobre una unidad, sobre un edificio o sobre suelo
                 if ((buildingAux = m_buildingManager.isPressedAnyBuilding(position)) != null)
@@ -238,21 +250,21 @@ public class GameManager : MonoBehaviour {
                     if (buildingAux.getTeam() == unitAuxPressed.getTeam())
                     {
                         //goto
-                        m_armygManager.goTo(position);
+                        m_armyManager.goTo(position);
                     }
                     else
                     {
                         //attack
-                        m_armygManager.goToAttack(buildingAux.getPosition());
+                        m_armyManager.goToAttack(buildingAux.getPosition());
                     }
                 }
-                else if ((unitTargetAux = m_armygManager.isPressedAnyEnemyUnit(position)) != null)
+                else if ((unitTargetAux = m_armyManager.isPressedAnyEnemyUnit(position)) != null)
                 {
-                    m_armygManager.goToAttack(position);
+                    m_armyManager.goToAttack(position);
                 }//@todo:recurso
                 else
                 {
-                    m_armygManager.goTo(position);
+                    m_armyManager.goTo(position);
                 }
             }
             
@@ -269,9 +281,21 @@ public class GameManager : MonoBehaviour {
                 m_startSelectPosition = position;
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION);
             }
-            else //if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
+            else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
             {
                 //al levantar construiremos
+            }
+            else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_MOVE_ATTACKING_WHERE)
+            {
+                //AL CLICAR MOVER UNIDADES ATACANDO ALLÍ
+            }
+            else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_PATROL_WHERE)
+            {
+                //AL CLICAR ALMACENAR POSICIONES ACTUAL Y CLICKADA Y MOVER UNIDADES PERMANENTEMENTE
+            }
+            else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_REPAIR_WHAT)
+            {
+                //AL CLICAR EN UN EDIFICIO REPARARLO & SI NO SE CLICA EN UN EDIFICIO CANCELAR ESTADO
             }
             
         }
@@ -295,7 +319,7 @@ public class GameManager : MonoBehaviour {
             //termina selección
             if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION)
             {
-                m_typeLeaderUnit = m_armygManager.selectUnits(m_startSelectPosition, position);
+                m_typeLeaderUnit = m_armyManager.selectUnits(m_startSelectPosition, position);
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
@@ -314,6 +338,18 @@ public class GameManager : MonoBehaviour {
                 break;
             case GUIManager.ACTION_TYPES.ACTION_ESCAPE:
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
+                break;
+            case GUIManager.ACTION_TYPES.ACTION_MOVE_ATTACKING:
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_MOVE_ATTACKING_WHERE);
+                break;
+            case GUIManager.ACTION_TYPES.ACTION_PATROL:
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_PATROL_WHERE);
+                break;
+            case GUIManager.ACTION_TYPES.ACTION_REPAIR:
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_REPAIR_WHAT);
+                break;
+            case GUIManager.ACTION_TYPES.ACTION_STOP:
+                m_armyManager.stopUnits();
                 break;
         }
     }
