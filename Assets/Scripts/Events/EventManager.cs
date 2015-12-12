@@ -8,7 +8,6 @@ public class EventManager {
         EVENT_MOUSE_DOWN,
         EVENT_MOUSE_UP,
         EVENT_SPAWN_UNIT,
-        EVENT_TYPE_LEADER_UNIT_CHOSEN,
         EVENT_ACTION_BUTTON_CLICKED,
         EVENT_TYPE_BUILDING_CLICKED,
 		MAX_EVENTS
@@ -55,12 +54,6 @@ public class EventManager {
         {
             EventSpawnUnit eventSpawnUnit = (EventSpawnUnit)hEvent;
             armyManager.spawnUnit(eventSpawnUnit.m_team, eventSpawnUnit.m_type, eventSpawnUnit.m_position, eventSpawnUnit.m_meetingPoint);
-            break;
-        }
-            case EVENTS.EVENT_TYPE_LEADER_UNIT_CHOSEN:
-        {
-            EventTypeLeaderUnitChosen eventTypeLeaderUnitChosen = (EventTypeLeaderUnitChosen)hEvent;
-            gameManager.typeLeaderUnitChosen(eventTypeLeaderUnitChosen.m_type);
             break;
         }
             case EVENTS.EVENT_ACTION_BUTTON_CLICKED:

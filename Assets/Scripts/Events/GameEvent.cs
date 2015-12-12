@@ -29,11 +29,6 @@ public class EventSpawnUnit : GameEvent
     public Vector3 m_meetingPoint;
     public EventSpawnUnit() { type = EventManager.EVENTS.EVENT_SPAWN_UNIT; }
 }
-public class EventTypeLeaderUnitChosen : GameEvent
-{
-    public Unit.UNIT_TYPES m_type;
-    public EventTypeLeaderUnitChosen() { type = EventManager.EVENTS.EVENT_TYPE_LEADER_UNIT_CHOSEN; }
-}
 public class EventActionButtonClicked : GameEvent
 {
     public GUIManager.ACTION_TYPES m_actionType;

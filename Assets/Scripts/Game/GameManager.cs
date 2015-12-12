@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
     private BuildingManager m_buildingManager;
     private GUIManager m_guiManager;
     private ArmyManager m_armygManager;
-    private Unit.UNIT_TYPES m_typeLeaderUnit;
+    private Unit m_typeLeaderUnit;
 
     private Vector3 m_startSelectPosition;
     public GameObject m_selectRect;
@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
                 m_selectRect.SetActive(false);
 
-                if (m_typeLeaderUnit == Unit.UNIT_TYPES.UNIT_TYPE_WORKER)
+                if (m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_WORKER)
                 {
                     m_guiManager.activatePanel(1);
                 }
@@ -295,7 +295,7 @@ public class GameManager : MonoBehaviour {
             //termina selección
             if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION)
             {
-                m_armygManager.selectUnits(m_startSelectPosition, position);
+                m_typeLeaderUnit = m_armygManager.selectUnits(m_startSelectPosition, position);
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
@@ -304,11 +304,6 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-    }
-    public void typeLeaderUnitChosen(Unit.UNIT_TYPES typeLeaderUnit)
-    {
-        m_typeLeaderUnit = typeLeaderUnit;
-        updateLevel();
     }
     public void actionButtonClicked(GUIManager.ACTION_TYPES actionClicked)
     {

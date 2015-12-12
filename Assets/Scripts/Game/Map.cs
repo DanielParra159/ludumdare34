@@ -132,12 +132,22 @@ public class Map : MonoBehaviour {
         int xMax = (int)(position.x + radious / m_xSize);
         int zMax = (int)(position.z + radious / m_zSize);
 
-        for (int x = xMin; x <= xMax; ++x)
+        int xPos = (int)(position.x / m_xSize);
+        int zPos = (int)(position.z / m_zSize);
+
+        //int radiousAux = 1;
+        int dadiousLimit = (zMax -zMin)/2;
+
+        for (int radiousAux = 1; radiousAux <= dadiousLimit; ++radiousAux)
         {
-            for (int z = zMin; z < zMax; ++z)
+            for (int z = zPos + radiousAux; z < radiousAux - radiousAux; --z)
             {
-                if (x < m_xCell && z < m_zCell)
+                for (int x = xPos - radiousAux; x <= xPos + radiousAux; ++x)
                 {
+
+                    if (x < m_xCell && z < m_zCell)
+                    {
+                    }
                 }
             }
         }
