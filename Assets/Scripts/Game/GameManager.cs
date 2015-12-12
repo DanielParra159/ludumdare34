@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour {
 
     private BuildingManager m_buildingManager;
     private ArmyManager m_armygManager;
+    private Unit.UNIT_TYPES m_typeLeaderUnit;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(instance);
 
             m_lastState = m_currentState;
+            m_lastSubLevelState = m_currentSubLevelState;
 
         }
         else if (instance != this)
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //SACAR LAS COMPROBACIONES DEL UPDATE Y REALIZAR LAS ACCIONES INDIVIDUALES EN LOS EVENTOS
         switch (m_currentState)
         {
             case GAME_STATES.GAME_STATE_MENU:
@@ -93,8 +97,14 @@ public class GameManager : MonoBehaviour {
         switch(m_currentSubLevelState)
         {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
-                if(false/*JUGADOR SELECCIONA UN ALDEANO*/){
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD);
+                //SI HACEMOS UN CAMBIADOR DE GUI QUE RECIBA EL TIPO DE UNIDAD, ESTE IF ES SIMPLIFICABLE
+                if (m_typeLeaderUnit == Unit.UNIT_TYPES.UNIT_TYPE_WORKER) 
+                {
+                    //CAMBIAR GUI A LA DEL CONSTRUCTOR
+                }
+                else
+                {
+                    //CAMBIAR GUI A LA GUI DEL TIPO DE UNIDAD SELECCIONADA
                 }
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD:
@@ -149,10 +159,10 @@ public class GameManager : MonoBehaviour {
                 //O ACCIONES DE ALDEANO SI ALDEANO SELECCIONADO
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD:
-                //CAMBIAR GUI Y MOSTRAR EDIFICIOS
+                //CAMBIAR GUI AL DE MOSTRAR GUI DE CONSTRUCCIONES
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
-                //CAMBIAR GUI Y MOSTRAR BOTON DE CANCELACIÓN
+                //CAMBIAR GUI AL DE MOSTRAR BOTON DE CANCELACIÓN
                 //MOSTRAR REPRESENTACION DEL EDIFICIO SELECCIONADO EN EL CURSOR DEL JUGADOR
                 break;
         }
@@ -232,6 +242,20 @@ public class GameManager : MonoBehaviour {
             //termina selección
             //@todo: para probar selección simple
             m_armygManager.selectUnit(position);
+        }
+    }
+    public void typeLeaderUnitChosen(Unit.UNIT_TYPES typeLeaderUnit)
+    {
+        m_typeLeaderUnit = typeLeaderUnit;
+        updateLevel();
+    }
+    public void actionButtonClicked(GUIManager.ACTION_TYPES actionClicked)
+    {
+        switch (actionClicked) 
+        {
+            case GUIManager.ACTION_TYPES.ACTION_BUILD:
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD);
+                break;
         }
     }
 }

@@ -33,3 +33,7 @@ public class EventTypeLeaderUnitChosen : GameEvent
 {
     public Unit.UNIT_TYPES m_type;
 }
+public class EventActionButtonClicked : GameEvent
+{
+    public GUIManager.ACTION_TYPES m_actionType;
+}
