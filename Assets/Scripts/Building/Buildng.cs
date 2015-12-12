@@ -23,7 +23,7 @@ public class Buildng : MonoBehaviour
     public static int maxBuildingStates = (int)BUILDING_STATES.MAX_BUILDING_STATES;
 
     [SerializeField]
-    protected BUILDING_TYPES type;
+    protected BUILDING_TYPES m_type;
     protected BUILDING_STATES m_currentState;
     protected BUILDING_STATES m_lastState;
 
@@ -151,6 +151,10 @@ public class Buildng : MonoBehaviour
     public int getTeam()
     {
         return m_team;
+    }
+    public BUILDING_TYPES getType()
+    {
+        return m_type;
     }
     public void setMapXZ(int x, int z)
     {

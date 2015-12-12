@@ -8,6 +8,7 @@ public class EventManager {
         EVENT_MOUSE_DOWN,
         EVENT_MOUSE_UP,
         EVENT_SPAWN_UNIT,
+        EVENT_SPAWN_BUILDING,
         EVENT_ACTION_BUTTON_CLICKED,
         EVENT_TYPE_BUILDING_CLICKED,
         EVENT_READY_TO_REPAIR,
@@ -59,6 +60,12 @@ public class EventManager {
         {
             EventSpawnUnit eventSpawnUnit = (EventSpawnUnit)hEvent;
             armyManager.spawnUnit(eventSpawnUnit.m_team, eventSpawnUnit.m_type, eventSpawnUnit.m_position, eventSpawnUnit.m_meetingPoint);
+            break;
+        }
+            case EVENTS.EVENT_SPAWN_BUILDING:
+        {
+            EventSpawnBuilding eventSpawnBuilding = (EventSpawnBuilding)hEvent;
+            buildingManager.spawnBuilding(eventSpawnBuilding.m_team, eventSpawnBuilding.m_type, eventSpawnBuilding.m_position);
             break;
         }
             case EVENTS.EVENT_ACTION_BUTTON_CLICKED:

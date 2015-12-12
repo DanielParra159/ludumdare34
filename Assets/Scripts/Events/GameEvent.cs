@@ -29,6 +29,13 @@ public class EventSpawnUnit : GameEvent
     public Vector3 m_meetingPoint;
     public EventSpawnUnit() { type = EventManager.EVENTS.EVENT_SPAWN_UNIT; }
 }
+public class EventSpawnBuilding : GameEvent
+{
+    public TeamManager.TEAMS m_team;
+    public Buildng.BUILDING_TYPES m_type;
+    public Vector3 m_position;
+    public EventSpawnBuilding() { type = EventManager.EVENTS.EVENT_SPAWN_BUILDING; }
+}
 public class EventActionButtonClicked : GameEvent
 {
     public GUIManager.ACTION_TYPES m_actionType;

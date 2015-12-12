@@ -1687,12 +1687,6 @@ MonoBehaviour:
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
     unitsNumber: 01000000010000000100000001000000
-  - unitsPrefab:
-    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
-    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
-    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
-    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
-    unitsNumber: 01000000010000000100000001000000
   neutralUnitsPrefabs:
     unitsPrefab:
     - {fileID: 182598, guid: cda229ac5ef7f0e48a2206a75a8fdf68, type: 2}
@@ -2297,13 +2291,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e9b7b2e9a21154cafcc72d5fc3bccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingsPrefab:
-  - {fileID: 196802, guid: 4af6ca97c79b7d4458bc0fd1528882d4, type: 2}
-  - {fileID: 162302, guid: 485a0146c4854344586d2303e594d89d, type: 2}
-  - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
-  - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
-  - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
-  buildingsNumber: 0300000002000000020000000200000002000000
+  buildingPrefabs:
+  - buildingsPrefab:
+    - {fileID: 196802, guid: 4af6ca97c79b7d4458bc0fd1528882d4, type: 2}
+    - {fileID: 162302, guid: 485a0146c4854344586d2303e594d89d, type: 2}
+    - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
+    - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
+    - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
+    buildingsNumber: 0500000005000000050000000500000005000000
+  - buildingsPrefab:
+    - {fileID: 196802, guid: 4af6ca97c79b7d4458bc0fd1528882d4, type: 2}
+    - {fileID: 162302, guid: 485a0146c4854344586d2303e594d89d, type: 2}
+    - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
+    - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
+    - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
+    buildingsNumber: 0500000005000000050000000500000005000000
 --- !u!114 &11468546
 MonoBehaviour:
   m_ObjectHideFlags: 1
