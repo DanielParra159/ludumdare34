@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour {
             else if ((unitAuxPressed = m_armyManager.isSelectedAnyUnit()) != null)
             {
                 //tenemos seleccionado alguna unidad? comprobamos si se ha pulsado sobre una unidad, sobre un edificio o sobre suelo
-                if ((buildingAux = m_buildingManager.isPressedAnyBuilding(position)) != null)
+                if ((buildingAux = m_buildingManager.isPressedAnyEnemyBuilding(position)) != null)
                 {
                     //comprobamos el equipo
                     if (buildingAux.getTeam() == unitAuxPressed.getTeam())
@@ -304,11 +304,12 @@ public class GameManager : MonoBehaviour {
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_REPAIR_WHAT)
             {
-                Buildng building = m_buildingManager.isPressedAnyBuilding(position);
+                Buildng building = m_buildingManager.isPressedAnyAllyBuilding(position);
                 if(building != null)
                 {
                     m_armyManager.goToRepair(building);
                 }
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
             
         }

@@ -101,7 +101,7 @@ public class BuildingManager : MonoBehaviour {
         }
         return m_selectedBuilding;
     }
-    public Buildng isPressedAnyBuilding(Vector3 position)
+    public Buildng isPressedAnyEnemyBuilding(Vector3 position)
     {
         Buildng pressedBuildingAux = null;
         int enemyTeam = m_team + 1 % (int)TeamManager.TEAMS.TEAM_MAX;
@@ -109,6 +109,16 @@ public class BuildingManager : MonoBehaviour {
         {
             if (buildings[enemyTeam][i].isPressed(position))
                 pressedBuildingAux = buildings[enemyTeam][i];
+        }
+        return pressedBuildingAux;
+    }
+    public Buildng isPressedAnyAllyBuilding(Vector3 position)
+    {
+        Buildng pressedBuildingAux = null;
+        for (int i = 0; i < buildings[m_team].Count; ++i)
+        {
+            if (buildings[m_team][i].isPressed(position))
+                pressedBuildingAux = buildings[m_team][i];
         }
         return pressedBuildingAux;
     }
