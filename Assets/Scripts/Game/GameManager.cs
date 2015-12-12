@@ -171,9 +171,14 @@ public class GameManager : MonoBehaviour {
     /*
      * Solo llegan eventos que se hagan dentro de la zona de acci�n
      */
-    public void onMouseDown(InputManager.MOUSE_BUTTONS button, Vector2 screenPosition)
+    public void onMouseDown(InputManager.MOUSE_BUTTONS button, Vector3 screenPosition)
     {
-        Vector3 position = Camera.main.ScreenToWorldPoint(screenPosition);
+
+        Ray ray = Camera.main.ScreenPointToRay(screenPosition);
+        RaycastHit hit;
+        if (!Physics.Raycast(ray, out hit)) return;
+
+        Vector3 position = hit.point;
         if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_RIGH && m_currentState == GAME_STATES.GAME_STATE_LEVEL)
         {
             
@@ -231,9 +236,13 @@ public class GameManager : MonoBehaviour {
     /*
      * Solo llegan eventos que se hagan dentro de la zona de acci�n
      */
-    public void onMouseUp(InputManager.MOUSE_BUTTONS button, Vector2 screenPosition)
+    public void onMouseUp(InputManager.MOUSE_BUTTONS button, Vector3 screenPosition)
     {
-        Vector3 position = Camera.main.ScreenToWorldPoint(screenPosition);
+        Ray ray = Camera.main.ScreenPointToRay(screenPosition);
+        RaycastHit hit;
+        if (!Physics.Raycast(ray, out hit)) return;
+
+        Vector3 position = hit.point;
         //comprobar en que sub estado estamos, construyendo, sin selecci�n...
         //Hacer selecci�n multiple, si no hay deferencia entre las posiciones queremos una selecci�n simple
         if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL &&
