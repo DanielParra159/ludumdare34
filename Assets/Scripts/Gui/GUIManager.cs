@@ -22,6 +22,8 @@ public class GUIManager : MonoBehaviour {
     public static int maxPanels = (int)GUIManager.PANELS.MAX_PANELS;
     public static int maxBuildingActions = (int)GUIManager.ACTION_TYPES.MAX_ACTIONS;
 
+    public BuildingManager m_buildingManager;
+
     public EventTypeBuildingClicked eventTypeBuildingClicked;
     public EventActionButtonClicked eventActionButtonClicked;
 
@@ -45,6 +47,7 @@ public class GUIManager : MonoBehaviour {
 	void Start () {
         eventTypeBuildingClicked = new EventTypeBuildingClicked();
         eventActionButtonClicked = new EventActionButtonClicked();
+        m_buildingManager = BuildingManager.instance;
 	}
 	
 	// Update is called once per frame
@@ -74,5 +77,11 @@ public class GUIManager : MonoBehaviour {
             }
         }
         panels[(int)panelToActivate].SetActive(true);
+    }
+
+    public void buildUnit()
+    {
+        Buildng selected = m_buildingManager.isSelectedAnyBuilding();
+        selected.GetComponent<UnitSpawn>().buildUnit();
     }
 }
