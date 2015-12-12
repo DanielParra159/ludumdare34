@@ -19,11 +19,12 @@ public class Unit : MonoBehaviour {
     }
     public enum UNIT_STATES
     {
-        UNIT_STATE_IDLE, UNIT_STATE_GOING_TO, UNIT_STATE_ATTACKING, UNIT_STATE_DYING, UNIT_STATE_BUILDING, MAX_UNIT_STATES
+        UNIT_STATE_IDLE, UNIT_STATE_GOING_TO, UNIT_STATE_ATTACKING, UNIT_STATE_DYING, UNIT_STATE_BUILDING, UNIT_STATE_PATROLLING,
+        MAX_UNIT_STATES
     }
     public enum UNIT_SUB_STATES
     {
-        UNIT_SUB_STATE_NORMAL, UNIT_SUB_STATE_FOLLOW_TARGET, UNIT_SUB_STATE_AGGRESSIVE, MAX_UNIT_SUB_STATES
+        UNIT_SUB_STATE_NORMAL, UNIT_SUB_STATE_FOLLOW_TARGET, UNIT_SUB_STATE_AGGRESSIVE, UNIT_SUB_STATE_RECOLLECTING, MAX_UNIT_SUB_STATES
     }
     public static int maxNeutralUnitsTypes = (int)NEUTRAL_UNIT_TYPES.MAX_NEUTRAL_UNIT_TYPES;
     public static int maxUnitsTypes = (int)UNIT_TYPES.MAX_UNIT_TYPES;
@@ -54,10 +55,15 @@ public class Unit : MonoBehaviour {
     protected Map m_map;
     protected Vector2 m_mapPos;
     protected GameObject m_target;
+    protected GameObject m_recollectionPoint;
 
     protected Transform m_transform;
     protected Pausable m_pausable;
     protected bool m_initialized = false; //@todo cuando muera se tiene que poner a false
+
+    //Par de atributos a usar para el patrol
+    protected Vector3 m_positionInitial;
+    protected Vector3 m_positionFinal;
 
     void Awake()
     {
@@ -109,6 +115,9 @@ public class Unit : MonoBehaviour {
                 break;
             case UNIT_STATES.UNIT_STATE_DYING:
                 updateDying();
+                break;
+            case UNIT_STATES.UNIT_STATE_PATROLLING:
+                updatePatrolling();
                 break;
         }
 	}
@@ -169,6 +178,13 @@ public class Unit : MonoBehaviour {
                 }
                 break;
             }
+            //TO DO PROCESO DE RECOLECCIÓN 
+            /*case UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING:
+            {
+                Vector3 targetPosition = m_recollectionPoint.transform.position;
+
+                break;
+            }*/
         }
     }
     protected void updateAttacking() 
@@ -181,6 +197,18 @@ public class Unit : MonoBehaviour {
         changeState(UNIT_STATES.UNIT_STATE_IDLE);
     }
     protected void updateDying() { }
+    protected void updatePatrolling() 
+    {   
+        //GITANADA PARA EVITAR LA COORD Y
+        if (gameObject.transform.position.x == m_positionInitial.x && gameObject.transform.position.z == m_positionInitial.z)
+        {
+            m_navMeshAgent.SetDestination(m_positionFinal);
+        }
+        else if (gameObject.transform.position.x == m_positionFinal.x && gameObject.transform.position.z == m_positionFinal.z)
+        {
+            m_navMeshAgent.SetDestination(m_positionInitial);
+        }
+    }
 
     protected void changeState(UNIT_STATES nextState)
     {
@@ -197,6 +225,9 @@ public class Unit : MonoBehaviour {
             case UNIT_STATES.UNIT_STATE_ATTACKING:
                 break;
             case UNIT_STATES.UNIT_STATE_DYING:
+                break;
+            case UNIT_STATES.UNIT_STATE_PATROLLING:
+                changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
                 break;
         }
     }
@@ -234,6 +265,12 @@ public class Unit : MonoBehaviour {
         m_navMeshAgent.SetDestination(position);
         changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
         changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
+    }
+    public void goToPatrol(Vector3 position)
+    {
+        m_positionInitial = gameObject.transform.position;
+        m_positionFinal = position;
+        changeState(UNIT_STATES.UNIT_STATE_PATROLLING);
     }
     public void onDamage(float currentLif)
     {

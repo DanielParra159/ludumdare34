@@ -169,7 +169,14 @@ public class ArmyManager : MonoBehaviour {
     }
     public void stopUnits()
     {
-
+        //
+    }
+    public void goToPatrol(Vector3 position)
+    {
+        for (int i = 0; i < m_selectedUnits.Count; ++i)
+        {
+            m_selectedUnits[i].goToPatrol(position);
+        }
     }
 
 }

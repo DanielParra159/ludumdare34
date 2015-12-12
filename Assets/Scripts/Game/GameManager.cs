@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
         SUBGAME_STATE_NORMAL, 
         SUBGAME_STATE_CHOOSE_TO_BUILD, 
         SUBGAME_STATE_WHERE_TO_BUILD, 
-        SUBGAME_STATE_START_SELECTION, 
+        SUBGAME_STATE_START_SELECTION,
         SUBGAME_STATE_PATROL_WHERE,
         SUBGAME_STATE_MOVE_ATTACKING_WHERE,
         SUBGAME_STATE_REPAIR_WHAT,
@@ -287,11 +287,12 @@ public class GameManager : MonoBehaviour {
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_MOVE_ATTACKING_WHERE)
             {
-                //AL CLICAR MOVER UNIDADES ATACANDO ALLÍ
+                m_armyManager.goToAttack(position);
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_PATROL_WHERE)
             {
-                //AL CLICAR ALMACENAR POSICIONES ACTUAL Y CLICKADA Y MOVER UNIDADES PERMANENTEMENTE
+                m_armyManager.goToPatrol(position);
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_REPAIR_WHAT)
             {
