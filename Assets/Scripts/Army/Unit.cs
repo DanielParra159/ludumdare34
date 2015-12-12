@@ -6,7 +6,7 @@ using System.Collections;
 [RequireComponent(typeof(Life))]
 [RequireComponent(typeof(Attack))]
 [RequireComponent(typeof(Selectable))]
-//[RequireComponent(typeof(NavMeshAgent))] @todo creo que es este
+[RequireComponent(typeof(NavMeshAgent))]
 public class Unit : MonoBehaviour {
 
     public enum UNIT_TYPES
@@ -26,20 +26,25 @@ public class Unit : MonoBehaviour {
     public static int maxUnitsStates = (int)UNIT_STATES.MAX_UNIT_STATES;
 
     [SerializeField]
-    protected UNIT_TYPES type;
+    protected UNIT_TYPES m_type;
     protected UNIT_STATES m_currentState;
     protected UNIT_STATES m_lastState;
     //protected UNITS_STATES nextState;
 
+    
+
     protected int m_team;
+    protected NavMeshAgent m_navMeshAgent;
+    protected float m_speed;
 
-
+    protected Transform m_transform;
     protected Pausable m_pausable;
     protected bool m_initialized = false; //@todo cuando muera se tiene que poner a false
 
     void Awake()
     {
         m_pausable = new Pausable(onPause, onResume);
+        m_transform = transform;
     }
 
 	void Start () {
@@ -49,6 +54,9 @@ public class Unit : MonoBehaviour {
         Life lifeTemp = gameObject.GetComponent<Life>();
         lifeTemp.registerOnDead(onDead);
         lifeTemp.registerOnDamage(onDamage);
+
+        m_navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+        m_speed = m_navMeshAgent.speed;
 	}
 	
     public void init()
@@ -77,12 +85,18 @@ public class Unit : MonoBehaviour {
         }
 	}
 
-    private void updateIdle() { }
-    private void updateGoing() { }
-    private void updateAttacking() { }
-    private void updateDying() { }
+    protected void updateIdle() { }
+    protected void updateGoing()
+    {
+        if ( m_navMeshAgent.destination == null )
+        {
+            changeState(UNIT_STATES.UNIT_STATE_IDLE);
+        }
+    }
+    protected void updateAttacking() { }
+    protected void updateDying() { }
 
-    private void changeState(UNIT_STATES nextState)
+    protected void changeState(UNIT_STATES nextState)
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
         m_lastState = m_currentState;
@@ -99,6 +113,12 @@ public class Unit : MonoBehaviour {
                 break;
         }
     }
+    public void goTo(Vector3 position)
+    {
+        m_navMeshAgent.destination = position;
+        changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
+    }
+
     public void onDamage(float currentLif)
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
@@ -121,5 +141,15 @@ public class Unit : MonoBehaviour {
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
         //acelerar/desacelerar animaci�n y velocidad de mov
+    }
+
+    public UNIT_TYPES getType()
+    {
+        return m_type;
+    }
+
+    public void setPosition(Vector3 position)
+    {
+        m_transform.position = position;
     }
 }
