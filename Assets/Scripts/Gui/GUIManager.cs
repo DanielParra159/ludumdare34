@@ -6,12 +6,16 @@ public class GUIManager : MonoBehaviour {
     public static GUIManager instance = null;
     public enum ACTION_TYPES
     {
-        ACTION_BUILD, MAX_ACTIONS
+        ACTION_BUILD, ACTION_ESCAPE, MAX_ACTIONS
     }
 
     public static int maxActionTypes = (int)GUIManager.ACTION_TYPES.MAX_ACTIONS;
 
     public EventTypeBuildingClicked eventTypeBuildingClicked;
+    public EventActionButtonClicked eventActionButtonClicked;
+
+    [Tooltip("Para añadir los diferentes paneles a activar y desactivar")]
+    public GameObject[] panels = null;
 
     void Awake ()
     {
@@ -29,6 +33,7 @@ public class GUIManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         eventTypeBuildingClicked = new EventTypeBuildingClicked();
+        eventActionButtonClicked = new EventActionButtonClicked();
 	}
 	
 	// Update is called once per frame
@@ -36,9 +41,23 @@ public class GUIManager : MonoBehaviour {
 	
 	}
 
-    public void typeBuildingClicked(Buildng.BUILDING_TYPES buildingType)
+    public void typeBuildingClicked(int buildingType)
     {
-        eventTypeBuildingClicked.m_buildingType = buildingType;
+        eventTypeBuildingClicked.m_buildingType = (Buildng.BUILDING_TYPES)buildingType;
         eventTypeBuildingClicked.SendEvent();
+    }
+
+    public void actionButtonClicked(int actionType)
+    {
+        eventActionButtonClicked.m_actionType = (ACTION_TYPES)actionType;
+        eventActionButtonClicked.SendEvent();
+    }
+    
+    public void activatePanel(int panelToActivate)
+    {   
+        foreach(GameObject panel in panels)
+            if(panel!=panels[panelToActivate])
+                panel.SetActive(false);
+        panels[panelToActivate].SetActive(true);
     }
 }

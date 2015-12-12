@@ -9,6 +9,7 @@ using System.Collections;
 [RequireComponent(typeof(InputManager))]
 [RequireComponent(typeof(ResourcesManager))]
 [RequireComponent(typeof(SoundManager))]
+[RequireComponent(typeof(GUIManager))]
 
 public class GameManager : MonoBehaviour {
 
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour {
     private SUB_LEVEL_STATES m_lastSubLevelState;
 
     private BuildingManager m_buildingManager;
+    private GUIManager m_guiManager;
     private ArmyManager m_armygManager;
     private Unit.UNIT_TYPES m_typeLeaderUnit;
 
@@ -67,6 +69,7 @@ public class GameManager : MonoBehaviour {
         m_buildingManager = BuildingManager.instance;
         m_armygManager = ArmyManager.instance;
         m_inputManager = InputManager.instance;
+        m_guiManager = GUIManager.instance;
     }
 	
 	// Update is called once per frame
@@ -176,6 +179,16 @@ public class GameManager : MonoBehaviour {
         {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
                 m_selectRect.SetActive(false);
+
+                if (m_typeLeaderUnit == Unit.UNIT_TYPES.UNIT_TYPE_WORKER)
+                {
+                    m_guiManager.activatePanel(1);
+                }
+                else
+                {
+                    m_guiManager.activatePanel(0);
+                }
+
                 //CAMBIAR GUI Y MOSTRAR ACCIONES DE NADA SELECCIONADO SI ALDEANO NO SELECCIONADO
                 //O ACCIONES DE ALDEANO SI ALDEANO SELECCIONADO
                 break;
@@ -183,7 +196,7 @@ public class GameManager : MonoBehaviour {
                 //CAMBIAR GUI AL DE MOSTRAR GUI DE CONSTRUCCIONES
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
-                //CAMBIAR GUI AL DE MOSTRAR BOTON DE CANCELACIÓN
+                m_guiManager.activatePanel(0);
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION:
                 m_selectRect.SetActive(true);
@@ -302,6 +315,9 @@ public class GameManager : MonoBehaviour {
         {
             case GUIManager.ACTION_TYPES.ACTION_BUILD:
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD);
+                break;
+            case GUIManager.ACTION_TYPES.ACTION_ESCAPE:
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
                 break;
         }
     }
