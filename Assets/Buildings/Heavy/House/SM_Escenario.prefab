@@ -12377,7 +12377,7 @@ GameObject:
   - 208: {fileID: 20808820}
   m_Layer: 9
   m_Name: SM_Escenario
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69061,6 +69061,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CarveOnlyStationary
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

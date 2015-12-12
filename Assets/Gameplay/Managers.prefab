@@ -1320,6 +1320,7 @@ MonoBehaviour:
     y: 0
     width: 404
     height: 227
+  m_margin_Percentage: .100000001
 --- !u!114 &11434998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1658,6 +1659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_currentState: 2
   m_currentSubLevelState: 0
+  m_cameraSpeed: 30
   m_selectRect: {fileID: 135936}
 --- !u!114 &11446216
 MonoBehaviour:

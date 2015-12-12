@@ -12,6 +12,7 @@ public class EventManager {
         EVENT_TYPE_BUILDING_CLICKED,
         EVENT_READY_TO_REPAIR,
         EVENT_STOP_REPAIRING,
+        EVENT_MOVE_CAMERA,
 		MAX_EVENTS
 	};
 
@@ -82,6 +83,12 @@ public class EventManager {
         {
             StopRepairingBuilding stopRepairingBuilding = (StopRepairingBuilding)hEvent;
             buildingManager.stopRepairing(stopRepairingBuilding.building);
+            break;
+        }
+            case EVENTS.EVENT_MOVE_CAMERA:
+        {
+            EventMoveCamera eventMoveCamera = (EventMoveCamera)hEvent;
+            gameManager.moveCamera(eventMoveCamera.m_dir);
             break;
         }
 		}

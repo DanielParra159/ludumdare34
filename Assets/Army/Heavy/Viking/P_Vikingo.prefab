@@ -543,7 +543,7 @@ GameObject:
   - 23: {fileID: 2353616}
   m_Layer: 0
   m_Name: P_Vikingo
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2042,6 +2042,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_attackRange
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Unit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

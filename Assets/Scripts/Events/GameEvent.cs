@@ -49,3 +49,8 @@ public class StopRepairingBuilding : GameEvent
     public Buildng building;
     public StopRepairingBuilding() { type = EventManager.EVENTS.EVENT_STOP_REPAIRING; }
 }
+public class EventMoveCamera : GameEvent
+{
+    public Vector3 m_dir;
+    public EventMoveCamera() { type = EventManager.EVENTS.EVENT_MOVE_CAMERA; }
+}
