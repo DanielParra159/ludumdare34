@@ -9,6 +9,7 @@ using System.Collections;
 [RequireComponent(typeof(InputManager))]
 [RequireComponent(typeof(ResourcesManager))]
 [RequireComponent(typeof(SoundManager))]
+[RequireComponent(typeof(GUIManager))]
 
 public class GameManager : MonoBehaviour {
 
@@ -154,6 +155,7 @@ public class GameManager : MonoBehaviour {
                 //O ACCIONES DE ALDEANO SI ALDEANO SELECCIONADO
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD:
+                
                 //CAMBIAR GUI AL DE MOSTRAR GUI DE CONSTRUCCIONES
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:

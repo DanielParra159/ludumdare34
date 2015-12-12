@@ -13,6 +13,9 @@ public class GUIManager : MonoBehaviour {
 
     public EventTypeBuildingClicked eventTypeBuildingClicked;
 
+    [Tooltip("Para añadir los diferentes paneles a activar y desactivar")]
+    public GameObject[] panels = null;
+
     void Awake ()
     {
         if (instance == null)
@@ -36,9 +39,17 @@ public class GUIManager : MonoBehaviour {
 	
 	}
 
-    public void typeBuildingClicked(Buildng.BUILDING_TYPES buildingType)
+    public void typeBuildingClicked(int buildingType)
     {
-        eventTypeBuildingClicked.m_buildingType = buildingType;
+        eventTypeBuildingClicked.m_buildingType = (Buildng.BUILDING_TYPES)buildingType;
         eventTypeBuildingClicked.SendEvent();
+    }
+    
+    public void activatePanel(GameObject panelToActivate)
+    {   
+        foreach(GameObject panel in panels)
+            if(panel!=panelToActivate)
+                panel.SetActive(false);
+        panelToActivate.SetActive(true);
     }
 }
