@@ -29,3 +29,7 @@ public class EventSpawnUnit : GameEvent
     public Vector3 m_meetingPoint;
     public EventSpawnUnit() { type = EventManager.EVENTS.EVENT_SPAWN_UNIT; }
 }
+public class EventTypeLeaderUnitChosen : GameEvent
+{
+    public Unit.UNIT_TYPES m_type;
+}
