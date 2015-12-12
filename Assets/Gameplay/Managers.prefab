@@ -104,6 +104,7 @@ GameObject:
   - 114: {fileID: 11454348}
   - 114: {fileID: 11463366}
   - 114: {fileID: 11434798}
+  - 114: {fileID: 11429744}
   m_Layer: 10
   m_Name: Managers
   m_TagString: Untagged
@@ -183,6 +184,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135936}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11429744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56c7d8132147044fba24c47c71d0469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_xCell: 10
+  m_zCell: 10
+  m_xSize: 8
+  m_zSize: 8
+  draw: 1
 --- !u!114 &11430366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,10 +314,12 @@ MonoBehaviour:
   unitsPrefabs:
   - unitsPrefab:
     - {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    unitsNumber: 01000000
-  - unitsPrefab:
     - {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    unitsNumber: 01000000
+    unitsNumber: 0100000001000000
+  - unitsPrefab:
+    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
+    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
+    unitsNumber: 0100000001000000
   neutralUnitsPrefabs:
     unitsPrefab:
     - {fileID: 182598, guid: cda229ac5ef7f0e48a2206a75a8fdf68, type: 2}
