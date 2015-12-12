@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour {
             else if ((unitAuxPressed = m_armyManager.isSelectedAnyUnit()) != null)
             {
                 //tenemos seleccionado alguna unidad? comprobamos si se ha pulsado sobre una unidad, sobre un edificio o sobre suelo
-                if ((buildingAux = m_buildingManager.isPressedAnyBuilding(position)) != null)
+                if ((buildingAux = m_buildingManager.isPressedAnyEnemyBuilding(position)) != null)
                 {
                     //comprobamos el equipo
                     if (buildingAux.getTeam() == unitAuxPressed.getTeam())
@@ -274,15 +274,14 @@ public class GameManager : MonoBehaviour {
                     m_armyManager.goTo(position);
                 }
             }
-            
-            
             //nos movemos con la selección o movemos el punto de encuentro si es un edificio, además si es un aldeado cancelamos la construcción
             changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL); //@todo: se tiene que notificar al aldeano para que cambie su interfaz?
             //lanzar evento de boton derecho para que se avise a armymanager y buildingmanager
         }
         else if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL )
         {
-            if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL || m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD)
+            if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL || 
+                m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD)
             {
                 //empieza selección
                 m_startSelectPosition = position;
@@ -304,14 +303,15 @@ public class GameManager : MonoBehaviour {
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_REPAIR_WHAT)
             {
-                Buildng building = m_buildingManager.isPressedAnyBuilding(position);
+                Buildng building = m_buildingManager.isPressedAnyAllyBuilding(position);
                 if(building != null)
                 {
                     m_armyManager.goToRepair(building);
                 }
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
-            
         }
+
         //comprobar en que sub estado estamos, construyendo, sin selecci�n...
         //activar flag y prepararse para selecci�n multiple
     }
@@ -337,11 +337,39 @@ public class GameManager : MonoBehaviour {
                 {
                     m_typeLeaderBuilding = m_buildingManager.selectBuilding(m_startSelectPosition, position);
                 }
+                else 
+                {
+                    m_buildingManager.unselectBuilding();
+                }
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
             {
                 //construimos si es posible
+            }
+            if (m_typeLeaderBuilding != null)
+            {
+                Buildng.BUILDING_TYPES building = m_typeLeaderBuilding.getType();
+                if (building == Buildng.BUILDING_TYPES.BUILDING_URBAN_CENTER)
+                {
+                    m_guiManager.activatePanel(GUIManager.PANELS.URBAN_CENTRE_PANEL);
+                }
+                else if (building == Buildng.BUILDING_TYPES.BUILDING_TYPE_HOUSE)
+                {
+                    m_guiManager.activatePanel(GUIManager.PANELS.NOTHING_PANEL);
+                }
+                else if (building == Buildng.BUILDING_TYPES.BUILDING_TYPE_BARRACKS)
+                {
+                    m_guiManager.activatePanel(GUIManager.PANELS.BARRACK_PANEL);
+                }
+                else if (building == Buildng.BUILDING_TYPES.BUILDING_TYPE_UPGRADE)
+                {
+                    m_guiManager.activatePanel(GUIManager.PANELS.UPGRADE_PANEL);
+                }
+                else if (building == Buildng.BUILDING_TYPES.BUILDING_TYPE_TOWER)
+                {
+                    m_guiManager.activatePanel(GUIManager.PANELS.TOWER_PANEL);
+                }
             }
         }
 

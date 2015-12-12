@@ -293,6 +293,8 @@ public class Unit : MonoBehaviour {
                 break;
             case UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING:
                 break;
+            case UNIT_SUB_STATES.UNIT_SUB_STATE_REPAIRING:
+                break;
         }
     }
     public void goTo(Vector3 position)

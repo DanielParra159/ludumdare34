@@ -8,12 +8,19 @@ public class GUIManager : MonoBehaviour {
     {
         ACTION_BUILD, ACTION_ESCAPE, ACTION_PATROL, ACTION_STOP, ACTION_MOVE_ATTACKING, ACTION_REPAIR, MAX_ACTIONS
     }
+    public enum BUILDING_ACTIONS
+    {
+        BUILDING_UC_VILLAGER, BUILDING_BARRACK_SWORDMAN, BUILDING_BARRACK_ARCHER, BUILDING_BARRACK_LANCER, BUILDING_UPGRADE_SWORD,
+        BUILDING_UPGRADE_BOW, BUILDING_UPGRADE_SPEAR, BUILDING_TOWER_UPGRADE, MAX_BUILDING_ACTIONS
+    }
     public enum PANELS
     {
-        NOTHING_PANEL, BUILDER_PANEL, BUILDINGS_PANEL, ARMY_PANEL, MAX_PANELS
+        NOTHING_PANEL, BUILDER_PANEL, BUILDINGS_PANEL, ARMY_PANEL, URBAN_CENTRE_PANEL, BARRACK_PANEL, UPGRADE_PANEL,
+        TOWER_PANEL, MAX_PANELS
     }
     public static int maxActionTypes = (int)GUIManager.ACTION_TYPES.MAX_ACTIONS;
     public static int maxPanels = (int)GUIManager.PANELS.MAX_PANELS;
+    public static int maxBuildingActions = (int)GUIManager.ACTION_TYPES.MAX_ACTIONS;
 
     public EventTypeBuildingClicked eventTypeBuildingClicked;
     public EventActionButtonClicked eventActionButtonClicked;

@@ -101,7 +101,15 @@ public class BuildingManager : MonoBehaviour {
         }
         return m_selectedBuilding;
     }
-    public Buildng isPressedAnyBuilding(Vector3 position)
+    public void unselectBuilding()
+    {
+        if (m_selectedBuilding != null)
+        {
+            m_selectedBuilding.unselecBuilding();
+            m_selectedBuilding = null;
+        }
+    }
+    public Buildng isPressedAnyEnemyBuilding(Vector3 position)
     {
         Buildng pressedBuildingAux = null;
         int enemyTeam = m_team + 1 % (int)TeamManager.TEAMS.TEAM_MAX;
@@ -112,9 +120,19 @@ public class BuildingManager : MonoBehaviour {
         }
         return pressedBuildingAux;
     }
+    public Buildng isPressedAnyAllyBuilding(Vector3 position)
+    {
+        Buildng pressedBuildingAux = null;
+        for (int i = 0; i < buildings[m_team].Count; ++i)
+        {
+            if (buildings[m_team][i].isPressed(position))
+                pressedBuildingAux = buildings[m_team][i];
+        }
+        return pressedBuildingAux;
+    }
     public Buildng isSelectedAnyBuilding()
     {
-        return null;
+        return m_selectedBuilding;
     }
     public void setMeetingPoint(Vector3 position)
     {
