@@ -138,7 +138,10 @@ public class Unit : MonoBehaviour {
             case UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE:
                 {
                     GameObject go = m_map.anyEnemyInRadious(transform.position, m_enemyDetectionRadius, m_team);
-                    goToTarget(go);
+                    if(go!=null)
+                    {
+                        goToTarget(go);
+                    }
                     //podemos atacar si existe
                     break;
                 }
@@ -159,8 +162,10 @@ public class Unit : MonoBehaviour {
             case UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE:
             {
                 GameObject go = m_map.anyEnemyInRadious(transform.position, m_enemyDetectionRadius, m_team);
-                goToTarget(go);
-                //podemos atacar si existe
+                if(go!=null)
+                {
+                    goToTarget(go);
+                }
                 break;
             }
             case UNIT_SUB_STATES.UNIT_SUB_STATE_FOLLOW_TARGET:

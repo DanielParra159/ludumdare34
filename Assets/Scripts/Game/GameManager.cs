@@ -290,6 +290,7 @@ public class GameManager : MonoBehaviour {
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_MOVE_ATTACKING_WHERE)
             {
                 m_armyManager.goToAttack(position);
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_PATROL_WHERE)
             {
