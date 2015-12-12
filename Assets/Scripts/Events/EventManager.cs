@@ -10,18 +10,22 @@ public class EventManager {
         EVENT_SPAWN_UNIT,
         EVENT_ACTION_BUTTON_CLICKED,
         EVENT_TYPE_BUILDING_CLICKED,
+        EVENT_READY_TO_REPAIR,
+        EVENT_STOP_REPAIRING,
 		MAX_EVENTS
 	};
 
     private static SoundManager soundManager;
     private static GameManager gameManager;
     private static ArmyManager armyManager;
+    private static BuildingManager buildingManager;
 
     // Use this for initialization
     public static void Start () {
         soundManager = SoundManager.instance;
         gameManager = GameManager.instance;
         armyManager = ArmyManager.instance;
+        buildingManager = BuildingManager.instance;
     }
 	
 	/*
@@ -66,6 +70,18 @@ public class EventManager {
         {
             EventTypeBuildingClicked eventTypeBuildingClicked = (EventTypeBuildingClicked)hEvent;
             gameManager.typeBuildingClicked(eventTypeBuildingClicked.m_buildingType);
+            break;
+        }
+            case EVENTS.EVENT_READY_TO_REPAIR:
+        {
+            ReadyToRepairBuilding readyToRepairBuilding = (ReadyToRepairBuilding)hEvent;
+            buildingManager.readyToRepair(readyToRepairBuilding.building);
+            break;
+        }
+            case EVENTS.EVENT_STOP_REPAIRING:
+        {
+            StopRepairingBuilding stopRepairingBuilding = (StopRepairingBuilding)hEvent;
+            buildingManager.stopRepairing(stopRepairingBuilding.building);
             break;
         }
 		}

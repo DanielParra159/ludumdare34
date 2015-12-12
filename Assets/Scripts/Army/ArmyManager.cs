@@ -181,5 +181,11 @@ public class ArmyManager : MonoBehaviour {
             m_selectedUnits[i].goToPatrol(position);
         }
     }
-
+    public void goToRepair(Buildng building)
+    {
+        for (int i = 0; i < m_selectedUnits.Count; ++i)
+        {
+            m_selectedUnits[i].goToRepair(building);
+        }
+    }
 }

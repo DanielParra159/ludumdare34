@@ -296,7 +296,11 @@ public class GameManager : MonoBehaviour {
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_REPAIR_WHAT)
             {
-                //AL CLICAR EN UN EDIFICIO REPARARLO & SI NO SE CLICA EN UN EDIFICIO CANCELAR ESTADO
+                Buildng building = m_buildingManager.isPressedAnyBuilding(position);
+                if(building != null)
+                {
+                    m_armyManager.goToRepair(building);
+                }
             }
             
         }

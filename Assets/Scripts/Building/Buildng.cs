@@ -7,17 +7,19 @@ using System.Collections;
 [RequireComponent(typeof(Selectable))]
 [RequireComponent(typeof(BoxCollider))]
 //[RequireComponent(typeof(NavMeshObstacle))] @todo creo que es este, puede que no todas las construcciones lo necesiten activado
-public class Buildng : MonoBehaviour {
+public class Buildng : MonoBehaviour
+{
 
     public enum BUILDING_TYPES
     {
-        BUILDING_URBAN_CENTER, BUILDING_TYPE_HOUSE, BUILDING_TYPE_BARRACKS, BUILDING_TYPE_UPGRADE, BUILDING_TYPE_TOWER,  
+        BUILDING_URBAN_CENTER, BUILDING_TYPE_HOUSE, BUILDING_TYPE_BARRACKS, BUILDING_TYPE_UPGRADE, BUILDING_TYPE_TOWER,
         MAX_BUILDING_TYPES
     }
     public static int maxBuildingTypes = (int)BUILDING_TYPES.MAX_BUILDING_TYPES;
     public enum BUILDING_STATES
     {
-        BUILDING_STATE_IN_CONSTRUCTION, BUILDING_STATE_BUILT, BUILDING_STATE_DESTROYED, MAX_BUILDING_STATES
+        BUILDING_STATE_IN_CONSTRUCTION, BUILDING_STATE_BUILT, BUILDING_STATE_DESTROYED, BUILDING_STATE_BEING_REPAIRED,
+        MAX_BUILDING_STATES
     }
     public static int maxBuildingStates = (int)BUILDING_STATES.MAX_BUILDING_STATES;
 
@@ -34,6 +36,7 @@ public class Buildng : MonoBehaviour {
 
     protected Pausable m_pausable;
     private bool m_initialized = false; //@todo cuando muera se tiene que poner a false
+    protected Life m_life;
 
     void Awake()
     {
@@ -41,15 +44,16 @@ public class Buildng : MonoBehaviour {
         m_transform = transform;
     }
 
-	// Use this for initialization
-	void Start () {
-        Life lifeTemp = gameObject.GetComponent<Life>();
-        lifeTemp.registerOnDead(onDead);
-        lifeTemp.registerOnDamage(onDamage);
+    // Use this for initialization
+    void Start()
+    {
+        m_life = gameObject.GetComponent<Life>();
+        m_life.registerOnDead(onDead);
+        m_life.registerOnDamage(onDamage);
 
         m_team = gameObject.GetComponent<Team>().m_team;
-	}
-	
+    }
+
     public void init()
     {
         m_initialized = true;
@@ -71,11 +75,18 @@ public class Buildng : MonoBehaviour {
             case BUILDING_STATES.BUILDING_STATE_DESTROYED:
                 updateDestroyed();
                 break;
+            case BUILDING_STATES.BUILDING_STATE_BEING_REPAIRED:
+                updateRepaired();
+                break;
         }
     }
     private void updateInConstruction() { }
     private void updateBuilt() { }
     private void updateDestroyed() { }
+    private void updateRepaired()
+    {
+        m_life.setRegeneration(50.0f);
+    }
 
 
     private void changeState(BUILDING_STATES nextState)
@@ -88,8 +99,14 @@ public class Buildng : MonoBehaviour {
             case BUILDING_STATES.BUILDING_STATE_IN_CONSTRUCTION:
                 break;
             case BUILDING_STATES.BUILDING_STATE_BUILT:
+                if(m_lastState == BUILDING_STATES.BUILDING_STATE_BEING_REPAIRED)
+                {
+                    m_life.setRegeneration(0);
+                }
                 break;
             case BUILDING_STATES.BUILDING_STATE_DESTROYED:
+                break;
+            case BUILDING_STATES.BUILDING_STATE_BEING_REPAIRED:
                 break;
         }
     }
@@ -102,7 +119,14 @@ public class Buildng : MonoBehaviour {
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado el edificio " + this);
     }
-
+    public void onHeal()
+    {
+        changeState(BUILDING_STATES.BUILDING_STATE_BEING_REPAIRED);
+    }
+    public void onStopHeal()
+    {
+        changeState(BUILDING_STATES.BUILDING_STATE_BUILT);
+    }
     public void onPause()
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado el edificio " + this);

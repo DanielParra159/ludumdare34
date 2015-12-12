@@ -117,4 +117,9 @@ public class Life : MonoBehaviour
     {
         m_slider.enabled = false;
     }
+
+    public void setRegeneration(float regeneration)
+    {
+        m_regeneration = regeneration;
+    }
 }

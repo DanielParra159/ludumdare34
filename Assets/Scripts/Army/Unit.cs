@@ -24,7 +24,8 @@ public class Unit : MonoBehaviour {
     }
     public enum UNIT_SUB_STATES
     {
-        UNIT_SUB_STATE_NORMAL, UNIT_SUB_STATE_FOLLOW_TARGET, UNIT_SUB_STATE_AGGRESSIVE, UNIT_SUB_STATE_RECOLLECTING, MAX_UNIT_SUB_STATES
+        UNIT_SUB_STATE_NORMAL, UNIT_SUB_STATE_FOLLOW_TARGET, UNIT_SUB_STATE_AGGRESSIVE, UNIT_SUB_STATE_RECOLLECTING, 
+        UNIT_SUB_STATE_REPAIRING, MAX_UNIT_SUB_STATES
     }
     public static int maxNeutralUnitsTypes = (int)NEUTRAL_UNIT_TYPES.MAX_NEUTRAL_UNIT_TYPES;
     public static int maxUnitsTypes = (int)UNIT_TYPES.MAX_UNIT_TYPES;
@@ -65,6 +66,10 @@ public class Unit : MonoBehaviour {
     protected Vector3 m_positionInitial;
     protected Vector3 m_positionFinal;
 
+    protected ReadyToRepairBuilding readyToRepairBuilding;
+    protected Buildng buildingToRepair;
+    protected StopRepairingBuilding stopRepairingBuilding;
+
     void Awake()
     {
         m_transform = transform;
@@ -88,7 +93,8 @@ public class Unit : MonoBehaviour {
         m_map = Map.instance;
         m_attack = GetComponent<Attack>();
 
-        
+        readyToRepairBuilding = new ReadyToRepairBuilding();
+        stopRepairingBuilding = new StopRepairingBuilding();
 	}
 	
     public void init()
@@ -178,13 +184,15 @@ public class Unit : MonoBehaviour {
                 }
                 break;
             }
-            //TO DO PROCESO DE RECOLECCIÓN 
-            /*case UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING:
+            case UNIT_SUB_STATES.UNIT_SUB_STATE_REPAIRING:
             {
-                Vector3 targetPosition = m_recollectionPoint.transform.position;
-
+                if (m_navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete)
+                {
+                    readyToRepairBuilding.building = buildingToRepair;
+                    readyToRepairBuilding.SendEvent();
+                }
                 break;
-            }*/
+            }
         }
     }
     protected void updateAttacking() 
@@ -199,10 +207,11 @@ public class Unit : MonoBehaviour {
     protected void updateDying() { }
     protected void updatePatrolling() 
     {   
-        //GITANADA PARA EVITAR LA COORD Y
+        //GITANADA PARA EVITAR LA COORD Y|MODIFICAR PARA HACER UNA COMPROBACIÓN MÁS PROFESIONAL
         if (gameObject.transform.position.x == m_positionInitial.x && gameObject.transform.position.z == m_positionInitial.z)
         {
             m_navMeshAgent.SetDestination(m_positionFinal);
+            //m_navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete;
         }
         else if (gameObject.transform.position.x == m_positionFinal.x && gameObject.transform.position.z == m_positionFinal.z)
         {
@@ -237,6 +246,11 @@ public class Unit : MonoBehaviour {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
         m_lastSubState = m_currentSubState;
         m_currentSubState = nextSubState;
+        if(m_lastSubState == UNIT_SUB_STATES.UNIT_SUB_STATE_REPAIRING)
+        {
+            stopRepairingBuilding.building = buildingToRepair;
+            stopRepairingBuilding.SendEvent();
+        }
         switch (m_currentSubState)
         {
             case UNIT_SUB_STATES.UNIT_SUB_STATE_NORMAL:
@@ -244,6 +258,8 @@ public class Unit : MonoBehaviour {
             case UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE:
                 break;
             case UNIT_SUB_STATES.UNIT_SUB_STATE_FOLLOW_TARGET:
+                break;
+            case UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING:
                 break;
         }
     }
@@ -273,6 +289,13 @@ public class Unit : MonoBehaviour {
         m_positionFinal = position;
         changeState(UNIT_STATES.UNIT_STATE_PATROLLING);
     }
+    public void goToRepair(Buildng building)
+    {
+        m_navMeshAgent.SetDestination(building.transform.position);
+        buildingToRepair = building;
+        changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
+        changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_REPAIRING);
+    }
     public void stop()
     {
         changeState(UNIT_STATES.UNIT_STATE_IDLE);
@@ -285,7 +308,6 @@ public class Unit : MonoBehaviour {
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
     }
-
     public void onPause()
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);

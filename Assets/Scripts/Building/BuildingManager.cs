@@ -67,4 +67,12 @@ public class BuildingManager : MonoBehaviour {
     {
         m_selectedBuilding.setMeetingPointPosition(position);
     }
+    public void readyToRepair(Buildng building)
+    {
+        building.onHeal();
+    }
+    public void stopRepairing(Buildng building)
+    {
+        building.onStopHeal();
+    }
 }

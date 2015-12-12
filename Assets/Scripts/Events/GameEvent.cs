@@ -39,3 +39,13 @@ public class EventTypeBuildingClicked : GameEvent
     public Buildng.BUILDING_TYPES m_buildingType;
     public EventTypeBuildingClicked() { type = EventManager.EVENTS.EVENT_TYPE_BUILDING_CLICKED; }
 }
+public class ReadyToRepairBuilding : GameEvent
+{
+    public Buildng building;
+    public ReadyToRepairBuilding() { type = EventManager.EVENTS.EVENT_READY_TO_REPAIR; }
+}
+public class StopRepairingBuilding : GameEvent
+{
+    public Buildng building;
+    public StopRepairingBuilding() { type = EventManager.EVENTS.EVENT_STOP_REPAIRING; }
+}
