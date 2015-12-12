@@ -160,7 +160,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: typeBuildingClicked
         m_Mode: 3
         m_Arguments:
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -723,7 +723,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -1344,7 +1344,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: typeBuildingClicked
         m_Mode: 3
         m_Arguments:
@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -1752,7 +1752,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: typeBuildingClicked
         m_Mode: 3
         m_Arguments:
@@ -1945,7 +1945,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -2140,7 +2140,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -2416,22 +2416,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[0].unitsPrefab.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[1].unitsPrefab.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[1].unitsNumber.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[0].unitsNumber.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 496756, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2463,42 +2447,6 @@ Prefab:
     - target: {fileID: 496756, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[0].unitsPrefab.Array.data[1]
-      value: 
-      objectReference: {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[1].unitsPrefab.Array.data[1]
-      value: 
-      objectReference: {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[1].unitsNumber.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[0].unitsNumber.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[0].unitsPrefab.Array.data[2]
-      value: 
-      objectReference: {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[0].unitsNumber.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[1].unitsPrefab.Array.data[2]
-      value: 
-      objectReference: {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    - target: {fileID: 11446216, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: unitsPrefabs.Array.data[1].unitsNumber.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11429744, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
@@ -2795,7 +2743,7 @@ CanvasRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 189790, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
   m_PrefabInternal: {fileID: 1462739932}
---- !u!114 &1839439681
+--- !u!114 &1839439680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2958,7 +2906,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -3079,7 +3027,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: typeBuildingClicked
         m_Mode: 3
         m_Arguments:
@@ -3347,7 +3295,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: actionButtonClicked
         m_Mode: 3
         m_Arguments:
@@ -3564,7 +3512,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839439681}
+      - m_Target: {fileID: 0}
         m_MethodName: typeBuildingClicked
         m_Mode: 3
         m_Arguments:
