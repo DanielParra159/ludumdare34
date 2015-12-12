@@ -35,7 +35,7 @@ public class InputManager : MonoBehaviour {
 	void Update () {
         m_mousePosition = Input.mousePosition;
         m_eventMouseClick.m_screenPosition = m_mousePosition;
-        if (Input.GetMouseButtonDown(0) && m_actionRect.Contains(m_mousePosition)) //boton izquierdo pulsado
+        if (Input.GetMouseButtonDown(0) /*&& m_actionRect.Contains(m_mousePosition)*/) //boton izquierdo pulsado
         {
             m_eventMouseClick.m_button = MOUSE_BUTTONS.MOUSE_BUTTON_LEFT;
             m_eventMouseClick.type =  EventManager.EVENTS.EVENT_MOUSE_DOWN;
@@ -48,7 +48,7 @@ public class InputManager : MonoBehaviour {
             m_eventMouseClick.SendEvent();
         }
 
-        if (Input.GetMouseButtonDown(1) && m_actionRect.Contains(Input.mousePosition)) //boton derecho pulsado
+        if (Input.GetMouseButtonDown(1) /*&& m_actionRect.Contains(Input.mousePosition)*/) //boton derecho pulsado
         {
             m_eventMouseClick.m_button = MOUSE_BUTTONS.MOUSE_BUTTON_RIGH;
             m_eventMouseClick.type = EventManager.EVENTS.EVENT_MOUSE_DOWN;
