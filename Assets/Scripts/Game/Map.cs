@@ -124,34 +124,55 @@ public class Map : MonoBehaviour {
         addObjectToMap(position, go);
     }
 
-    public GameObject anyEnemyInRadious(Vector3 position, float radious)
+    public GameObject anyEnemyInRadious(Vector3 position, float radious, int team)
     {
-        int xMin = (int)(position.x - radious / m_xSize);
-        int zMin = (int)(position.z - radious / m_zSize);
+        GameObject goAux = null;
+        int nearestX = int.MaxValue;
+        int nearestZ = int.MaxValue;
+        int xMin = (int)((position.x - radious) / m_xSize);
+        int zMin = (int)((position.z - radious) / m_zSize);
 
-        int xMax = (int)(position.x + radious / m_xSize);
-        int zMax = (int)(position.z + radious / m_zSize);
+        int xMax = (int)((position.x + radious) / m_xSize);
+        int zMax = (int)((position.z + radious) / m_zSize);
 
-        int xPos = (int)(position.x / m_xSize);
-        int zPos = (int)(position.z / m_zSize);
-
-        //int radiousAux = 1;
-        int dadiousLimit = (zMax -zMin)/2;
-
-        for (int radiousAux = 1; radiousAux <= dadiousLimit; ++radiousAux)
+        for (int x = xMin; x <= xMax; ++x)
         {
-            for (int z = zPos + radiousAux; z < radiousAux - radiousAux; --z)
+            for (int z = zMin; z < zMax; ++z)
             {
-                for (int x = xPos - radiousAux; x <= xPos + radiousAux; ++x)
+                if (x < m_xCell && z < m_zCell)
                 {
-
-                    if (x < m_xCell && z < m_zCell)
+                    for (int i = 0; i < m_ObjectsMap[x][z].Count; ++i)
                     {
+                        //mejorable, mucho...
+                        Unit unitAux = m_ObjectsMap[x][z][i].GetComponent<Unit>();
+                        if ( unitAux !=null)
+                        {
+                            if ((unitAux.getTeam() != team) && (nearestX > x || nearestZ > z ))
+                            {
+                                goAux = m_ObjectsMap[x][z][i];
+                                nearestX = x;
+                                nearestZ = z;
+                            }
+                        }
+                        else
+                        {
+                            Buildng buildingAux = m_ObjectsMap[x][z][i].GetComponent<Buildng>();
+                            if (buildingAux != null)
+                            {
+                                if (buildingAux.getTeam() != team && (nearestX > x || nearestZ > z))
+                                {
+                                    goAux = m_ObjectsMap[x][z][i];
+                                    nearestX = x;
+                                    nearestZ = z;
+                                }
+                            }
+                        }
+                        
                     }
                 }
             }
         }
-        return null;
+        return goAux;
 
     }
     
