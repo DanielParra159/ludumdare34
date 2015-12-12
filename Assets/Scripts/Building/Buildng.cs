@@ -27,11 +27,18 @@ public class Buildng : MonoBehaviour
     protected BUILDING_STATES m_currentState;
     protected BUILDING_STATES m_lastState;
 
+    protected Selectable m_selectable;
+
     [Tooltip("Punto de reuni�n de las unidades")]
     public Transform m_meetingPoint;
     protected Transform m_transform;
     protected int m_team;
     protected Vector2 m_mapPos;
+
+    [SerializeField]
+    [Tooltip("Radio de la unidad, se utiliza para las pulsaciones")]
+    protected float m_radius = 2.0f;
+    protected float m_radius2;
 
     protected Pausable m_pausable;
     private bool m_initialized = false; //@todo cuando muera se tiene que poner a false
@@ -41,11 +48,15 @@ public class Buildng : MonoBehaviour
     {
         m_pausable = new Pausable(onPause, onResume);
         m_transform = transform;
+
+        m_radius2 = m_radius * m_radius;
     }
 
     // Use this for initialization
     void Start()
     {
+        m_selectable = GetComponent<Selectable>();
+
         m_life = gameObject.GetComponent<Life>();
         m_life.registerOnDead(onDead);
         m_life.registerOnDamage(onDamage);
@@ -160,5 +171,24 @@ public class Buildng : MonoBehaviour
     {
         m_mapPos.x = x;
         m_mapPos.y = z;
+    }
+    public bool isPressed(Vector3 position)
+    {
+        if ((position - m_transform.position).sqrMagnitude < m_radius2)
+            return true;
+        return false;
+    }
+    public void selecBuilding()
+    {
+        m_selectable.SetSelected();
+    }
+    public void unselecBuilding()
+    {
+        m_selectable.SetDeselect();
+    }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, m_radius);
     }
 }

@@ -22,6 +22,7 @@ public class BuildingManager : MonoBehaviour {
 
     private Buildng m_selectedBuilding = null;
 
+    private int m_team = 0; //@todo: simplificamos y decimos que el player es el 0
 
     private PoolManager[][] poolOfBuildings; //por equipo y por tipo de edificio
     private List<Buildng>[] buildings;
@@ -69,9 +70,47 @@ public class BuildingManager : MonoBehaviour {
 	
 	}
 
+    public Buildng selectBuilding(Vector3 startPosition, Vector3 endPosition)
+    {
+        //esto es muy mejorable
+        Vector3 center = (endPosition - startPosition);
+        center.y += 0.1f;
+        Vector3 centerAux = startPosition + center * 0.5f;
+        Bounds selectBounds = new Bounds(centerAux, new Vector3(Mathf.Abs(center.x), 10.0f, Mathf.Abs(center.z)));
+        if (selectBounds.size.x < 1.5f || selectBounds.size.z < 1.5f)
+        {
+            selectBounds.size = selectBounds.size + new Vector3(1.5f, 0.0f, 1.5f);
+        }
+        int maxType = (int)Unit.UNIT_TYPES.MAX_UNIT_TYPES;
+        m_selectedBuilding = null;
+        for (int i = 0; i < buildings[m_team].Count; ++i)
+        {
+            if (selectBounds.Contains(buildings[m_team][i].getPosition()))
+            {
+                buildings[m_team][i].selecBuilding();
+                if (buildings[m_team][i].getTeam() < maxType)
+                {
+                    m_selectedBuilding = buildings[m_team][i];
+                }
+
+            }
+            else
+            {
+                buildings[m_team][i].unselecBuilding();
+            }
+        }
+        return m_selectedBuilding;
+    }
     public Buildng isPressedAnyBuilding(Vector3 position)
     {
-        return null;
+        Buildng pressedBuildingAux = null;
+        int enemyTeam = m_team + 1 % (int)TeamManager.TEAMS.TEAM_MAX;
+        for (int i = 0; i < buildings[enemyTeam].Count; ++i)
+        {
+            if (buildings[enemyTeam][i].isPressed(position))
+                pressedBuildingAux = buildings[enemyTeam][i];
+        }
+        return pressedBuildingAux;
     }
     public Buildng isSelectedAnyBuilding()
     {

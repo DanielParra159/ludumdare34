@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour {
     private GUIManager m_guiManager;
     private ArmyManager m_armyManager;
     private Unit m_typeLeaderUnit = null;
+    private Buildng m_typeLeaderBuilding = null;
 
     private Vector3 m_startSelectPosition;
     public GameObject m_selectRect;
@@ -332,6 +333,10 @@ public class GameManager : MonoBehaviour {
             if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION)
             {
                 m_typeLeaderUnit = m_armyManager.selectUnits(m_startSelectPosition, position);
+                if (m_typeLeaderUnit==null)
+                {
+                    m_typeLeaderBuilding = m_buildingManager.selectBuilding(m_startSelectPosition, position);
+                }
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
