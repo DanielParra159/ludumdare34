@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 4abe7590897a85f4abcfe536c5191d87
+timeCreated: 1449909743
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Barril01
+    100002: Barril02
+    100004: Barril03
+    100006: Barril04
+    100008: Barriles
+    100010: Birras
+    100012: Chimenea
+    100014: Chimenea_1
+    100016: Cube
+    100018: Espuma
+    100020: Jarra
+    100022: Jarra_2
+    100024: Marco_Corto
+    100026: Marco_Largo
+    100028: Moon
+    100030: Physical_Sky
+    100032: Puerta
+    100034: Puerta_2
+    100036: Rotulo
+    100038: Rotulo_2
+    100040: Shadow_Plane
+    100042: Sky_Null
+    100044: //RootNode
+    100046: Sun
+    100048: Toldo
+    100050: Ventanas
+    100052: Vidrio_Corto
+    100054: Vidrio_Largo
+    100056: Vidrio_Puerta01
+    100058: Vidrio_Puerta02
+    400000: Barril01
+    400002: Barril02
+    400004: Barril03
+    400006: Barril04
+    400008: Barriles
+    400010: Birras
+    400012: Chimenea
+    400014: Chimenea_1
+    400016: Cube
+    400018: Espuma
+    400020: Jarra
+    400022: Jarra_2
+    400024: Marco_Corto
+    400026: Marco_Largo
+    400028: Moon
+    400030: Physical_Sky
+    400032: Puerta
+    400034: Puerta_2
+    400036: Rotulo
+    400038: Rotulo_2
+    400040: Shadow_Plane
+    400042: Sky_Null
+    400044: //RootNode
+    400046: Sun
+    400048: Toldo
+    400050: Ventanas
+    400052: Vidrio_Corto
+    400054: Vidrio_Largo
+    400056: Vidrio_Puerta01
+    400058: Vidrio_Puerta02
+    2300000: Barril01
+    2300002: Barril02
+    2300004: Barril03
+    2300006: Barril04
+    2300008: Chimenea
+    2300010: Chimenea_1
+    2300012: Cube
+    2300014: Espuma
+    2300016: Jarra_2
+    2300018: Marco_Corto
+    2300020: Marco_Largo
+    2300022: Puerta_2
+    2300024: Rotulo_2
+    2300026: Toldo
+    2300028: Vidrio_Corto
+    2300030: Vidrio_Largo
+    2300032: Vidrio_Puerta01
+    2300034: Vidrio_Puerta02
+    3300000: Barril01
+    3300002: Barril02
+    3300004: Barril03
+    3300006: Barril04
+    3300008: Chimenea
+    3300010: Chimenea_1
+    3300012: Cube
+    3300014: Espuma
+    3300016: Jarra_2
+    3300018: Marco_Corto
+    3300020: Marco_Largo
+    3300022: Puerta_2
+    3300024: Rotulo_2
+    3300026: Toldo
+    3300028: Vidrio_Corto
+    3300030: Vidrio_Largo
+    3300032: Vidrio_Puerta01
+    3300034: Vidrio_Puerta02
+    4300000: Rotulo_2
+    4300002: Barril04
+    4300004: Barril03
+    4300006: Barril02
+    4300008: Barril01
+    4300010: Espuma
+    4300012: Jarra_2
+    4300014: Vidrio_Largo
+    4300016: Vidrio_Corto
+    4300018: Marco_Corto
+    4300020: Marco_Largo
+    4300022: Vidrio_Puerta01
+    4300024: Vidrio_Puerta02
+    4300026: Puerta_2
+    4300028: Toldo
+    4300030: Chimenea
+    4300032: Chimenea_1
+    4300034: Cube
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
