@@ -66,7 +66,7 @@ public class FeedbackMessagesManager : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        showWorldMessage(new Vector3(0, 1, 0), "+20");
+
 	}
 	
 	// Update is called once per frame

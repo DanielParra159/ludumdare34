@@ -10011,6 +10011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxLife: 100
   m_regeneration: 0
+  m_yPositionOfDamageMessage: 3
   m_slider: {fileID: 11473608}
 --- !u!114 &11438890
 MonoBehaviour:
@@ -10847,6 +10848,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_delayBetweenAttacks
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_yPositionOfDamageMessage
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
