@@ -41,7 +41,7 @@ public class Selectable : MonoBehaviour {
         {
             m_model = modelTransform.GetComponent<Renderer>();//Se puede reemplazar por una variable publica
         }
-        if (m_model)
+        if (m_model && m_model.material.HasProperty("_Outline"))
         {
             m_type = SELECTABLE_TYPES.SELECTABLE_TYPE_UNIT;
             // if there is a "model" children in the object it is a unit

@@ -9,16 +9,16 @@ public class BuildingSpawn : MonoBehaviour {
     private static EventSpawnBuilding m_eventSpawnBuilding;
 	// Use this for initialization
 	void Start () {
+        
+	}
+	
+	// Update is called once per frame
+	void Update () {
         m_eventSpawnBuilding = new EventSpawnBuilding();
         m_eventSpawnBuilding.m_position = transform.position;
         m_eventSpawnBuilding.m_team = m_unitToSpawn.GetComponent<Team>().m_myTeam;
         m_eventSpawnBuilding.m_type = m_unitToSpawn.getType();
         m_eventSpawnBuilding.SendEvent();
         gameObject.SetActive(false);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	}   
 }
