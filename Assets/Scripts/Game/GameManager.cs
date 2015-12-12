@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour {
     private SUB_LEVEL_STATES m_lastSubLevelState;
 
     private BuildingManager m_buildingManager;
+    private GUIManager m_guiManager;
     private ArmyManager m_armygManager;
     private Unit.UNIT_TYPES m_typeLeaderUnit;
 
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour {
         m_buildingManager = BuildingManager.instance;
         m_armygManager = ArmyManager.instance;
         m_inputManager = InputManager.instance;
+        m_guiManager = GUIManager.instance;
     }
 	
 	// Update is called once per frame
@@ -99,7 +101,7 @@ public class GameManager : MonoBehaviour {
     private void updateLoading() { }
     private void updateStartingLevel()
     {
-        changeState(GAME_STATES.GAME_STATE_LEVEL);
+        //changeState(GAME_STATES.GAME_STATE_LEVEL);
     }
     private void updateLevel() 
     {
@@ -164,15 +166,22 @@ public class GameManager : MonoBehaviour {
         switch(m_currentSubLevelState)
         {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
+                if (m_typeLeaderUnit == Unit.UNIT_TYPES.UNIT_TYPE_WORKER)
+                {
+                    m_guiManager.activatePanel(1);
+                }
+                else
+                {
+                    m_guiManager.activatePanel(0);
+                }
                 //CAMBIAR GUI Y MOSTRAR ACCIONES DE NADA SELECCIONADO SI ALDEANO NO SELECCIONADO
                 //O ACCIONES DE ALDEANO SI ALDEANO SELECCIONADO
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD:
-                
                 //CAMBIAR GUI AL DE MOSTRAR GUI DE CONSTRUCCIONES
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
-                //CAMBIAR GUI AL DE MOSTRAR BOTON DE CANCELACIÓN
+                m_guiManager.activatePanel(0);
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION:
                 Ray ray = Camera.main.ScreenPointToRay(m_inputManager.getScreenMousePosition());
@@ -298,6 +307,9 @@ public class GameManager : MonoBehaviour {
         {
             case GUIManager.ACTION_TYPES.ACTION_BUILD:
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD);
+                break;
+            case GUIManager.ACTION_TYPES.ACTION_ESCAPE:
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
                 break;
         }
     }
