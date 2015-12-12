@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour {
     private SUB_LEVEL_STATES m_currentSubLevelState;
     private SUB_LEVEL_STATES m_lastSubLevelState;
 
+    private BuildingManager m_buildingManager;
+    private ArmyManager m_armygManager;
+
 	// Use this for initialization
 	void Awake () {
         if (instance == null)
@@ -51,6 +54,8 @@ public class GameManager : MonoBehaviour {
     void Start()
     {
         EventManager.Start();
+        m_buildingManager = BuildingManager.instance;
+        m_armygManager = ArmyManager.instance;
     }
 	
 	// Update is called once per frame
@@ -79,7 +84,10 @@ public class GameManager : MonoBehaviour {
 	}
     private void updateMenu() { }
     private void updateLoading() { }
-    private void updateStartingLevel() { }
+    private void updateStartingLevel()
+    {
+        changeState(GAME_STATES.GAME_STATE_LEVEL);
+    }
     private void updateLevel() 
     {
         switch(m_currentSubLevelState)
@@ -153,17 +161,77 @@ public class GameManager : MonoBehaviour {
     /*
      * Solo llegan eventos que se hagan dentro de la zona de acci�n
      */
-    public void onMouseDown(InputManager.MOUSE_BUTTONS button, Vector3 creenPosition)
+    public void onMouseDown(InputManager.MOUSE_BUTTONS button, Vector2 screenPosition)
     {
+        Vector3 position = Camera.main.ScreenToWorldPoint(screenPosition);
+        if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_RIGH && m_currentState == GAME_STATES.GAME_STATE_LEVEL)
+        {
+            
+            //@todo: comprobar si se ha pulsad sobre algún elemento de interes, recurso, enemigo, edificio...
+            Buildng buildingAux = null;
+            Unit unitAuxPressed = null;
+            Unit unitTargetAux = null;
+           
+            if ((buildingAux = m_buildingManager.isSelectedAnyBuilding()) != null )
+            {
+                //tenemos una construcción activa? Solo podemos cambiar el meetingpoint
+                m_buildingManager.setMeetingPoint(position);
+            }
+            else if ((unitAuxPressed = m_armygManager.isSelectedAnyUnit()) != null)
+            {
+                //tenemos seleccionado alguna unidad? comprobamos si se ha pulsado sobre una unidad, sobre un edificio o sobre suelo
+                if ((buildingAux = m_buildingManager.isPressedAnyBuilding(position)) != null)
+                {
+                    //comprobamos el equipo
+                    if (buildingAux.getTeam() == unitAuxPressed.getTeam())
+                    {
+                        //goto
+                        unitAuxPressed.goTo(position);
+                    }
+                    else
+                    {
+                        //attack
+                        unitAuxPressed.goToAttack(buildingAux.getPosition());
+                    }
+                }
+                else if ((unitTargetAux = m_armygManager.isPressedAnyUnit(position)) != null)
+                {
+
+                }//@todo:recurso
+                else
+                {
+                    //suelo
+                    unitAuxPressed.goTo(position);
+                }
+            }
+            
+            
+            //nos movemos con la selección o movemos el punto de encuentro si es un edificio, además si es un aldeado cancelamos la construcción
+            changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL); //@todo: se tiene que notificar al aldeano para que cambie su interfaz?
+            //lanzar evento de boton derecho para que se avise a armymanager y buildingmanager
+        }
+        else if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL && 
+            m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL || m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD )
+        {
+            //empieza selección
+        }
         //comprobar en que sub estado estamos, construyendo, sin selecci�n...
         //activar flag y prepararse para selecci�n multiple
     }
     /*
      * Solo llegan eventos que se hagan dentro de la zona de acci�n
      */
-    public void onMouseUp(InputManager.MOUSE_BUTTONS button, Vector3 creenPosition)
+    public void onMouseUp(InputManager.MOUSE_BUTTONS button, Vector2 screenPosition)
     {
+        Vector3 position = Camera.main.ScreenToWorldPoint(screenPosition);
         //comprobar en que sub estado estamos, construyendo, sin selecci�n...
         //Hacer selecci�n multiple, si no hay deferencia entre las posiciones queremos una selecci�n simple
+        if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL &&
+            m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL || m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD)
+        {
+            //termina selección
+            //@todo: para probar selección simple
+            m_armygManager.selectUnit(position);
+        }
     }
 }

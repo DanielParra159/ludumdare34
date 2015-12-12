@@ -14,6 +14,9 @@ public class ArmyManager : MonoBehaviour {
     public int[] maxUnitsInitially = {100,100};
     private int[] currentMaxUnits; //numero de unidads maximas actualmente, por equipo
 
+    private Unit m_selectedUnit;
+    private int m_team = 0; //@todo: simplificamos y decimos que el player es el 0
+
     [System.Serializable]
     public class Units
     {
@@ -91,10 +94,34 @@ public class ArmyManager : MonoBehaviour {
 
     public void spawnUnit(TeamManager.TEAMS team, Unit.UNIT_TYPES type, Vector3 position, Vector3 meetingPoint)
     {
-        Unit unitAux = poolOfUnits[(int)team][(int)type].getObject(true).GetComponent<Unit>();
+        int teamAux = (int)team;
+        Unit unitAux = poolOfUnits[teamAux][(int)type].getObject(true).GetComponent<Unit>();
         unitAux.init();
         unitAux.setPosition(position);
         unitAux.goTo(meetingPoint);
+        units[teamAux].Add(unitAux);
+    }
+    public Unit isPressedAnyUnit(Vector3 position)
+    {
+        return null;
+    }
+    public Unit selectUnit(Vector3 position)
+    {
+        //@todo: por reacer
+        for (int i = 0; i < units[m_team].Count; ++i )
+        {
+            if (units[m_team][i].canBeSelected(position))
+            {
+                units[m_team][i].selecUnit();
+                m_selectedUnit = units[m_team][i];
+                return m_selectedUnit;
+            }
+        }
+            return null;
+    }
+    public Unit isSelectedAnyUnit()
+    {
+        return m_selectedUnit;
     }
 
 }

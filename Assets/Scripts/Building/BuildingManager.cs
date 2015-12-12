@@ -11,6 +11,10 @@ public class BuildingManager : MonoBehaviour {
     public GameObject[] buildingsPrefab;
     [Tooltip("Previsión de edificios que almacenará la pool, contando con los dos equipos.")]
     public int[] buildingsNumber;
+
+    private Buildng m_selectedBuilding = null;
+
+
     private PoolManager[] poolOfBuildings; //por equipo y por tipo de edificio
     private List<Buildng>[] buildings;
 
@@ -50,4 +54,17 @@ public class BuildingManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public Buildng isPressedAnyBuilding(Vector3 position)
+    {
+        return null;
+    }
+    public Buildng isSelectedAnyBuilding()
+    {
+        return null;
+    }
+    public void setMeetingPoint(Vector3 position)
+    {
+        m_selectedBuilding.setMeetingPointPosition(position);
+    }
 }

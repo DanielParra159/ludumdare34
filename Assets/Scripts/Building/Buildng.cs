@@ -28,6 +28,8 @@ public class Buildng : MonoBehaviour {
 
     [Tooltip("Punto de reuni�n de las unidades")]
     public Transform m_meetingPoint;
+    protected Transform m_transform;
+    protected int m_team;
 
     protected Pausable m_pausable;
     private bool m_initialized = false; //@todo cuando muera se tiene que poner a false
@@ -35,6 +37,7 @@ public class Buildng : MonoBehaviour {
     void Awake()
     {
         m_pausable = new Pausable(onPause, onResume);
+        m_transform = transform;
     }
 
 	// Use this for initialization
@@ -42,6 +45,8 @@ public class Buildng : MonoBehaviour {
         Life lifeTemp = gameObject.GetComponent<Life>();
         lifeTemp.registerOnDead(onDead);
         lifeTemp.registerOnDamage(onDamage);
+
+        m_team = gameObject.GetComponent<Team>().m_team;
 	}
 	
     public void init()
@@ -109,5 +114,18 @@ public class Buildng : MonoBehaviour {
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado el edificio " + this);
         m_meetingPoint.position = position;
+    }
+
+    public void setPosition(Vector3 position)
+    {
+        m_transform.position = position;
+    }
+    public Vector3 getPosition()
+    {
+        return m_transform.position;
+    }
+    public int getTeam()
+    {
+        return m_team;
     }
 }

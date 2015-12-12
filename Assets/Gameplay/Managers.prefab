@@ -215,7 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549825cda78b5bf4394db971dedd76c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_currentState: 0
+  m_currentState: 2
+  m_currentSubLevelState: 0
 --- !u!114 &11446216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -311,7 +312,10 @@ MonoBehaviour:
   buildingsPrefab:
   - {fileID: 194358, guid: fe4177e6c8be9204390ca7fed567c68f, type: 2}
   - {fileID: 103872, guid: f1a1797bd27d7f646953ead182eaf1dc, type: 2}
-  buildingsNumber: 0200000002000000
+  - {fileID: 103872, guid: f1a1797bd27d7f646953ead182eaf1dc, type: 2}
+  - {fileID: 103872, guid: f1a1797bd27d7f646953ead182eaf1dc, type: 2}
+  - {fileID: 103872, guid: f1a1797bd27d7f646953ead182eaf1dc, type: 2}
+  buildingsNumber: 0200000002000000020000000200000002000000
 --- !u!114 &11474664
 MonoBehaviour:
   m_ObjectHideFlags: 1

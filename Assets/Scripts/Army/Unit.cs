@@ -31,8 +31,8 @@ public class Unit : MonoBehaviour {
     protected UNIT_STATES m_lastState;
     //protected UNITS_STATES nextState;
 
-    
 
+    protected Selectable m_selectable;
     protected int m_team;
     protected NavMeshAgent m_navMeshAgent;
     protected float m_speed;
@@ -57,6 +57,8 @@ public class Unit : MonoBehaviour {
         Life lifeTemp = gameObject.GetComponent<Life>();
         lifeTemp.registerOnDead(onDead);
         lifeTemp.registerOnDamage(onDamage);
+
+        m_selectable = GetComponent<Selectable>();
 
         
 	}
@@ -117,10 +119,13 @@ public class Unit : MonoBehaviour {
     }
     public void goTo(Vector3 position)
     {
-        m_navMeshAgent.destination = position;
+        m_navMeshAgent.SetDestination(position);
         changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
     }
+    public void goToAttack(Vector3 position)
+    {
 
+    }
     public void onDamage(float currentLif)
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
@@ -153,5 +158,22 @@ public class Unit : MonoBehaviour {
     public void setPosition(Vector3 position)
     {
         m_transform.position = position;
+    }
+    public Vector3 getPosition()
+    {
+        return m_transform.position;
+    }
+
+    public int getTeam()
+    {
+        return m_team;
+    }
+    public bool canBeSelected(Vector3 position)
+    {
+        return true;
+    }
+    public void selecUnit()
+    {
+        m_selectable.SetSelected();
     }
 }
