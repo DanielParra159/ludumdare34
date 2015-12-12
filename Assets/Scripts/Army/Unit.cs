@@ -21,6 +21,10 @@ public class Unit : MonoBehaviour {
     {
         UNIT_STATE_IDLE, UNIT_STATE_GOING_TO, UNIT_STATE_ATTACKING, UNIT_STATE_DYING, UNIT_STATE_BUILDING, MAX_UNIT_STATES
     }
+    public enum UNIT_SUB_STATES
+    {
+        UNIT_SUB_STATE_NORMAL, UNIT_SUB_STATE_AGGRESSIVE, MAX_UNIT_SUB_STATES
+    }
     public static int maxNeutralUnitsTypes = (int)NEUTRAL_UNIT_TYPES.MAX_NEUTRAL_UNIT_TYPES;
     public static int maxUnitsTypes = (int)UNIT_TYPES.MAX_UNIT_TYPES;
     public static int maxUnitsStates = (int)UNIT_STATES.MAX_UNIT_STATES;
@@ -29,13 +33,24 @@ public class Unit : MonoBehaviour {
     protected UNIT_TYPES m_type;
     protected UNIT_STATES m_currentState;
     protected UNIT_STATES m_lastState;
-    //protected UNITS_STATES nextState;
+    protected UNIT_SUB_STATES m_currentSubState;
+    protected UNIT_SUB_STATES m_lastSubState;
 
 
     protected Selectable m_selectable;
     protected int m_team;
     protected NavMeshAgent m_navMeshAgent;
     protected float m_speed;
+    [SerializeField]
+    [Tooltip("Radio de la unidad, se utiliza para las pulsaciones")]
+    protected float m_radius = 2.0f;
+    protected float m_radius2;
+    [SerializeField]
+    [Tooltip("Radio de detección sobre los enemigos")]
+    protected float m_enemyDetectionRadius = 8.0f;
+    protected float m_enemyDetectionRadius2;
+
+    protected Vector2 m_mapPos;
 
     protected Transform m_transform;
     protected Pausable m_pausable;
@@ -48,6 +63,8 @@ public class Unit : MonoBehaviour {
 
         m_navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         m_speed = m_navMeshAgent.speed;
+        m_radius2 = m_radius * m_radius;
+        m_enemyDetectionRadius2 = m_enemyDetectionRadius * m_enemyDetectionRadius;
     }
 
 	void Start () {
@@ -66,6 +83,7 @@ public class Unit : MonoBehaviour {
     public void init()
     {
         m_initialized = true;
+        Map.instance.addObjectToMap(m_transform.position, gameObject);
     }
 
 	// Update is called once per frame
@@ -96,6 +114,17 @@ public class Unit : MonoBehaviour {
         {
             changeState(UNIT_STATES.UNIT_STATE_IDLE);
         }
+        else
+        {
+            Map.instance.moveObjectToMap((int)m_mapPos.x, (int)m_mapPos.y, m_transform.position, gameObject);
+        }
+        switch(m_currentSubState)
+        {
+            case UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE:
+            {
+                break;
+            }
+        }
     }
     protected void updateAttacking() { }
     protected void updateDying() { }
@@ -117,14 +146,34 @@ public class Unit : MonoBehaviour {
                 break;
         }
     }
+    protected void changeSubState(UNIT_SUB_STATES nextSubState)
+    {
+        Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
+        m_lastSubState = m_currentSubState;
+        m_currentSubState = nextSubState;
+        switch (m_currentSubState)
+        {
+            case UNIT_SUB_STATES.UNIT_SUB_STATE_NORMAL:
+                break;
+            case UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE:
+                break;
+        }
+    }
     public void goTo(Vector3 position)
     {
         m_navMeshAgent.SetDestination(position);
         changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
+        changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_NORMAL);
+    }
+    public void goToTarget(GameObject taget)
+    {
+        //@todo: guardarse el target y perseguirlo
+        m_navMeshAgent.SetDestination(taget.transform.position);
+        changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
     }
     public void goToAttack(Vector3 position)
     {
-
+        changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
     }
     public void onDamage(float currentLif)
     {
@@ -158,6 +207,7 @@ public class Unit : MonoBehaviour {
     public void setPosition(Vector3 position)
     {
         m_transform.position = position;
+        Map.instance.moveObjectToMap((int)m_mapPos.x, (int)m_mapPos.y, position, gameObject);
     }
     public Vector3 getPosition()
     {
@@ -179,5 +229,21 @@ public class Unit : MonoBehaviour {
     public void unselecUnit()
     {
         m_selectable.SetDeselect();
+    }
+    public bool isPressed(Vector3 position)
+    {
+        if ((position - m_transform.position).sqrMagnitude < m_radius2)
+            return true;
+        return false;
+    }
+    public void setMapXZ(int x, int z)
+    {
+        m_mapPos.x = x;
+        m_mapPos.y = z;
+    }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, m_radius);
     }
 }

@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 428536}
   - 33: {fileID: 3356116}
-  - 65: {fileID: 6592164}
   - 23: {fileID: 2318286}
   - 114: {fileID: 11487948}
   - 114: {fileID: 11486730}
@@ -69,18 +68,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182598}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6592164
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11420362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 0
+  m_radius: 1
 --- !u!114 &11469694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a17a05abffd4f4fb5384f93b4d6a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelTransform: {fileID: 0}
   m_selectedSound: {fileID: 0}
 --- !u!114 &11487948
 MonoBehaviour:

@@ -10,6 +10,7 @@ using System.Collections;
 [RequireComponent(typeof(ResourcesManager))]
 [RequireComponent(typeof(SoundManager))]
 [RequireComponent(typeof(GUIManager))]
+[RequireComponent(typeof(Map))]
 
 public class GameManager : MonoBehaviour {
 
@@ -245,9 +246,9 @@ public class GameManager : MonoBehaviour {
                         m_armygManager.goToAttack(buildingAux.getPosition());
                     }
                 }
-                else if ((unitTargetAux = m_armygManager.isPressedAnyUnit(position)) != null)
+                else if ((unitTargetAux = m_armygManager.isPressedAnyEnemyUnit(position)) != null)
                 {
-
+                    m_armygManager.goToAttack(position);
                 }//@todo:recurso
                 else
                 {

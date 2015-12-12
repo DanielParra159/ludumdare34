@@ -3584,7 +3584,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 413952}
   - 33: {fileID: 3307606}
-  - 65: {fileID: 6583082}
   - 23: {fileID: 2356904}
   - 114: {fileID: 11478558}
   - 114: {fileID: 11449462}
@@ -9971,18 +9970,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 165908}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6583082
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165908}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11400846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10042,6 +10029,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 0
+  m_radius: 2
+  m_enemyDetectionRadius: 8
 --- !u!114 &11449262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10852,6 +10841,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_ObstacleAvoidanceType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_radius
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

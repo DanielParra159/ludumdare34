@@ -103,12 +103,20 @@ public class ArmyManager : MonoBehaviour {
         unitAux.goTo(meetingPoint);
         units[teamAux].Add(unitAux);
     }
-    public Unit isPressedAnyUnit(Vector3 position)
+    public Unit isPressedAnyEnemyUnit(Vector3 position)
     {
-        return null;
+        Unit pressedUnitAux = null;
+        int enemyTeam = m_team + 1 % (int)TeamManager.TEAMS.TEAM_MAX;
+        for (int i = 0; i < units[enemyTeam].Count; ++i)
+        {
+            if (units[enemyTeam][i].isPressed(position))
+                pressedUnitAux = units[enemyTeam][i];
+        }
+        return pressedUnitAux;
     }
     public Unit selectUnits(Vector3 startPosition, Vector3 endPosition)
     {
+        //esto es muy mejorable
         Vector3 center = (endPosition - startPosition);
         center.y += 0.1f;
         Vector3 centerAux = startPosition + center * 0.5f;

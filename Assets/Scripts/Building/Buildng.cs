@@ -30,6 +30,7 @@ public class Buildng : MonoBehaviour {
     public Transform m_meetingPoint;
     protected Transform m_transform;
     protected int m_team;
+    protected Vector2 m_mapPos;
 
     protected Pausable m_pausable;
     private bool m_initialized = false; //@todo cuando muera se tiene que poner a false
@@ -127,5 +128,10 @@ public class Buildng : MonoBehaviour {
     public int getTeam()
     {
         return m_team;
+    }
+    public void setMapXZ(int x, int z)
+    {
+        m_mapPos.x = x;
+        m_mapPos.y = z;
     }
 }
