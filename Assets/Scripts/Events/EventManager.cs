@@ -9,6 +9,7 @@ public class EventManager {
         EVENT_MOUSE_UP,
         EVENT_SPAWN_UNIT,
         EVENT_TYPE_LEADER_UNIT_CHOSEN,
+        EVENT_ACTION_BUTTON_CLICKED,
 		MAX_EVENTS
 	};
 
@@ -56,10 +57,16 @@ public class EventManager {
             break;
         }
             case EVENTS.EVENT_TYPE_LEADER_UNIT_CHOSEN:
+        {
             EventTypeLeaderUnitChosen eventTypeLeaderUnitChosen = (EventTypeLeaderUnitChosen)hEvent;
             gameManager.typeLeaderUnitChosen(eventTypeLeaderUnitChosen.m_type);
+            break;
+        }
+            case EVENTS.EVENT_ACTION_BUTTON_CLICKED:
         {
-
+            EventActionButtonClicked eventActionButtonClicked = (EventActionButtonClicked)hEvent;
+            gameManager.actionButtonClicked(eventActionButtonClicked.m_actionType);
+            break;
         }
 		}
 		//avisar a la red
