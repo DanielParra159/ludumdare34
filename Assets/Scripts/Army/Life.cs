@@ -40,18 +40,23 @@ public class Life : MonoBehaviour
         if (m_slider)
         {
             m_slider.maxValue = m_maxLife;
+            m_slider.value = m_currentLife;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_slider.transform.parent.position = gameObject.transform.position;
         m_currentLife += m_regeneration * Time.deltaTime * TimeManager.currentTimeFactor;
         if ( m_currentLife > m_maxLife)
         {
             m_currentLife = m_maxLife;
             //this.enabled = false;
+        }
+        if (m_slider)
+        {
+            m_slider.transform.parent.position = gameObject.transform.position;
+            m_slider.value = m_currentLife;
         }
     }
     public bool OnDamage(float damage)
