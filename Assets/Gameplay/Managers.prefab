@@ -313,20 +313,23 @@ MonoBehaviour:
   maxUnitsInitially: 0a0000000a000000
   unitsPrefabs:
   - unitsPrefab:
-    - {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    - {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    - {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    unitsNumber: 010000000100000001000000
+    - {fileID: 152276, guid: 2c9be3d146cef7f469b778ba5be72b0e, type: 2}
+    - {fileID: 135428, guid: 4fc7e48eb27eca44895aac7a8f7c0de8, type: 2}
+    - {fileID: 195982, guid: 35912fefde9a53344812161a2c184c28, type: 2}
+    - {fileID: 152276, guid: 2c9be3d146cef7f469b778ba5be72b0e, type: 2}
+    unitsNumber: 01000000010000000100000001000000
   - unitsPrefab:
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
-    unitsNumber: 010000000100000001000000
+    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
+    unitsNumber: 01000000010000000100000001000000
   - unitsPrefab:
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
-    unitsNumber: 010000000100000001000000
+    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
+    unitsNumber: 01000000010000000100000001000000
   neutralUnitsPrefabs:
     unitsPrefab:
     - {fileID: 182598, guid: cda229ac5ef7f0e48a2206a75a8fdf68, type: 2}

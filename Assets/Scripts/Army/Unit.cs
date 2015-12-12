@@ -11,7 +11,7 @@ public class Unit : MonoBehaviour {
 
     public enum UNIT_TYPES
     {
-        /*BORRAR*/UNIT_TYPE_POTATO,/*BORRAR*/ UNIT_TYPE_WORKER, UNIT_TYPE_ARMY, MAX_UNIT_TYPES
+        UNIT_TYPE_WARRIOR_SWORDMAN, UNIT_TYPE_WARRIOR_LANCER,UNIT_TYPE_WARRIOR_ARCHER, UNIT_TYPE_WORKER, MAX_UNIT_TYPES
     }
     public enum NEUTRAL_UNIT_TYPES
     {
@@ -65,6 +65,8 @@ public class Unit : MonoBehaviour {
     protected Vector3 m_positionInitial;
     protected Vector3 m_positionFinal;
 
+    protected Animator m_animator;
+
     void Awake()
     {
         m_transform = transform;
@@ -74,6 +76,7 @@ public class Unit : MonoBehaviour {
         m_speed = m_navMeshAgent.speed;
         m_radius2 = m_radius * m_radius;
         m_enemyDetectionRadius2 = m_enemyDetectionRadius * m_enemyDetectionRadius;
+        m_animator = GetComponentInChildren<Animator>();
     }
 
 	void Start () {
@@ -102,6 +105,7 @@ public class Unit : MonoBehaviour {
 	void Update () {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
         if (m_pausable.Check()) return;
+        
         switch (m_currentState)
         {
             case UNIT_STATES.UNIT_STATE_IDLE:
@@ -193,6 +197,10 @@ public class Unit : MonoBehaviour {
         if ( m_attack.canAttack())
         {
             m_attack.attackTarget(m_target);
+            if ( m_animator != null)
+            {
+                m_animator.SetTrigger("attack");
+            }
         }
         changeState(UNIT_STATES.UNIT_STATE_IDLE);
     }
@@ -220,15 +228,35 @@ public class Unit : MonoBehaviour {
             case UNIT_STATES.UNIT_STATE_IDLE:
                 m_navMeshAgent.SetDestination(m_transform.position);
                 changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
+                if (m_animator != null)
+                {
+                    m_animator.SetBool("walking", false);
+                }
                 break;
             case UNIT_STATES.UNIT_STATE_GOING_TO:
+                if (m_animator != null)
+                {
+                    m_animator.SetBool("walking", true);
+                }
                 break;
             case UNIT_STATES.UNIT_STATE_ATTACKING:
+                if (m_animator != null)
+                {
+                    m_animator.SetBool("walking", false);
+                }
                 break;
             case UNIT_STATES.UNIT_STATE_DYING:
+                if (m_animator != null)
+                {
+                    m_animator.SetBool("walking", false);
+                }
                 break;
             case UNIT_STATES.UNIT_STATE_PATROLLING:
                 changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
+                if (m_animator != null)
+                {
+                    m_animator.SetBool("walking", true);
+                }
                 break;
         }
     }

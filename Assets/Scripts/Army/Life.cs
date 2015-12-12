@@ -15,6 +15,9 @@ public class Life : MonoBehaviour
     [Tooltip("Regeneración por segundo")]
     [Range(0, 1000)]
     public float m_regeneration= 0.0f;
+    [Tooltip("Regeneración por segundo")]
+    [Range(1, 100)]
+    public float m_yPositionOfDamageMessage = 1.0f;
 
     [Tooltip("Slider donde se mostrara la vida")]
     public Slider m_slider;
@@ -22,10 +25,14 @@ public class Life : MonoBehaviour
     private NotifyOnDead m_onDead = null;
     private NotifyOnDamage m_onDamage = null;
 
+    private FeedbackMessagesManager m_feedbackMessagesManager;
+
     // Use this for initialization
     void Start()
     {
-        reset(); 
+        reset();
+        m_feedbackMessagesManager = FeedbackMessagesManager.instance;
+        m_slider.transform.parent.transform.parent = null;
     }
     void reset()
     {
@@ -39,11 +46,12 @@ public class Life : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_slider.transform.parent.position = gameObject.transform.position;
         m_currentLife += m_regeneration * Time.deltaTime * TimeManager.currentTimeFactor;
-        if ( m_currentLife>m_maxLife)
+        if ( m_currentLife > m_maxLife)
         {
             m_currentLife = m_maxLife;
-            this.enabled = false;
+            //this.enabled = false;
         }
     }
     public bool OnDamage(float damage)
@@ -51,6 +59,8 @@ public class Life : MonoBehaviour
         bool dead = false;
         this.enabled = true;
         m_currentLife -= damage;
+        Vector3 offset = new Vector3(Random.Range(1.0f, 3.0f), m_yPositionOfDamageMessage, Random.Range(1.0f, 3.0f));
+        m_feedbackMessagesManager.showWorldMessage(gameObject.transform.position + offset, "" + damage);
         if (m_currentLife <= 0.0f)
         {
             //gameObject.SendMessage("OnDead", SendMessageOptions.DontRequireReceiver);

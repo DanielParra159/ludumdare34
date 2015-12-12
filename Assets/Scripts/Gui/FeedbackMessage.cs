@@ -11,10 +11,10 @@ public class FeedbackMessage : MonoBehaviour {
     public float m_visibleTime;
     protected float m_remainingTime; //tiempo restante del mensaje
     [Tooltip("Tiempo que tarda en aparecer el texto, alfa = 1")]
-    [Range(1, 5)]
+    [Range(0, 5)]
     public float m_appearTime;
     [Tooltip("Tiempo que tarda en desaparecer el texto, alfa = 0")]
-    [Range(1, 5)]
+    [Range(0, 5)]
     public float m_disappearTime;
     [Tooltip("Tiempo durante el que se desplaza, 0 desactivado desplazamiento.")]
     [Range(1, 20)]
@@ -32,6 +32,7 @@ public class FeedbackMessage : MonoBehaviour {
 	void Awake () {
         Assert.IsNotNull(m_text);
         m_transform = gameObject.GetComponent<Transform>();
+        
 	}
 	
 	// Update is called once per frame
@@ -74,7 +75,7 @@ public class FeedbackMessage : MonoBehaviour {
                 m_remainingTime = m_disappearTime;
                 break;
             case FeedbackMessagesManager.STATES.STATE_DISAPPEARED:
-                enabled = false;
+                gameObject.SetActive(false);
                 break;
         }
     }

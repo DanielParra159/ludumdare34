@@ -89,11 +89,6 @@ public class ArmyManager : MonoBehaviour {
             }
     }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void spawnUnit(TeamManager.TEAMS team, Unit.UNIT_TYPES type, Vector3 position, Vector3 meetingPoint)
     {
         int teamAux = (int)team;

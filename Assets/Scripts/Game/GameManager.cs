@@ -196,8 +196,10 @@ public class GameManager : MonoBehaviour {
                 {
                     m_guiManager.activatePanel(GUIManager.PANELS.NOTHING_PANEL);
                 }
-                if (m_typeLeaderUnit != null && m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_ARMY)
-                                                                //LUEGO HA DESER MODIFICADO PARA LA FUTURA MODIFICACIO NDE UNIT_TYPES
+                if (m_typeLeaderUnit != null &&
+                    (m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_WARRIOR_SWORDMAN ||
+                    m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_WARRIOR_LANCER ||
+                    m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_WARRIOR_ARCHER))
                 {
                     m_guiManager.activatePanel(GUIManager.PANELS.ARMY_PANEL);
                 }

@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: 50a5d97b4ca596b4d8e4d57ab342e610
+timeCreated: 1449936650
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Brazo_Dch
+    100002: Brazo_Izq
+    100004: Brazos
+    100006: Cabeza
+    100008: Cabeza_2
+    100010: Cuerpo
+    100012: Guitarra_1
+    100014: Mano_Dch
+    100016: Mano_Izq
+    100018: Ojo_Dch
+    100020: Ojo_Izq
+    100022: Ojo_Izq_1
+    100024: Oreja_Dch
+    100026: Oreja_Izq
+    100028: Pelo
+    100030: Pierna_Dch
+    100032: Pierna_Izq
+    100034: Piernas
+    100036: //RootNode
+    400000: Brazo_Dch
+    400002: Brazo_Izq
+    400004: Brazos
+    400006: Cabeza
+    400008: Cabeza_2
+    400010: Cuerpo
+    400012: Guitarra_1
+    400014: Mano_Dch
+    400016: Mano_Izq
+    400018: Ojo_Dch
+    400020: Ojo_Izq
+    400022: Ojo_Izq_1
+    400024: Oreja_Dch
+    400026: Oreja_Izq
+    400028: Pelo
+    400030: Pierna_Dch
+    400032: Pierna_Izq
+    400034: Piernas
+    400036: //RootNode
+    2300000: Brazo_Dch
+    2300002: Brazo_Izq
+    2300004: Cabeza_2
+    2300006: Cuerpo
+    2300008: Guitarra_1
+    2300010: Mano_Dch
+    2300012: Mano_Izq
+    2300014: Ojo_Dch
+    2300016: Ojo_Izq
+    2300018: Ojo_Izq_1
+    2300020: Oreja_Dch
+    2300022: Oreja_Izq
+    2300024: Pelo
+    2300026: Pierna_Dch
+    2300028: Pierna_Izq
+    3300000: Brazo_Dch
+    3300002: Brazo_Izq
+    3300004: Cabeza_2
+    3300006: Cuerpo
+    3300008: Guitarra_1
+    3300010: Mano_Dch
+    3300012: Mano_Izq
+    3300014: Ojo_Dch
+    3300016: Ojo_Izq
+    3300018: Ojo_Izq_1
+    3300020: Oreja_Dch
+    3300022: Oreja_Izq
+    3300024: Pelo
+    3300026: Pierna_Dch
+    3300028: Pierna_Izq
+    4300000: Pierna_Dch
+    4300002: Pierna_Izq
+    4300004: Cuerpo
+    4300006: Guitarra_1
+    4300008: Pelo
+    4300010: Ojo_Izq
+    4300012: Ojo_Dch
+    4300014: Cabeza_2
+    4300016: Oreja_Izq
+    4300018: Oreja_Dch
+    4300020: Ojo_Izq_1
+    4300022: Brazo_Dch
+    4300024: Mano_Dch
+    4300026: Brazo_Izq
+    4300028: Mano_Izq
+    7400000: Inicio movimiento
+    7400002: Reposo
+    7400004: Movimiento
+    7400006: Fin movimiento
+    7400008: Atacar
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Inicio movimiento
+      takeName: C4D Animation Take
+      firstFrame: 25
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cuerpo
+        weight: 1
+      - path: Cuerpo/Brazos
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza
+        weight: 1
+      - path: Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq_1
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Cuerpo/Guitarra_1
+        weight: 1
+      - path: Piernas
+        weight: 1
+      - path: Piernas/Pierna_Dch
+        weight: 1
+      - path: Piernas/Pierna_Izq
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Reposo
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cuerpo
+        weight: 1
+      - path: Cuerpo/Brazos
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza
+        weight: 1
+      - path: Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq_1
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Cuerpo/Guitarra_1
+        weight: 1
+      - path: Piernas
+        weight: 1
+      - path: Piernas/Pierna_Dch
+        weight: 1
+      - path: Piernas/Pierna_Izq
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Movimiento
+      takeName: C4D Animation Take
+      firstFrame: 30
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cuerpo
+        weight: 1
+      - path: Cuerpo/Brazos
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza
+        weight: 1
+      - path: Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq_1
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Cuerpo/Guitarra_1
+        weight: 1
+      - path: Piernas
+        weight: 1
+      - path: Piernas/Pierna_Dch
+        weight: 1
+      - path: Piernas/Pierna_Izq
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Fin movimiento
+      takeName: C4D Animation Take
+      firstFrame: 55
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cuerpo
+        weight: 1
+      - path: Cuerpo/Brazos
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza
+        weight: 1
+      - path: Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq_1
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Cuerpo/Guitarra_1
+        weight: 1
+      - path: Piernas
+        weight: 1
+      - path: Piernas/Pierna_Dch
+        weight: 1
+      - path: Piernas/Pierna_Izq
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Atacar
+      takeName: C4D Animation Take
+      firstFrame: 60
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cuerpo
+        weight: 1
+      - path: Cuerpo/Brazos
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza
+        weight: 1
+      - path: Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq_1
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Cuerpo/Guitarra_1
+        weight: 1
+      - path: Piernas
+        weight: 1
+      - path: Piernas/Pierna_Dch
+        weight: 1
+      - path: Piernas/Pierna_Izq
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
