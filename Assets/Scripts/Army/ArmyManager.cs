@@ -14,6 +14,7 @@ public class ArmyManager : MonoBehaviour {
     public int[] maxUnitsInitially = {100,100};
     private int[] currentMaxUnits; //numero de unidads maximas actualmente, por equipo
 
+    private List<Unit> m_selectedUnits;
     private Unit m_selectedUnit;
     private int m_team = 0; //@todo: simplificamos y decimos que el player es el 0
 
@@ -57,6 +58,7 @@ public class ArmyManager : MonoBehaviour {
 
         //inicialización de estructura para todos los equipos
         units = new List<Unit>[TeamManager.maxTeams];
+        m_selectedUnits = new List<Unit>(100);
         currentMaxUnits = new int[TeamManager.maxTeams];
         poolOfUnits = new PoolManager[TeamManager.maxTeams][];
         for (int i = 0; i < TeamManager.maxTeams; ++i)
@@ -105,26 +107,57 @@ public class ArmyManager : MonoBehaviour {
     {
         return null;
     }
-    public Unit selectUnit(Vector3 startPosition, Vector3 endPosition)
+    public Unit selectUnits(Vector3 startPosition, Vector3 endPosition)
     {
         Vector3 center = (endPosition - startPosition);
-        Bounds selectBounds = new Bounds(center*0.5f, new Vector3(center.x,10.0f,center.y));
-        
-        //@todo: por reacer
+        center.y += 0.1f;
+        Vector3 centerAux = startPosition + center * 0.5f;
+        Bounds selectBounds = new Bounds(centerAux, new Vector3(Mathf.Abs(center.x),10.0f,Mathf.Abs(center.z)));
+        if (selectBounds.size.x < 1.5f || selectBounds.size.z < 1.5f)
+        {
+            selectBounds.size = selectBounds.size + new Vector3(1.5f, 0.0f, 1.5f);
+        }
+        int maxType = (int)Unit.UNIT_TYPES.MAX_UNIT_TYPES;
+        m_selectedUnits.Clear();
+        m_selectedUnit = null;
         for (int i = 0; i < units[m_team].Count; ++i )
         {
-            if (units[m_team][i].canBeSelected(endPosition))
+            if (selectBounds.Contains(units[m_team][i].getPosition()))
             {
                 units[m_team][i].selecUnit();
-                m_selectedUnit = units[m_team][i];
-                return m_selectedUnit;
+                m_selectedUnits.Add(units[m_team][i]);
+                if (units[m_team][i].getTeam() < maxType)
+                {
+                    m_selectedUnit = units[m_team][i];
+                }
+                
+            }
+            else
+            {
+                units[m_team][i].unselecUnit();
             }
         }
-            return null;
+        //if (m_selectedUnits.Count > 0 && m_selectedUnit!=null)
+        //m_selectedUnits.Add(m_selectedUnit);
+        return m_selectedUnit;
     }
     public Unit isSelectedAnyUnit()
     {
         return m_selectedUnit;
+    }
+    public void goTo(Vector3 position)
+    {
+        for (int i = 0; i < m_selectedUnits.Count; ++i)
+        {
+            m_selectedUnits[i].goTo(position);
+        }
+    }
+    public void goToAttack(Vector3 position)
+    {
+        for (int i = 0; i < m_selectedUnits.Count; ++i)
+        {
+            m_selectedUnits[i].goToAttack(position);
+        }
     }
 
 }

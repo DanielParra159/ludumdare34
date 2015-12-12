@@ -176,4 +176,8 @@ public class Unit : MonoBehaviour {
     {
         m_selectable.SetSelected();
     }
+    public void unselecUnit()
+    {
+        m_selectable.SetDeselect();
+    }
 }

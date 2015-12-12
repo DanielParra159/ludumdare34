@@ -102,6 +102,18 @@ public class GameManager : MonoBehaviour {
     }
     private void updateLevel() 
     {
+        switch(m_currentSubLevelState)
+        {
+            case SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION:
+                Ray ray = Camera.main.ScreenPointToRay(m_inputManager.getScreenMousePosition());
+                RaycastHit hit;
+                if (!Physics.Raycast(ray, out hit)) return;
+                Vector3 center = (hit.point - m_startSelectPosition);
+                center.y += 0.1f;
+                m_selectRect.transform.position = m_startSelectPosition + center * 0.5f;
+                m_selectRect.transform.localScale = center;
+                break;
+        }
         //SERIAS DUDAS SOBRE LA VALIDEZ DE ESTE CÓDIGO | KAITO
         /*
         switch(m_currentSubLevelState)
@@ -163,6 +175,7 @@ public class GameManager : MonoBehaviour {
         switch(m_currentSubLevelState)
         {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
+                m_selectRect.SetActive(false);
                 //CAMBIAR GUI Y MOSTRAR ACCIONES DE NADA SELECCIONADO SI ALDEANO NO SELECCIONADO
                 //O ACCIONES DE ALDEANO SI ALDEANO SELECCIONADO
                 break;
@@ -173,13 +186,7 @@ public class GameManager : MonoBehaviour {
                 //CAMBIAR GUI AL DE MOSTRAR BOTON DE CANCELACIÓN
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION:
-                Ray ray = Camera.main.ScreenPointToRay(m_inputManager.getScreenMousePosition());
-                RaycastHit hit;
-                if (!Physics.Raycast(ray, out hit)) return;
-                Vector3 center = (hit.point - m_startSelectPosition);
-                float selectLen = center.magnitude*0.5f;
-                m_selectRect.transform.position = center*0.5f;
-                m_selectRect.transform.localScale = center;
+                m_selectRect.SetActive(true);
                 break;
         }
     }
@@ -217,12 +224,12 @@ public class GameManager : MonoBehaviour {
                     if (buildingAux.getTeam() == unitAuxPressed.getTeam())
                     {
                         //goto
-                        unitAuxPressed.goTo(position);
+                        m_armygManager.goTo(position);
                     }
                     else
                     {
                         //attack
-                        unitAuxPressed.goToAttack(buildingAux.getPosition());
+                        m_armygManager.goToAttack(buildingAux.getPosition());
                     }
                 }
                 else if ((unitTargetAux = m_armygManager.isPressedAnyUnit(position)) != null)
@@ -231,8 +238,7 @@ public class GameManager : MonoBehaviour {
                 }//@todo:recurso
                 else
                 {
-                    //suelo
-                    unitAuxPressed.goTo(position);
+                    m_armygManager.goTo(position);
                 }
             }
             
@@ -270,15 +276,15 @@ public class GameManager : MonoBehaviour {
         Vector3 position = hit.point;
         //comprobar en que sub estado estamos, construyendo, sin selecci�n...
         //Hacer selecci�n multiple, si no hay deferencia entre las posiciones queremos una selecci�n simple
-        if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL &&
-            m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL || m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD)
+        if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL)
         {
             //termina selección
             if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION)
             {
-                m_armygManager.selectUnit(m_startSelectPosition, position);
+                m_armygManager.selectUnits(m_startSelectPosition, position);
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
-            else //if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
+            else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
             {
                 //construimos si es posible
             }
