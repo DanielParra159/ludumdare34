@@ -32,8 +32,15 @@ public class EventSpawnUnit : GameEvent
 public class EventTypeLeaderUnitChosen : GameEvent
 {
     public Unit.UNIT_TYPES m_type;
+    public EventTypeLeaderUnitChosen() { type = EventManager.EVENTS.EVENT_TYPE_LEADER_UNIT_CHOSEN; }
 }
 public class EventActionButtonClicked : GameEvent
 {
     public GUIManager.ACTION_TYPES m_actionType;
+    public EventActionButtonClicked() { type = EventManager.EVENTS.EVENT_ACTION_BUTTON_CLICKED; }
+}
+public class EventTypeBuildingClicked : GameEvent
+{
+    public Buildng.BUILDING_TYPES m_buildingType;
+    public EventTypeBuildingClicked() { type = EventManager.EVENTS.EVENT_TYPE_BUILDING_CLICKED; }
 }

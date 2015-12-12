@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour {
 
     private Unit.UNIT_TYPES m_typeLeaderUnit;
 
+    //VARIABLE QUE ALMACENA EL TIPO DE EDIFICIO A CONSTRUIR
+    private Buildng.BUILDING_TYPES m_typeBuilding;
+
 	// Use this for initialization
 	void Awake () {
         if (instance == null)
@@ -86,6 +89,8 @@ public class GameManager : MonoBehaviour {
     private void updateStartingLevel() { }
     private void updateLevel() 
     {
+        //SERIAS DUDAS SOBRE LA VALIDEZ DE ESTE CÓDIGO | KAITO
+        /*
         switch(m_currentSubLevelState)
         {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
@@ -100,13 +105,10 @@ public class GameManager : MonoBehaviour {
                 }
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD:
-                if (false/*JUGADOR SELECCIONA UN EDIFICIO*/)
-                {
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
+                //PROBABLEMENTE NUNCA SE ENTRE AQUÍ
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
-                if (false/*JUGADOR HACE CLICK EN TERRENO VÁLIDO*/)
+                if (false) //JUGADOR HACE CLICK EN TERRENO VÁLIDO
                 {
                     //UNIT BUILDER PASA A ESTADO UNIT_STATE_BUILDING
                     //VOLVER ACTIVO UNA INSTANCIA DEL BUILDING SELECCIONADO DE LA POOL
@@ -114,6 +116,7 @@ public class GameManager : MonoBehaviour {
                 }
                 break;
         }
+        */
     }
     private void updatePause() { }
     private void updateGameOver() { }
@@ -155,7 +158,6 @@ public class GameManager : MonoBehaviour {
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
                 //CAMBIAR GUI AL DE MOSTRAR BOTON DE CANCELACIÓN
-                //MOSTRAR REPRESENTACION DEL EDIFICIO SELECCIONADO EN EL CURSOR DEL JUGADOR
                 break;
         }
     }
@@ -187,6 +189,37 @@ public class GameManager : MonoBehaviour {
         {
             case GUIManager.ACTION_TYPES.ACTION_BUILD:
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD);
+                break;
+        }
+    }
+    public void typeBuildingClicked(Buildng.BUILDING_TYPES buildingType)
+    {
+        switch (buildingType)
+        {
+            case Buildng.BUILDING_TYPES.BUILDING_URBAN_CENTER:
+                //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
+                break;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_HOUSE:
+                //MOSTRAR REPRESENTACION DEL EDIFICIO HOUSE EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
+                break;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_BARRACKS:
+                //MOSTRAR REPRESENTACION DEL EDIFICIO BARRACKS EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
+                break;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_UPGRADE:
+                //MOSTRAR REPRESENTACION DEL EDIFICIO UPGRADE EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
+                break;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_TOWER:
+                //MOSTRAR REPRESENTACION DEL EDIFICIO TOWER EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
                 break;
         }
     }

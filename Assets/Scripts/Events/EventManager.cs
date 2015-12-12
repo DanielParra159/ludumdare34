@@ -10,6 +10,7 @@ public class EventManager {
         EVENT_SPAWN_UNIT,
         EVENT_TYPE_LEADER_UNIT_CHOSEN,
         EVENT_ACTION_BUTTON_CLICKED,
+        EVENT_TYPE_BUILDING_CLICKED,
 		MAX_EVENTS
 	};
 
@@ -66,6 +67,12 @@ public class EventManager {
         {
             EventActionButtonClicked eventActionButtonClicked = (EventActionButtonClicked)hEvent;
             gameManager.actionButtonClicked(eventActionButtonClicked.m_actionType);
+            break;
+        }
+            case EVENTS.EVENT_TYPE_BUILDING_CLICKED:
+        {
+            EventTypeBuildingClicked eventTypeBuildingClicked = (EventTypeBuildingClicked)hEvent;
+            gameManager.typeBuildingClicked(eventTypeBuildingClicked.m_buildingType);
             break;
         }
 		}

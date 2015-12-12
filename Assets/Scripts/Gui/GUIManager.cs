@@ -11,6 +11,8 @@ public class GUIManager : MonoBehaviour {
 
     public static int maxActionTypes = (int)GUIManager.ACTION_TYPES.MAX_ACTIONS;
 
+    public EventTypeBuildingClicked eventTypeBuildingClicked;
+
     void Awake ()
     {
         if (instance == null)
@@ -26,11 +28,17 @@ public class GUIManager : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-	    
+        eventTypeBuildingClicked = new EventTypeBuildingClicked();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    public void typeBuildingClicked(Buildng.BUILDING_TYPES buildingType)
+    {
+        eventTypeBuildingClicked.m_buildingType = buildingType;
+        eventTypeBuildingClicked.SendEvent();
+    }
 }
