@@ -101,6 +101,14 @@ public class BuildingManager : MonoBehaviour {
         }
         return m_selectedBuilding;
     }
+    public void unselectBuilding()
+    {
+        if (m_selectedBuilding != null)
+        {
+            m_selectedBuilding.unselecBuilding();
+            m_selectedBuilding = null;
+        }
+    }
     public Buildng isPressedAnyEnemyBuilding(Vector3 position)
     {
         Buildng pressedBuildingAux = null;
@@ -124,7 +132,7 @@ public class BuildingManager : MonoBehaviour {
     }
     public Buildng isSelectedAnyBuilding()
     {
-        return null;
+        return m_selectedBuilding;
     }
     public void setMeetingPoint(Vector3 position)
     {
