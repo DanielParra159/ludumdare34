@@ -5,8 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(Team))]
 [RequireComponent(typeof(Life))]
 [RequireComponent(typeof(Selectable))]
-[RequireComponent(typeof(BoxCollider))]
-//[RequireComponent(typeof(NavMeshObstacle))] @todo creo que es este, puede que no todas las construcciones lo necesiten activado
+[RequireComponent(typeof(NavMeshObstacle))]
 public class Buildng : MonoBehaviour
 {
 
