@@ -167,5 +167,9 @@ public class ArmyManager : MonoBehaviour {
             m_selectedUnits[i].goToAttack(position);
         }
     }
+    public void stopUnits()
+    {
+
+    }
 
 }
