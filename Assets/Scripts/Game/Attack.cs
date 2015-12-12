@@ -26,7 +26,7 @@ public class Attack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        m_currentTime -= Time.deltaTime;
+        m_currentTime -= Time.deltaTime * TimeManager.currentTimeFactor;;
         if (m_currentTime< 0.0f)
         {
             this.enabled = false;

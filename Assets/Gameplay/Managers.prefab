@@ -315,11 +315,18 @@ MonoBehaviour:
   - unitsPrefab:
     - {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
     - {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
-    unitsNumber: 0100000001000000
+    - {fileID: 165908, guid: 3b3bdf16dd904ce40a9a804a0a9563d1, type: 2}
+    unitsNumber: 010000000100000001000000
   - unitsPrefab:
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
     - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
-    unitsNumber: 0100000001000000
+    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
+    unitsNumber: 010000000100000001000000
+  - unitsPrefab:
+    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
+    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
+    - {fileID: 117332, guid: 9212c0636ccc33043b4c3d98932613d3, type: 2}
+    unitsNumber: 010000000100000001000000
   neutralUnitsPrefabs:
     unitsPrefab:
     - {fileID: 182598, guid: cda229ac5ef7f0e48a2206a75a8fdf68, type: 2}
