@@ -190,6 +190,7 @@ public class Unit : MonoBehaviour {
         switch (m_currentState)
         {
             case UNIT_STATES.UNIT_STATE_IDLE:
+                m_navMeshAgent.SetDestination(m_transform.position);
                 changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
                 break;
             case UNIT_STATES.UNIT_STATE_GOING_TO:
@@ -234,6 +235,10 @@ public class Unit : MonoBehaviour {
         m_navMeshAgent.SetDestination(position);
         changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
         changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
+    }
+    public void stop()
+    {
+        changeState(UNIT_STATES.UNIT_STATE_IDLE);
     }
     public void onDamage(float currentLif)
     {

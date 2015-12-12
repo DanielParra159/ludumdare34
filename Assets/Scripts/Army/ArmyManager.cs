@@ -169,7 +169,10 @@ public class ArmyManager : MonoBehaviour {
     }
     public void stopUnits()
     {
-
+        for (int i = 0; i < m_selectedUnits.Count; ++i)
+        {
+            m_selectedUnits[i].stop();
+        }
     }
 
 }
