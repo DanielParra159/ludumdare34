@@ -105,12 +105,15 @@ public class ArmyManager : MonoBehaviour {
     {
         return null;
     }
-    public Unit selectUnit(Vector3 position)
+    public Unit selectUnit(Vector3 startPosition, Vector3 endPosition)
     {
+        Vector3 center = (endPosition - startPosition);
+        Bounds selectBounds = new Bounds(center*0.5f, new Vector3(center.x,10.0f,center.y));
+        
         //@todo: por reacer
         for (int i = 0; i < units[m_team].Count; ++i )
         {
-            if (units[m_team][i].canBeSelected(position))
+            if (units[m_team][i].canBeSelected(endPosition))
             {
                 units[m_team][i].selecUnit();
                 m_selectedUnit = units[m_team][i];

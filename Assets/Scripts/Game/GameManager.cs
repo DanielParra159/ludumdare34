@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
     }
     public enum SUB_LEVEL_STATES
     {
-        SUBGAME_STATE_NORMAL, SUBGAME_STATE_CHOOSE_TO_BUILD, SUBGAME_STATE_WHERE_TO_BUILD, SUBGAME_STATE_MAX
+        SUBGAME_STATE_NORMAL, SUBGAME_STATE_CHOOSE_TO_BUILD, SUBGAME_STATE_WHERE_TO_BUILD, SUBGAME_STATE_START_SELECTION, SUBGAME_STATE_MAX
     }
     public static int maxGameStates = (int)GAME_STATES.GAME_STATE_MAX;
     public static int maxSubGameStates = (int)SUB_LEVEL_STATES.SUBGAME_STATE_MAX;
@@ -36,9 +36,13 @@ public class GameManager : MonoBehaviour {
     private ArmyManager m_armygManager;
     private Unit.UNIT_TYPES m_typeLeaderUnit;
 
+    private Vector3 m_startSelectPosition;
+    public GameObject m_selectRect;
+
     //VARIABLE QUE ALMACENA EL TIPO DE EDIFICIO A CONSTRUIR
     private Buildng.BUILDING_TYPES m_typeBuilding;
 
+    private InputManager m_inputManager;
 
 	// Use this for initialization
 	void Awake () {
@@ -62,6 +66,7 @@ public class GameManager : MonoBehaviour {
         EventManager.Start();
         m_buildingManager = BuildingManager.instance;
         m_armygManager = ArmyManager.instance;
+        m_inputManager = InputManager.instance;
     }
 	
 	// Update is called once per frame
@@ -167,6 +172,15 @@ public class GameManager : MonoBehaviour {
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
                 //CAMBIAR GUI AL DE MOSTRAR BOTON DE CANCELACIÓN
                 break;
+            case SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION:
+                Ray ray = Camera.main.ScreenPointToRay(m_inputManager.getScreenMousePosition());
+                RaycastHit hit;
+                if (!Physics.Raycast(ray, out hit)) return;
+                Vector3 center = (hit.point - m_startSelectPosition);
+                float selectLen = center.magnitude*0.5f;
+                m_selectRect.transform.position = center*0.5f;
+                m_selectRect.transform.localScale = center;
+                break;
         }
     }
 
@@ -227,10 +241,19 @@ public class GameManager : MonoBehaviour {
             changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL); //@todo: se tiene que notificar al aldeano para que cambie su interfaz?
             //lanzar evento de boton derecho para que se avise a armymanager y buildingmanager
         }
-        else if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL && 
-            m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL || m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD )
+        else if (button == InputManager.MOUSE_BUTTONS.MOUSE_BUTTON_LEFT && m_currentState == GAME_STATES.GAME_STATE_LEVEL )
         {
-            //empieza selección
+            if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL || m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD)
+            {
+                //empieza selección
+                m_startSelectPosition = position;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION);
+            }
+            else //if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
+            {
+                //al levantar construiremos
+            }
+            
         }
         //comprobar en que sub estado estamos, construyendo, sin selecci�n...
         //activar flag y prepararse para selecci�n multiple
@@ -251,9 +274,16 @@ public class GameManager : MonoBehaviour {
             m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL || m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD)
         {
             //termina selección
-            //@todo: para probar selección simple
-            m_armygManager.selectUnit(position);
+            if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION)
+            {
+                m_armygManager.selectUnit(m_startSelectPosition, position);
+            }
+            else //if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
+            {
+                //construimos si es posible
+            }
         }
+
     }
     public void typeLeaderUnitChosen(Unit.UNIT_TYPES typeLeaderUnit)
     {
