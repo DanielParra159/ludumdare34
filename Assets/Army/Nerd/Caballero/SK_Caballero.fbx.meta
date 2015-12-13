@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: d473d340296d8bf42b6afe3d0b07c52c
+timeCreated: 1450003685
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Brazo_Dch
+    100002: Brazo_Izq
+    100004: Brazos
+    100006: Caballero_2
+    100008: Caballo
+    100010: Cabeza
+    100012: Cabeza_2
+    100014: Cuerpo
+    100016: Escoba
+    100018: Gafas
+    100020: Mano_Dch
+    100022: Mano_Izq
+    100024: Ojo_Dch
+    100026: Ojo_Izq
+    100028: Ojo_Izq_1
+    100030: Oreja_Dch
+    100032: Oreja_Izq
+    100034: Peana
+    100036: Pelo
+    100038: Pierna_Dch
+    100040: Pierna_Izq
+    100042: Piernas
+    100044: //RootNode
+    400000: Brazo_Dch
+    400002: Brazo_Izq
+    400004: Brazos
+    400006: Caballero_2
+    400008: Caballo
+    400010: Cabeza
+    400012: Cabeza_2
+    400014: Cuerpo
+    400016: Escoba
+    400018: Gafas
+    400020: Mano_Dch
+    400022: Mano_Izq
+    400024: Ojo_Dch
+    400026: Ojo_Izq
+    400028: Ojo_Izq_1
+    400030: Oreja_Dch
+    400032: Oreja_Izq
+    400034: Peana
+    400036: Pelo
+    400038: Pierna_Dch
+    400040: Pierna_Izq
+    400042: Piernas
+    400044: //RootNode
+    2300000: Brazo_Dch
+    2300002: Brazo_Izq
+    2300004: Caballo
+    2300006: Cabeza_2
+    2300008: Cuerpo
+    2300010: Escoba
+    2300012: Gafas
+    2300014: Mano_Dch
+    2300016: Mano_Izq
+    2300018: Ojo_Dch
+    2300020: Ojo_Izq
+    2300022: Ojo_Izq_1
+    2300024: Oreja_Dch
+    2300026: Oreja_Izq
+    2300028: Peana
+    2300030: Pelo
+    2300032: Pierna_Dch
+    2300034: Pierna_Izq
+    3300000: Brazo_Dch
+    3300002: Brazo_Izq
+    3300004: Caballo
+    3300006: Cabeza_2
+    3300008: Cuerpo
+    3300010: Escoba
+    3300012: Gafas
+    3300014: Mano_Dch
+    3300016: Mano_Izq
+    3300018: Ojo_Dch
+    3300020: Ojo_Izq
+    3300022: Ojo_Izq_1
+    3300024: Oreja_Dch
+    3300026: Oreja_Izq
+    3300028: Peana
+    3300030: Pelo
+    3300032: Pierna_Dch
+    3300034: Pierna_Izq
+    4300000: Caballo
+    4300002: Peana
+    4300004: Pierna_Dch
+    4300006: Pierna_Izq
+    4300008: Cuerpo
+    4300010: Gafas
+    4300012: Pelo
+    4300014: Ojo_Izq
+    4300016: Ojo_Dch
+    4300018: Cabeza_2
+    4300020: Oreja_Izq
+    4300022: Oreja_Dch
+    4300024: Ojo_Izq_1
+    4300026: Brazo_Dch
+    4300028: Mano_Dch
+    4300030: Brazo_Izq
+    4300032: Mano_Izq
+    4300034: Escoba
+    7400000: C4D Animation Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

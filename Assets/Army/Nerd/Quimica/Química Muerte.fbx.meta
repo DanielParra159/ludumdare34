@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: e45f9319963def64d8e5ab0dda030878
+timeCreated: 1450003686
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Boca
+    100002: Brazo_Dch
+    100004: Brazo_Izq
+    100006: Brazos
+    100008: Cabeza
+    100010: Cabeza_2
+    100012: Cuerpo
+    100014: Fuego_01
+    100016: Mano_Dch
+    100018: Mano_Izq
+    100020: "Mo\xF1o"
+    100022: "Mo\xF1o_2"
+    100024: Ojo_Dch
+    100026: Ojo_Izq
+    100028: Oreja_Dch
+    100030: Oreja_Izq
+    100032: Pelo
+    100034: Pierna_Dch
+    100036: Pierna_Izq
+    100038: Piernas
+    100040: Probeta
+    100042: Quimica
+    100044: //RootNode
+    400000: Boca
+    400002: Brazo_Dch
+    400004: Brazo_Izq
+    400006: Brazos
+    400008: Cabeza
+    400010: Cabeza_2
+    400012: Cuerpo
+    400014: Fuego_01
+    400016: Mano_Dch
+    400018: Mano_Izq
+    400020: "Mo\xF1o"
+    400022: "Mo\xF1o_2"
+    400024: Ojo_Dch
+    400026: Ojo_Izq
+    400028: Oreja_Dch
+    400030: Oreja_Izq
+    400032: Pelo
+    400034: Pierna_Dch
+    400036: Pierna_Izq
+    400038: Piernas
+    400040: Probeta
+    400042: Quimica
+    400044: //RootNode
+    2300000: Boca
+    2300002: Brazo_Dch
+    2300004: Brazo_Izq
+    2300006: Cabeza_2
+    2300008: Cuerpo
+    2300010: Fuego_01
+    2300012: Mano_Dch
+    2300014: Mano_Izq
+    2300016: "Mo\xF1o_2"
+    2300018: Ojo_Dch
+    2300020: Ojo_Izq
+    2300022: Oreja_Dch
+    2300024: Oreja_Izq
+    2300026: Pelo
+    2300028: Pierna_Dch
+    2300030: Pierna_Izq
+    2300032: Probeta
+    3300000: Boca
+    3300002: Brazo_Dch
+    3300004: Brazo_Izq
+    3300006: Cabeza_2
+    3300008: Cuerpo
+    3300010: Fuego_01
+    3300012: Mano_Dch
+    3300014: Mano_Izq
+    3300016: "Mo\xF1o_2"
+    3300018: Ojo_Dch
+    3300020: Ojo_Izq
+    3300022: Oreja_Dch
+    3300024: Oreja_Izq
+    3300026: Pelo
+    3300028: Pierna_Dch
+    3300030: Pierna_Izq
+    3300032: Probeta
+    4300000: Fuego_01
+    4300002: Pierna_Dch
+    4300004: Pierna_Izq
+    4300006: Cuerpo
+    4300008: Pelo
+    4300010: "Mo\xF1o_2"
+    4300012: Ojo_Izq
+    4300014: Ojo_Dch
+    4300016: Cabeza_2
+    4300018: Oreja_Izq
+    4300020: Oreja_Dch
+    4300022: Boca
+    4300024: Brazo_Dch
+    4300026: Mano_Dch
+    4300028: Probeta
+    4300030: Brazo_Izq
+    4300032: Mano_Izq
+    7400000: C4D Animation Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
