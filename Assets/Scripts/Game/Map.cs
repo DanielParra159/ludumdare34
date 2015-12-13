@@ -180,7 +180,7 @@ public class Map : MonoBehaviour {
 
         for (int x = xMin; x <= xMax; ++x)
         {
-            for (int z = zMin; z < zMax; ++z)
+            for (int z = zMin; z <= zMax; ++z)
             {
                 if (x < m_xCell && z < m_zCell)
                 {
@@ -190,7 +190,7 @@ public class Map : MonoBehaviour {
                         Unit unitAux = m_ObjectsMap[x][z][i].GetComponent<Unit>();
                         if ( unitAux !=null)
                         {
-                            if ((unitAux.getTeam() != team) && (nearestX > x || nearestZ > z ))
+                            if ((unitAux.getTeam() != team) /*&& (nearestX > x || nearestZ > z )*/)
                             {
                                 goAux = m_ObjectsMap[x][z][i];
                                 nearestX = x;
