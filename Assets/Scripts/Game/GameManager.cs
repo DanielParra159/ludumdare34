@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour {
     private ResourcesManager m_resourceManager;
     private FeedbackMessagesManager m_feedbackMessagesManager;
 
+    public GameObject[] m_inBuildProcess;
+
 	// Use this for initialization
 	void Awake () {
         if (instance == null)
@@ -71,11 +73,15 @@ public class GameManager : MonoBehaviour {
 
             m_lastState = m_currentState;
             m_lastSubLevelState = m_currentSubLevelState;
-
         }
         else if (instance != this)
         {
             Destroy(this.gameObject);
+        }
+        for (int i = 0; i < m_inBuildProcess.Length; ++i )
+        {
+            m_inBuildProcess[i] = Instantiate<GameObject>(m_inBuildProcess[i]);
+            m_inBuildProcess[i].SetActive(false);
         }
 	}
 
@@ -126,6 +132,7 @@ public class GameManager : MonoBehaviour {
         switch(m_currentSubLevelState)
         {
             case SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION:
+            {
                 Ray ray = Camera.main.ScreenPointToRay(m_inputManager.getScreenMousePosition());
                 RaycastHit hit;
                 if (!Physics.Raycast(ray, out hit)) return;
@@ -134,6 +141,19 @@ public class GameManager : MonoBehaviour {
                 m_selectRect.transform.position = m_startSelectPosition + center * 0.5f;
                 m_selectRect.transform.localScale = center;
                 break;
+            }
+            case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (!Physics.Raycast(ray, out hit)) return;
+
+                Vector3 position = hit.point;
+                m_inBuildProcess[(int)m_typeBuilding].transform.position = position;
+
+                break;
+            }
+                
         }
         //SERIAS DUDAS SOBRE LA VALIDEZ DE ESTE CÓDIGO | KAITO
         /*
@@ -302,11 +322,15 @@ public class GameManager : MonoBehaviour {
                     if (!Input.GetKey(KeyCode.LeftShift))
                     {
                         changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
+                        m_inBuildProcess[(int)m_typeBuilding].SetActive(false);
+                        Cursor.visible = true;
                     }
                 }
                 else
                 {
                     changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
+                    m_inBuildProcess[(int)m_typeBuilding].SetActive(false);
+                    Cursor.visible = true;
                 }
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_MOVE_ATTACKING_WHERE)
@@ -361,10 +385,10 @@ public class GameManager : MonoBehaviour {
                 }
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
-            else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
+            else /*if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
             {
                 //construimos si es posible
-            }
+            }*/
             if (m_typeLeaderBuilding != null)
             {
                 Buildng.BUILDING_TYPES building = m_typeLeaderBuilding.getType();
@@ -418,50 +442,10 @@ public class GameManager : MonoBehaviour {
     }
     public void typeBuildingClicked(Buildng.BUILDING_TYPES buildingType)
     {
-        switch (buildingType)
-        {
-            case Buildng.BUILDING_TYPES.BUILDING_URBAN_CENTER:
-                m_typeBuilding = buildingType;
-                //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                break;
-            case Buildng.BUILDING_TYPES.BUILDING_TYPE_HOUSE:
-                if (m_resourceManager.haveEnoughResources(buildingType))
-                {
-                    m_typeBuilding = buildingType;
-                    //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
-                else
-                {
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
-                }
-                break;
-            case Buildng.BUILDING_TYPES.BUILDING_TYPE_BARRACKS:
-                if (m_resourceManager.haveEnoughResources(buildingType))
-                {
-                    m_typeBuilding = buildingType;
-                    //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
-                break;
-            case Buildng.BUILDING_TYPES.BUILDING_TYPE_UPGRADE:
-                if (m_resourceManager.haveEnoughResources(buildingType))
-                {
-                    m_typeBuilding = buildingType;
-                    //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
-                break;
-            case Buildng.BUILDING_TYPES.BUILDING_TYPE_TOWER:
-                if (m_resourceManager.haveEnoughResources(buildingType))
-                {
-                    m_typeBuilding = buildingType;
-                    //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
-                break;
-        }
+        m_typeBuilding = buildingType;
+        m_inBuildProcess[(int)buildingType].SetActive(true);
+        Cursor.visible = false;
+        changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
     }
     public void moveCamera(Vector3 dir)
     {

@@ -72,30 +72,124 @@ public class ResourcesManager : MonoBehaviour {
     {
         return (currentResources[team].resourcesNum[(int)type] - value) > -1;
     }
+    //MÉTODOS DE COMPROBACIÓN DE POSIBILIDAD DE CONSTRUCCIÓN POR RECURSOS Y ENVIO DE MENSAJES
     public bool haveEnoughResources(Buildng.BUILDING_TYPES building)
     {
         switch (building)
         {
             case Buildng.BUILDING_TYPES.BUILDING_URBAN_CENTER:
-                if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 200) && !canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 150))
+                if (resourceComprobation(building))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2));
-                }
-                else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 200))
-                {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
-                }
-                else if(!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 150))
-                {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1));
-                }
-                else
-                {
-                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 200);
-                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 150);
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 300);
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200);
                     return true;
                 }
                 return false;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_HOUSE:
+                if (resourceComprobation(building))
+                {
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 50);
+                    return true;
+                }
+                return false;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_BARRACKS:
+                if (resourceComprobation(building))
+                {
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 150);
+                    return true;
+                }
+                return false;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_UPGRADE:
+                if (resourceComprobation(building))
+                {
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 100);
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200);
+                    return true;
+                }
+                return false;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_TOWER:
+                if (resourceComprobation(building))
+                {
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 75);
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 50);
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }
+    public bool resourceComprobation(Buildng.BUILDING_TYPES building)
+    {
+        switch (building) 
+        { 
+            case Buildng.BUILDING_TYPES.BUILDING_URBAN_CENTER:
+                if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 300) && 
+                    !canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2));
+                    return false;
+                }
+                else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 300))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    return false;
+                }
+                else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1));
+                    return false;
+                }
+                return true;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_HOUSE:
+                if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 50))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    return false;
+                }
+                return true;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_BARRACKS:
+                if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 150))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    return false;
+                }
+                return true;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_UPGRADE:
+                if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 100) &&
+                    !canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2));
+                    return false;
+                }
+                else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 100))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    return false;
+                }
+                else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1));
+                    return false;
+                }
+                return true;
+            case Buildng.BUILDING_TYPES.BUILDING_TYPE_TOWER:
+                if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 75) &&
+                    !canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 50))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2));
+                    return false;
+                }
+                else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 75))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    return false;
+                }
+                else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 50))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1));
+                    return false;
+                }
+                return true;
         }
         return false;
     }
