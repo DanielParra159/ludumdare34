@@ -399,6 +399,10 @@ public class Unit : MonoBehaviour {
         m_mapPos.x = x;
         m_mapPos.y = z;
     }
+    public float getDetectionRadius()
+    {
+        return m_enemyDetectionRadius;
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;

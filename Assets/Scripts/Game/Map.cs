@@ -13,9 +13,17 @@ public class Map : MonoBehaviour {
     public float m_zSize = 1.0f; //tamano de las celdas en Z
 
     public List<GameObject>[][] m_ObjectsMap;
+    public Renderer[][] m_Quads;
+    public bool[][] m_visited;
+    public bool[][] m_visiting;
+    public int m_xFogCell; //casillas en X
+    public int m_zFogCell; // casillas en Z
 
     private bool execution = false;
     public bool draw = true;
+
+    public GameObject fogQuad;
+    public float fogQuadScale;
 
     void Awake()
     {
@@ -27,13 +35,42 @@ public class Map : MonoBehaviour {
             execution = true;
 
             m_ObjectsMap = new List<GameObject>[m_xCell][];
+            
             for (int x = 0; x < m_xCell; ++x)
             {
                 m_ObjectsMap[x] = new List<GameObject>[m_zCell];
                 for (int z = 0; z < m_zCell; ++z)
                 {
-                    m_ObjectsMap[x][z] = new List<GameObject>(2);
+                    m_ObjectsMap[x][z] = new List<GameObject>(2);                   
                 }
+            }
+            float maxX = m_xCell * m_xSize;
+            float maxZ = m_zCell * m_zSize;
+            m_xFogCell = (int)(maxX / fogQuadScale);
+            m_zFogCell = (int)(maxZ / fogQuadScale);
+            Vector3 position = transform.position;
+            position.y = 5;
+            position.x += fogQuadScale * 0.5f;
+
+            m_visited = new bool[m_xFogCell][];
+            m_visiting = new bool[m_xFogCell][];
+            m_Quads = new Renderer[m_xFogCell][];
+            for (int i = 0; i < m_xFogCell; ++i)
+            {
+                m_visited[i] = new bool[m_zFogCell];
+                m_visiting[i] = new bool[m_zFogCell];
+                m_Quads[i] = new Renderer[m_zFogCell];
+                position.z = transform.position.z + fogQuadScale * 0.5f;
+                for (int j = 0; j < m_zFogCell; ++j)
+                {
+                    m_visited[i][j] = false;
+                    m_visiting[i][j] = false;
+                    m_Quads[i][j] = ((GameObject)Instantiate(fogQuad, position, fogQuad.transform.rotation)).GetComponent < Renderer>();
+                    m_Quads[i][j].gameObject.transform.localScale = new Vector3(fogQuadScale, fogQuadScale, 1); 
+                    m_Quads[i][j].material = new Material(m_Quads[i][j].material);
+                    position.z += fogQuadScale;
+                }
+                position.x += fogQuadScale;
             }
         }
         else if (instance != this)
