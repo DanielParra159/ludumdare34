@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour {
     public static InputManager instance = null;
     public enum MOUSE_BUTTONS { MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGH }
 
-    public Rect m_actionRect = new Rect(new Vector2(0,0),new Vector2(Screen.width, Screen.height));
+    public Rect m_actionRect;
     public float m_margin_Percentage = 0.1f;
     private Rect m_left;
     private Rect m_up;
@@ -23,6 +23,7 @@ public class InputManager : MonoBehaviour {
         GUI.Button(m_up, "");
         GUI.Button(m_right, "");
         GUI.Button(m_down, "");
+        GUI.Button(m_actionRect, "");
     }*/
 
     void Awake()
@@ -40,6 +41,7 @@ public class InputManager : MonoBehaviour {
             m_right = new Rect(Screen.width - (Screen.width * m_margin_Percentage), 0, Screen.width * m_margin_Percentage, Screen.height);
             m_down = new Rect(0, Screen.height - Screen.height * m_margin_Percentage, Screen.width, Screen.height * m_margin_Percentage);
 
+            m_actionRect = new Rect(new Vector2(0, 0), new Vector2(Screen.width, Screen.height - Screen.height * 0.26f));
         }
         else if (instance != this)
         {
@@ -79,26 +81,28 @@ public class InputManager : MonoBehaviour {
         }
         m_eventMoveCamera.m_dir = cameraDir.normalized;
         m_eventMoveCamera.SendEvent();
-        if (Input.GetMouseButtonDown(0) /*&& m_actionRect.Contains(m_mousePosition)*/) //boton izquierdo pulsado
+        Vector3 mousePosAux = m_mousePosition;
+        mousePosAux.y = Screen.height - mousePosAux.y;
+        if (Input.GetMouseButtonDown(0) && m_actionRect.Contains(mousePosAux)) //boton izquierdo pulsado
         {
             m_eventMouseClick.m_button = MOUSE_BUTTONS.MOUSE_BUTTON_LEFT;
             m_eventMouseClick.type =  EventManager.EVENTS.EVENT_MOUSE_DOWN;
             m_eventMouseClick.SendEvent();
         }
-        else if (Input.GetMouseButtonUp(0)) //boton izquierdo levantado
+        else if (Input.GetMouseButtonUp(0) /*&& m_actionRect.Contains(mousePosAux)*/) //boton izquierdo levantado
         {
             m_eventMouseClick.m_button = MOUSE_BUTTONS.MOUSE_BUTTON_LEFT;
             m_eventMouseClick.type = EventManager.EVENTS.EVENT_MOUSE_UP;
             m_eventMouseClick.SendEvent();
         }
 
-        if (Input.GetMouseButtonDown(1) /*&& m_actionRect.Contains(Input.mousePosition)*/) //boton derecho pulsado
+        if (Input.GetMouseButtonDown(1) && m_actionRect.Contains(mousePosAux)) //boton derecho pulsado
         {
             m_eventMouseClick.m_button = MOUSE_BUTTONS.MOUSE_BUTTON_RIGH;
             m_eventMouseClick.type = EventManager.EVENTS.EVENT_MOUSE_DOWN;
             m_eventMouseClick.SendEvent();
         }
-        else if (Input.GetMouseButtonUp(1)) //boton derecho levantado
+        else if (Input.GetMouseButtonUp(1) /*&& m_actionRect.Contains(mousePosAux)*/) //boton derecho levantado
         {
             m_eventMouseClick.m_button = MOUSE_BUTTONS.MOUSE_BUTTON_RIGH;
             m_eventMouseClick.type = EventManager.EVENTS.EVENT_MOUSE_UP;

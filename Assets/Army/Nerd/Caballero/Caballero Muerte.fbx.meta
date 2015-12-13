@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 25565cdf6c3ce1747b870baf154cbc64
+timeCreated: 1450003684
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Brazo_Dch
+    100002: Brazo_Izq
+    100004: Brazos
+    100006: Caballero
+    100008: //RootNode
+    100010: Caballero_2
+    100012: Caballo
+    100014: Cabeza
+    100016: Cabeza_2
+    100018: Cuerpo
+    100020: Escoba
+    100022: Gafas
+    100024: Mano_Dch
+    100026: Mano_Izq
+    100028: Moon
+    100030: Ojo_Dch
+    100032: Ojo_Izq
+    100034: Ojo_Izq_1
+    100036: Oreja_Dch
+    100038: Oreja_Izq
+    100040: Peana
+    100042: Pelo
+    100044: Physical_Sky
+    100046: Pierna_Dch
+    100048: Pierna_Izq
+    100050: Piernas
+    100052: Shadow_Plane
+    100054: Sky_Null
+    100056: Sun
+    400000: Brazo_Dch
+    400002: Brazo_Izq
+    400004: Brazos
+    400006: Caballero
+    400008: //RootNode
+    400010: Caballero_2
+    400012: Caballo
+    400014: Cabeza
+    400016: Cabeza_2
+    400018: Cuerpo
+    400020: Escoba
+    400022: Gafas
+    400024: Mano_Dch
+    400026: Mano_Izq
+    400028: Moon
+    400030: Ojo_Dch
+    400032: Ojo_Izq
+    400034: Ojo_Izq_1
+    400036: Oreja_Dch
+    400038: Oreja_Izq
+    400040: Peana
+    400042: Pelo
+    400044: Physical_Sky
+    400046: Pierna_Dch
+    400048: Pierna_Izq
+    400050: Piernas
+    400052: Shadow_Plane
+    400054: Sky_Null
+    400056: Sun
+    2300000: Brazo_Dch
+    2300002: Brazo_Izq
+    2300004: Caballo
+    2300006: Cabeza_2
+    2300008: Cuerpo
+    2300010: Escoba
+    2300012: Gafas
+    2300014: Mano_Dch
+    2300016: Mano_Izq
+    2300018: Ojo_Dch
+    2300020: Ojo_Izq
+    2300022: Ojo_Izq_1
+    2300024: Oreja_Dch
+    2300026: Oreja_Izq
+    2300028: Peana
+    2300030: Pelo
+    2300032: Pierna_Dch
+    2300034: Pierna_Izq
+    3300000: Brazo_Dch
+    3300002: Brazo_Izq
+    3300004: Caballo
+    3300006: Cabeza_2
+    3300008: Cuerpo
+    3300010: Escoba
+    3300012: Gafas
+    3300014: Mano_Dch
+    3300016: Mano_Izq
+    3300018: Ojo_Dch
+    3300020: Ojo_Izq
+    3300022: Ojo_Izq_1
+    3300024: Oreja_Dch
+    3300026: Oreja_Izq
+    3300028: Peana
+    3300030: Pelo
+    3300032: Pierna_Dch
+    3300034: Pierna_Izq
+    4300000: Caballo
+    4300002: Peana
+    4300004: Pierna_Dch
+    4300006: Pierna_Izq
+    4300008: Cuerpo
+    4300010: Gafas
+    4300012: Pelo
+    4300014: Ojo_Izq
+    4300016: Ojo_Dch
+    4300018: Cabeza_2
+    4300020: Oreja_Izq
+    4300022: Oreja_Dch
+    4300024: Ojo_Izq_1
+    4300026: Brazo_Dch
+    4300028: Mano_Dch
+    4300030: Brazo_Izq
+    4300032: Mano_Izq
+    4300034: Escoba
+    7400000: Muerte
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Muerte
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Caballero
+        weight: 1
+      - path: Caballero/Caballero_2
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Brazos
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Brazos/Brazo_Izq/Mano_Izq/Escoba
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza/Gafas
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza/Ojo_Izq_1
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Caballero/Caballero_2/Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Caballero/Caballero_2/Piernas
+        weight: 1
+      - path: Caballero/Caballero_2/Piernas/Pierna_Dch
+        weight: 1
+      - path: Caballero/Caballero_2/Piernas/Pierna_Izq
+        weight: 1
+      - path: Caballero/Caballo
+        weight: 1
+      - path: Caballero/Peana
+        weight: 1
+      - path: Physical_Sky
+        weight: 1
+      - path: Physical_Sky/Shadow_Plane
+        weight: 1
+      - path: Physical_Sky/Sky_Null
+        weight: 1
+      - path: Physical_Sky/Sky_Null/Moon
+        weight: 1
+      - path: Physical_Sky/Sky_Null/Sun
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
