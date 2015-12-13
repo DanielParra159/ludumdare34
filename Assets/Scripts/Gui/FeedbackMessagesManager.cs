@@ -17,13 +17,22 @@ public class FeedbackMessagesManager : MonoBehaviour {
     {
         STATE_APPEARING, STATE_APPEARED, STATE_DISAPPEARING, STATE_DISAPPEARED, MAX_STATES
     }
+    public enum POSITIONS
+    {
+        POSITION_LEFT, POSITION_CENTER, POSITION_RIGHT
+    }
 
     [Tooltip("Tiempo que serán visibles los mensajes")]
     [Range(1, 20)]
     public float m_visibleTime;
     private float m_remainingTime; //tiempo restante del mensaje
     [Tooltip("Componente en el que se muestra el texto")]
-    public Text m_cameraText;
+    public Text m_cameraTextCenter;
+    [Tooltip("Componente en el que se muestra el texto")]
+    public Text m_cameraTextLeft;
+    [Tooltip("Componente en el que se muestra el texto")]
+    public Text m_cameraTextRight;
+    private Text m_currentText;
     [Tooltip("Tiempo que tarda en aparecer el texto, alfa = 1")]
     [Range(1, 5)]
     public float m_appearTime;
@@ -40,8 +49,10 @@ public class FeedbackMessagesManager : MonoBehaviour {
 
     void Awake()
     {
-        Assert.IsNotNull(m_cameraText, "Componente Text no asignado en FeedbackMessagesManager");
-
+        Assert.IsNotNull(m_cameraTextCenter, "Componente Text no asignado en FeedbackMessagesManager");
+        Assert.IsNotNull(m_cameraTextLeft, "Componente Text no asignado en FeedbackMessagesManager");
+        Assert.IsNotNull(m_cameraTextRight, "Componente Text no asignado en FeedbackMessagesManager");
+        
         if (instance == null)
         {
             instance = this;
@@ -50,6 +61,8 @@ public class FeedbackMessagesManager : MonoBehaviour {
             loadMessages();
             m_worldMessages = new PoolManager(m_prefabWoldMessage, m_numWoldMessage);
             m_worldMessages.Init();
+
+            m_currentText = m_cameraTextCenter;
         }
         else if (instance != this)
         {
@@ -82,14 +95,27 @@ public class FeedbackMessagesManager : MonoBehaviour {
         }
 	}
 
-    public void showCameraMessage(FEEDBACK_MESSAGES message)
+    public void showCameraMessage(FEEDBACK_MESSAGES message, POSITIONS position)
     {
-        showCameraMessage(m_messages[(int)message]);
+        showCameraMessage(m_messages[(int)message], position);
     }
-    public void showCameraMessage(string message)
+    public void showCameraMessage(string message, POSITIONS position)
     {
+        
+        switch(position)
+        {
+            case POSITIONS.POSITION_LEFT:
+                m_currentText = m_cameraTextLeft;
+                break;
+            case POSITIONS.POSITION_CENTER:
+                m_currentText = m_cameraTextCenter;
+                break;
+            case POSITIONS.POSITION_RIGHT:
+                m_currentText = m_cameraTextRight;
+                break;
+        }
+        m_currentText.text = message;
         changeState(STATES.STATE_APPEARING);
-        m_cameraText.text = message;
     }
 
     public void showWorldMessage(Vector3 position, FEEDBACK_MESSAGES message)
@@ -109,14 +135,14 @@ public class FeedbackMessagesManager : MonoBehaviour {
         {
             case STATES.STATE_APPEARING:
                 enabled = true;
-                m_cameraText.CrossFadeAlpha(1.0f, m_appearTime, false);
+                m_currentText.CrossFadeAlpha(1.0f, m_appearTime, false);
                 m_remainingTime = m_appearTime;
                 break;
             case STATES.STATE_APPEARED:
                 m_remainingTime = m_visibleTime - m_appearTime;
                 break;
             case STATES.STATE_DISAPPEARING:
-                m_cameraText.CrossFadeAlpha(0.0f, m_disappearTime, false);
+                m_currentText.CrossFadeAlpha(0.0f, m_disappearTime, false);
                 m_remainingTime = m_disappearTime;
                 break;
             case STATES.STATE_DISAPPEARED:

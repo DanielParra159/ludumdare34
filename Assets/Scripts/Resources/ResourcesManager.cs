@@ -126,31 +126,31 @@ public class ResourcesManager : MonoBehaviour {
                 if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 300) && 
                     !canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 300))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 return true;
             case Buildng.BUILDING_TYPES.BUILDING_TYPE_HOUSE:
                 if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 50))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 return true;
             case Buildng.BUILDING_TYPES.BUILDING_TYPE_BARRACKS:
                 if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 150))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 return true;
@@ -158,17 +158,17 @@ public class ResourcesManager : MonoBehaviour {
                 if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 100) &&
                     !canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 100))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 200))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 return true;
@@ -176,17 +176,17 @@ public class ResourcesManager : MonoBehaviour {
                 if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 75) &&
                     !canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 50))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 75))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 50))
                 {
-                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1));
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1), FeedbackMessagesManager.POSITIONS.POSITION_CENTER);
                     return false;
                 }
                 return true;

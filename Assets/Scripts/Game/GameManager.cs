@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour {
                 Vector3 center = (hit.point - m_startSelectPosition);
                 center.y += 0.1f;
                 m_selectRect.transform.position = m_startSelectPosition + center * 0.5f;
-                m_selectRect.transform.localScale = center;
+                m_selectRect.transform.localScale = new Vector3(center.x, center.z, center.y);
                 break;
             }
             case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD:
