@@ -9,6 +9,7 @@ public class EventManager {
         EVENT_MOUSE_UP,
         EVENT_SPAWN_UNIT,
         EVENT_SPAWN_BUILDING,
+        EVENT_ADD_RESOURCE,
         EVENT_ACTION_BUTTON_CLICKED,
         EVENT_TYPE_BUILDING_CLICKED,
         EVENT_READY_TO_REPAIR,
@@ -21,6 +22,7 @@ public class EventManager {
     private static GameManager gameManager;
     private static ArmyManager armyManager;
     private static BuildingManager buildingManager;
+    private static ResourcesManager resourcesManager;
 
     // Use this for initialization
     public static void Start () {
@@ -28,6 +30,7 @@ public class EventManager {
         gameManager = GameManager.instance;
         armyManager = ArmyManager.instance;
         buildingManager = BuildingManager.instance;
+        resourcesManager = ResourcesManager.instance;
     }
 	
 	/*
@@ -66,6 +69,12 @@ public class EventManager {
         {
             EventSpawnBuilding eventSpawnBuilding = (EventSpawnBuilding)hEvent;
             buildingManager.spawnBuilding(eventSpawnBuilding.m_team, eventSpawnBuilding.m_type, eventSpawnBuilding.m_position);
+            break;
+        }
+            case EVENTS.EVENT_ADD_RESOURCE:
+        {
+            EventAddResource eventAddResource = (EventAddResource)hEvent;
+            resourcesManager.addResources((int)eventAddResource.m_team, eventAddResource.m_type, eventAddResource.m_amount);
             break;
         }
             case EVENTS.EVENT_ACTION_BUTTON_CLICKED:

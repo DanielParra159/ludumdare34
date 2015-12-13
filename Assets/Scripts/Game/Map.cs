@@ -44,6 +44,11 @@ public class Map : MonoBehaviour {
                     m_ObjectsMap[x][z] = new List<GameObject>(2);                   
                 }
             }
+
+
+            GameObject quadsMap = new GameObject("FogMap");
+            quadsMap = (GameObject)Instantiate(quadsMap);
+
             float maxX = m_xCell * m_xSize;
             float maxZ = m_zCell * m_zSize;
             m_xFogCell = (int)(maxX / fogQuadScale);
@@ -68,6 +73,7 @@ public class Map : MonoBehaviour {
                     m_Quads[i][j] = ((GameObject)Instantiate(fogQuad, position, fogQuad.transform.rotation)).GetComponent < Renderer>();
                     m_Quads[i][j].gameObject.transform.localScale = new Vector3(fogQuadScale, fogQuadScale, 1); 
                     m_Quads[i][j].material = new Material(m_Quads[i][j].material);
+                    m_Quads[i][j].transform.parent = quadsMap.transform;
                     position.z += fogQuadScale;
                 }
                 position.x += fogQuadScale;
