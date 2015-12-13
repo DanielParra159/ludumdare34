@@ -49,10 +49,11 @@ public class FeedbackMessage : MonoBehaviour {
         }
 	}
 
-    public void setText(Vector3 position, string text)
+    public void setText(Vector3 position, string text, Color color)
     {
         m_transform.position = position;
         m_text.text = text;
+        m_text.color = color;
         changeState(FeedbackMessagesManager.STATES.STATE_APPEARING);
     }
     

@@ -97,15 +97,15 @@ public class FeedbackMessagesManager : MonoBehaviour {
         }
 	}
 
-    public void showCameraMessage(FEEDBACK_MESSAGES message, POSITIONS position, bool inf = false)
+    public void showCameraMessage(FEEDBACK_MESSAGES message, POSITIONS position, Color color, bool inf = false)
     {
-        showCameraMessage(m_messages[(int)message], position, inf);
+        showCameraMessage(m_messages[(int)message], position,color, inf);
     }
     public void hideCameraMessage()
     {
         m_currentText.CrossFadeAlpha(0,1,true);
     }
-    public void showCameraMessage(string message, POSITIONS position, bool inf = false)
+    public void showCameraMessage(string message, POSITIONS position, Color color, bool inf = false)
     {
         if (inf)
         {
@@ -128,17 +128,18 @@ public class FeedbackMessagesManager : MonoBehaviour {
                 break;
         }
         m_currentText.text = message;
+        m_currentText.color = color;
         changeState(STATES.STATE_APPEARING);
     }
 
-    public void showWorldMessage(Vector3 position, FEEDBACK_MESSAGES message)
+    public void showWorldMessage(Vector3 position, FEEDBACK_MESSAGES message, Color color)
     {
-        showWorldMessage(position, m_messages[(int)message]);
+        showWorldMessage(position, m_messages[(int)message], color);
     }
-    public void showWorldMessage( Vector3 position, string message)
+    public void showWorldMessage( Vector3 position, string message, Color color)
     {
         FeedbackMessage feedbackMessage = m_worldMessages.getObject(true).GetComponent<FeedbackMessage>();
-        feedbackMessage.setText(position, message);
+        feedbackMessage.setText(position, message, color);
     }
 
     private void changeState(STATES state)

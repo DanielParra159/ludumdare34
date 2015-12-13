@@ -11,6 +11,8 @@ public class GUITooltip : MonoBehaviour {
     public FeedbackMessagesManager.POSITIONS position;
     [Tooltip("texto")]
     public string text;
+    [Tooltip("Color")]
+    public Color color = Color.white;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +26,7 @@ public class GUITooltip : MonoBehaviour {
 
     public void OnMouseEnter()
     {
-        m_feedbackMessagesManager.showCameraMessage(text, position, true);
+        m_feedbackMessagesManager.showCameraMessage(text, position, color, true);
         Debug.Log("Enter");
     }
     public void OnMouseExit()

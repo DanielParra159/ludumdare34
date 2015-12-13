@@ -65,7 +65,7 @@ public class Life : MonoBehaviour
         this.enabled = true;
         m_currentLife -= damage;
         Vector3 offset = new Vector3(Random.Range(1.0f, 3.0f), m_yPositionOfDamageMessage, Random.Range(1.0f, 3.0f));
-        m_feedbackMessagesManager.showWorldMessage(gameObject.transform.position + offset, "" + damage);
+        m_feedbackMessagesManager.showWorldMessage(gameObject.transform.position + offset, "" + damage, Color.red);
         if (m_currentLife <= 0.0f)
         {
             //gameObject.SendMessage("OnDead", SendMessageOptions.DontRequireReceiver);
