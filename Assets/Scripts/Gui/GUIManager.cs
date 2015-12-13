@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GUIManager : MonoBehaviour {
@@ -30,6 +31,9 @@ public class GUIManager : MonoBehaviour {
 
     [Tooltip("Para añadir los diferentes paneles a activar y desactivar")]
     public GameObject[] panels = null;
+    [Tooltip("Para añadir los diferentes paneles de las unidades para activar y desactivar")]
+    public GameManager[] unitsPanels;
+    public Image[] unitsImage;
 
     public GameObject m_meetingPoint;
 
@@ -98,5 +102,13 @@ public class GUIManager : MonoBehaviour {
     {
         Buildng selected = m_buildingManager.isSelectedAnyBuilding();
         selected.GetComponent<UnitSpawn>().barrackUnits(unit);
+    }
+    public void showUnitPanel(int unit)
+    {
+        unitsPanels[unit].transform.GetChild(0).GetComponent<Image>().sprite = unitsImage[unit].sprite;
+    }
+    public void hideUnitPanel()
+    {
+
     }
 }
