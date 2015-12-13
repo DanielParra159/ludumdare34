@@ -11,7 +11,6 @@ using System.Collections;
 [RequireComponent(typeof(SoundManager))]
 [RequireComponent(typeof(GUIManager))]
 [RequireComponent(typeof(Map))]
-[RequireComponent(typeof(ResourcesManager))]
 
 public class GameManager : MonoBehaviour {
 
@@ -59,8 +58,6 @@ public class GameManager : MonoBehaviour {
     private Buildng.BUILDING_TYPES m_typeBuilding;
 
     private InputManager m_inputManager;
-    private ResourcesManager m_resourceManager;
-    private FeedbackMessagesManager m_feedbackMessagesManager;
 
 	// Use this for initialization
 	void Awake () {
@@ -86,8 +83,6 @@ public class GameManager : MonoBehaviour {
         m_armyManager = ArmyManager.instance;
         m_inputManager = InputManager.instance;
         m_guiManager = GUIManager.instance;
-        m_resourceManager = ResourcesManager.instance;
-        m_feedbackMessagesManager = FeedbackMessagesManager.instance;
     }
 	
 	// Update is called once per frame
@@ -295,19 +290,11 @@ public class GameManager : MonoBehaviour {
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
             {
+                //MOSTRAR REPRESENTACION GRISACEA DEL EDIFICIO A CONSTRUIR
                 //COMPROBAR SI LA ZONA EN LA QUE SE QUIERE COLOCAR ES VÁLIDA
-                if (m_resourceManager.haveEnoughResources(m_typeBuilding))
-                {
-                    m_buildingManager.spawnBuilding(0, m_typeBuilding, position);
-                    if (!Input.GetKey(KeyCode.LeftShift))
-                    {
-                        changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
-                    }
-                }
-                else
-                {
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
-                }
+                m_guiManager.getToBuild();
+                //LLAMAR A JERARQUÍA Y OBTENER UN ELEMENTO DEL TIPO DE EDIFICIO SI QUEDA/CASO CONTRARIO SE CREA UNO
+                //al levantar construiremos
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_MOVE_ATTACKING_WHERE)
             {
@@ -421,50 +408,35 @@ public class GameManager : MonoBehaviour {
         switch (buildingType)
         {
             case Buildng.BUILDING_TYPES.BUILDING_URBAN_CENTER:
-                m_typeBuilding = buildingType;
                 //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
                 break;
             case Buildng.BUILDING_TYPES.BUILDING_TYPE_HOUSE:
-                if (m_resourceManager.haveEnoughResources(buildingType))
-                {
-                    m_typeBuilding = buildingType;
-                    //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
-                else
-                {
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
-                }
+                //MOSTRAR REPRESENTACION DEL EDIFICIO HOUSE EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
                 break;
             case Buildng.BUILDING_TYPES.BUILDING_TYPE_BARRACKS:
-                if (m_resourceManager.haveEnoughResources(buildingType))
-                {
-                    m_typeBuilding = buildingType;
-                    //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
+                //MOSTRAR REPRESENTACION DEL EDIFICIO BARRACKS EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
                 break;
             case Buildng.BUILDING_TYPES.BUILDING_TYPE_UPGRADE:
-                if (m_resourceManager.haveEnoughResources(buildingType))
-                {
-                    m_typeBuilding = buildingType;
-                    //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
+                //MOSTRAR REPRESENTACION DEL EDIFICIO UPGRADE EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
                 break;
             case Buildng.BUILDING_TYPES.BUILDING_TYPE_TOWER:
-                if (m_resourceManager.haveEnoughResources(buildingType))
-                {
-                    m_typeBuilding = buildingType;
-                    //MOSTRAR REPRESENTACION DEL EDIFICIO URBAN_CENTER EN EL CURSOR DEL JUGADOR
-                    changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-                }
+                //MOSTRAR REPRESENTACION DEL EDIFICIO TOWER EN EL CURSOR DEL JUGADOR
+                m_typeBuilding = buildingType;
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
                 break;
         }
     }
     public void moveCamera(Vector3 dir)
     {
+        //Vector3.right * GamePad.GetAxis(GamePad.Axis.LeftStick, numController).x + Vector3.forward
         Camera.main.transform.Translate(dir * Time.deltaTime * m_cameraSpeed);
     }
 }
