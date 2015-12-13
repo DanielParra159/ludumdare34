@@ -200,10 +200,10 @@ public class ArmyManager : MonoBehaviour {
             float radius2 = units[0][i].getDetectionRadius2();
             Vector3 position = units[0][i].getPosition();
             int xMin = (int)((position.x - radius) / map.fogQuadScale);
-            int zMin = (int)((position.z - radius) / map.fogQuadScale);
+            int zMin = (int)((position.z - radius + 4) / map.fogQuadScale);
 
             int xMax = (int)((position.x + radius) / map.fogQuadScale);
-            int zMax = (int)((position.z + radius) / map.fogQuadScale);
+            int zMax = (int)((position.z + radius + 4) / map.fogQuadScale);
             Vector3 worldPosition = Vector3.zero;
             worldPosition.y = position.y;
             for (int x = xMin; x < xMax; ++x)
