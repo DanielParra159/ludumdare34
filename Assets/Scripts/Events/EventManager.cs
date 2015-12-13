@@ -15,6 +15,7 @@ public class EventManager {
         EVENT_READY_TO_REPAIR,
         EVENT_STOP_REPAIRING,
         EVENT_MOVE_CAMERA,
+        EVENT_MEETING_POINT,
 		MAX_EVENTS
 	};
 
@@ -105,6 +106,12 @@ public class EventManager {
         {
             EventMoveCamera eventMoveCamera = (EventMoveCamera)hEvent;
             gameManager.moveCamera(eventMoveCamera.m_dir);
+            break;
+        }
+            case EVENTS.EVENT_MEETING_POINT:
+        {
+            EventMeetingPointClicked meetingPointClicked = (EventMeetingPointClicked)hEvent;
+            gameManager.meetingPoint();
             break;
         }
 		}

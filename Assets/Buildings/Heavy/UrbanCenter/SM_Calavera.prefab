@@ -6457,7 +6457,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117870}
-  m_LocalRotation: {x: .58911401, y: -.546142876, z: -.293530703, w: .51818198}
+  m_LocalRotation: {x: .589113951, y: -.546142817, z: -.293530673, w: .51818192}
   m_LocalPosition: {x: -.670719564, y: .503590345, z: -.217572525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12865,7 +12865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_unitToSpawn: {fileID: 11460430, guid: 857dda47eed3c8d4280f570a0983e403, type: 2}
   m_remainingTimeToSpawn: 10
-  m_meetingPoint: {fileID: 0}
+  m_meetingPoint: {fileID: 442378}
   m_spawnType: 0
   m_unitsToSpawnBarracks: []
 --- !u!114 &11454246
@@ -13231,7 +13231,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_meetingPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 442378}
     - target: {fileID: 0}
       propertyPath: m_model
       value: 

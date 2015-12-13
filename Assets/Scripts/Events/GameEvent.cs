@@ -68,3 +68,7 @@ public class EventMoveCamera : GameEvent
     public Vector3 m_dir;
     public EventMoveCamera() { type = EventManager.EVENTS.EVENT_MOVE_CAMERA; }
 }
+public class EventMeetingPointClicked : GameEvent
+{
+    public EventMeetingPointClicked() { type = EventManager.EVENTS.EVENT_MEETING_POINT; }
+}

@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour {
         SUBGAME_STATE_PATROL_WHERE,
         SUBGAME_STATE_MOVE_ATTACKING_WHERE,
         SUBGAME_STATE_REPAIR_WHAT,
+        SUBGAME_STATE_WHERE_TO_MEETING,
         SUBGAME_STATE_MAX
     }
     public static int maxGameStates = (int)GAME_STATES.GAME_STATE_MAX;
@@ -233,9 +234,6 @@ public class GameManager : MonoBehaviour {
                 {
                     m_guiManager.activatePanel(GUIManager.PANELS.ARMY_PANEL);
                 }
-
-                //CAMBIAR GUI Y MOSTRAR ACCIONES DE NADA SELECCIONADO SI ALDEANO NO SELECCIONADO
-                //O ACCIONES DE ALDEANO SI ALDEANO SELECCIONADO
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD:
                 m_guiManager.activatePanel(GUIManager.PANELS.BUILDINGS_PANEL);
@@ -245,6 +243,8 @@ public class GameManager : MonoBehaviour {
                 break;
             case SUB_LEVEL_STATES.SUBGAME_STATE_START_SELECTION:
                 m_selectRect.SetActive(true);
+                break;
+            case SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_MEETING:
                 break;
         }
     }
@@ -352,6 +352,10 @@ public class GameManager : MonoBehaviour {
                 }
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
+            else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_MEETING)
+            {
+                m_buildingManager.setMeetingPoint(position);
+            }
         }
 
         //comprobar en que sub estado estamos, construyendo, sin selecci�n...
@@ -384,8 +388,7 @@ public class GameManager : MonoBehaviour {
                     m_buildingManager.unselectBuilding();
                 }
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
-            }
-            else /*if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
+            } /*if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
             {
                 //construimos si es posible
             }*/
@@ -450,5 +453,9 @@ public class GameManager : MonoBehaviour {
     public void moveCamera(Vector3 dir)
     {
         Camera.main.transform.Translate(dir * Time.deltaTime * m_cameraSpeed);
+    }
+    public void meetingPoint()
+    {
+        changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_MEETING);
     }
 }
