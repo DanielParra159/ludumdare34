@@ -65,6 +65,9 @@ public class GameManager : MonoBehaviour {
 
     public GameObject[] m_inBuildProcess;
 
+    private EventShowUnitPanel eventShowUnitPanel;
+    private EventHideUnitPanel eventHidUnitPanel;
+
 	// Use this for initialization
 	void Awake () {
         if (instance == null)
@@ -74,6 +77,9 @@ public class GameManager : MonoBehaviour {
 
             m_lastState = m_currentState;
             m_lastSubLevelState = m_currentSubLevelState;
+
+            eventShowUnitPanel = new EventShowUnitPanel();
+            eventHidUnitPanel = new EventHideUnitPanel();
         }
         else if (instance != this)
         {
@@ -217,6 +223,12 @@ public class GameManager : MonoBehaviour {
         switch(m_currentSubLevelState)
         {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
+
+                eventShowUnitPanel.m_type = (int)m_typeLeaderUnit.getType();
+                eventShowUnitPanel.m_damage = m_typeLeaderUnit.getDamage();
+                eventShowUnitPanel.m_life = m_typeLeaderUnit.getLife();
+                eventShowUnitPanel.SendEvent();
+
                 m_selectRect.SetActive(false);
 
                 if (m_typeLeaderUnit != null && m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_WORKER)
@@ -226,6 +238,7 @@ public class GameManager : MonoBehaviour {
                 if (m_typeLeaderUnit == null)
                 {
                     m_guiManager.activatePanel(GUIManager.PANELS.NOTHING_PANEL);
+                    eventHidUnitPanel.SendEvent();
                 }
                 if (m_typeLeaderUnit != null &&
                     (m_typeLeaderUnit.getType() == Unit.UNIT_TYPES.UNIT_TYPE_WARRIOR_SWORDMAN ||
