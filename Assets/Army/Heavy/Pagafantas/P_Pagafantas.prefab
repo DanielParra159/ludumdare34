@@ -1287,6 +1287,7 @@ MonoBehaviour:
   m_damage: 1
   m_delayBetweenAttacks: 5
   m_attackRange: 4
+  m_onAttackSound: {fileID: 8300000, guid: d21cbe3d30546c040b4875fc03dcfe92, type: 3}
 --- !u!114 &11441396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1370,6 +1371,8 @@ MonoBehaviour:
   m_maxLife: 100
   m_regeneration: 0
   m_yPositionOfDamageMessage: 1
+  m_onDamageSound: {fileID: 0}
+  m_onDeadSound: {fileID: 0}
   m_slider: {fileID: 11441396}
 --- !u!114 &11460430
 MonoBehaviour:
@@ -1467,7 +1470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_model: {fileID: 195428}
-  m_selectedSound: {fileID: 0}
+  m_selectedSound: {fileID: 8300000, guid: cfbc0c0807d44a44789b1daed66f495e, type: 3}
 --- !u!195 &19531536
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -1663,6 +1666,14 @@ Prefab:
       propertyPath: m_radius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_onAttackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d21cbe3d30546c040b4875fc03dcfe92, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_selectedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: cfbc0c0807d44a44789b1daed66f495e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177564}
