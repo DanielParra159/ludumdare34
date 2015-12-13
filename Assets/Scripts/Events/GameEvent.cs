@@ -8,7 +8,7 @@ public class GameEvent {
 	public void SendEvent()
 	{
 		fTime = Time.time;
-		EventManager.newEvent( this );
+        EventManager.newEvent(this);
 	}
 }
 public class EventPlaySound : GameEvent {

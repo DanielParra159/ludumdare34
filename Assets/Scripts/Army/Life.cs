@@ -19,6 +19,9 @@ public class Life : MonoBehaviour
     [Range(1, 100)]
     public float m_yPositionOfDamageMessage = 1.0f;
 
+    public AudioClip m_onDamageSound;
+    public AudioClip m_onDeadSound;
+
     [Tooltip("Slider donde se mostrara la vida")]
     public Slider m_slider;
 
@@ -73,9 +76,18 @@ public class Life : MonoBehaviour
                 m_onDead();
             m_currentLife = 0.0f;
             dead = true;
+
+            if (m_onDeadSound != null)
+            {
+                SoundManager.instance.PlaySingle(m_onDeadSound);
+            }
         }
         else if (m_onDamage != null)
         {
+            if (m_onDamageSound != null)
+            {
+                SoundManager.instance.PlaySingle(m_onDamageSound);
+            }
             m_onDamage(m_currentLife);
         }
 

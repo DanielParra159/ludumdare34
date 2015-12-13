@@ -16,7 +16,7 @@ public class Attack : MonoBehaviour {
     [Range(1, 30)]
     protected float m_attackRange = 4.0f;
     protected float m_attackRange2;
-
+    public AudioClip m_onAttackSound;
     protected float m_currentTime;
 	// Use this for initialization
 	void Awake () {
@@ -35,6 +35,10 @@ public class Attack : MonoBehaviour {
 
     public void attackTarget(GameObject target)
     {
+        if (m_onAttackSound!=null)
+        {
+            SoundManager.instance.PlaySingle(m_onAttackSound);
+        }
         target.GetComponent<Life>().OnDamage(m_damage);
         m_currentTime = m_delayBetweenAttacks;
         this.enabled = true;

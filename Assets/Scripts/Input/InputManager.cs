@@ -77,7 +77,7 @@ public class InputManager : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.PageUp) || Input.GetAxis("Mouse ScrollWheel") > 0.0f)
         {
-            cameraDir.y = -1; 
+            cameraDir.y = -1;
         }
         m_eventMoveCamera.m_dir = cameraDir.normalized;
         m_eventMoveCamera.SendEvent();
