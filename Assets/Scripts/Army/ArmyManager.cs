@@ -190,17 +190,22 @@ public class ArmyManager : MonoBehaviour {
         for (int i = 0; i < units[0].Count;++i )
         {
             float radius = units[0][i].getDetectionRadius();
+            float radius2 = units[0][i].getDetectionRadius2();
             Vector3 position = units[0][i].getPosition();
             int xMin = (int)((position.x - radius) / map.fogQuadScale);
             int zMin = (int)((position.z - radius) / map.fogQuadScale);
 
             int xMax = (int)((position.x + radius) / map.fogQuadScale);
             int zMax = (int)((position.z + radius) / map.fogQuadScale);
+            Vector3 worldPosition = Vector3.zero;
+            worldPosition.y = position.y;
             for (int x = xMin; x < xMax; ++x)
             {
                 for (int z = zMin; z < zMax; ++z)
                 {
-                    if (x < map.m_xFogCell && z < map.m_zFogCell)
+                    worldPosition.x = x * map.fogQuadScale;
+                    worldPosition.z = z * map.fogQuadScale;
+                    if ((worldPosition-position).sqrMagnitude < radius2 && x < map.m_xFogCell && z < map.m_zFogCell)
                     {
                         map.m_visited[x][z] = true;
                         map.m_visiting[x][z] = true;
