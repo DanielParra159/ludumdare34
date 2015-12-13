@@ -191,16 +191,19 @@ public class Unit : MonoBehaviour {
     }
     protected void updateGoing()
     {
-        /*if (m_navMeshAgent.pathStatus == NavMeshPathStatus.)
-        {
-            changeState(UNIT_STATES.UNIT_STATE_IDLE);
-        }
-        else*/
-        {
-            m_map.moveObjectToMap((int)m_mapPos.x, (int)m_mapPos.y, m_transform.position, gameObject);
-        }
         switch(m_currentSubState)
         {
+            case UNIT_SUB_STATES.UNIT_SUB_STATE_NORMAL:
+            {
+                if (Vector3.Distance(m_navMeshAgent.destination, m_transform.position) < 3)
+                {
+                    changeState(UNIT_STATES.UNIT_STATE_IDLE);
+                }
+                else
+                {
+                    m_map.moveObjectToMap((int)m_mapPos.x, (int)m_mapPos.y, m_transform.position, gameObject);
+                }break;
+            }
             case UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE:
             {
                 GameObject go = m_map.anyEnemyInRadious(transform.position, m_enemyDetectionRadius, m_team);
@@ -396,7 +399,7 @@ public class Unit : MonoBehaviour {
         m_navMeshAgent.SetDestination(position);
         changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
         //DEBERIA DE SER NORMAL PERO NO HAY FORMA DE QUE ATAQUE...
-        changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
+        changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_NORMAL);
     }
     public void goToTarget(GameObject target)
     {
