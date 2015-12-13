@@ -12,6 +12,8 @@ public class ResourcesManager : MonoBehaviour {
     }
     public static int maxResourceTypes = (int)RESOURCES_TYPES.MAX_RESOURCE_TYPES;
 
+    private FeedbackMessagesManager m_feedbackMessagesManager;
+
     [System.Serializable]
     public class Resources
     {
@@ -49,7 +51,7 @@ public class ResourcesManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        m_feedbackMessagesManager = FeedbackMessagesManager.instance;
 	}
 	
 	// Update is called once per frame
@@ -69,5 +71,32 @@ public class ResourcesManager : MonoBehaviour {
     public bool canRemResources(int team, RESOURCES_TYPES type, int value)
     {
         return (currentResources[team].resourcesNum[(int)type] - value) > -1;
+    }
+    public bool haveEnoughResources(Buildng.BUILDING_TYPES building)
+    {
+        switch (building)
+        {
+            case Buildng.BUILDING_TYPES.BUILDING_URBAN_CENTER:
+                if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 200) && !canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 150))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(2));
+                }
+                else if (!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 200))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(0));
+                }
+                else if(!canRemResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 150))
+                {
+                    m_feedbackMessagesManager.showCameraMessage(m_feedbackMessagesManager.getMessage(1));
+                }
+                else
+                {
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_ONE, 200);
+                    remResources(0, RESOURCES_TYPES.RESOURCE_TYPE_TWO, 150);
+                    return true;
+                }
+                return false;
+        }
+        return false;
     }
 }

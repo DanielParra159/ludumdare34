@@ -9,7 +9,8 @@ public class FeedbackMessagesManager : MonoBehaviour {
     
     public enum FEEDBACK_MESSAGES
     {
-        FEEDBACK_MESSAGE_WANTING_GOLD, MAX_FEEDBACK_MESSAGES
+        FEEDBACK_MESSAGE_WANTING_RESOURCE_ONE, FEEDBACK_MESSAGE_WANTING_RESOURCE_TWO, FEEDBACK_MESSAGE_WANTING_RESOURCE_BOTH, 
+        MAX_FEEDBACK_MESSAGES
     }
     public static int maxFeedBackMessages = (int)FEEDBACK_MESSAGES.MAX_FEEDBACK_MESSAGES;
     public enum STATES
@@ -58,10 +59,13 @@ public class FeedbackMessagesManager : MonoBehaviour {
     private bool loadMessages()
     {
         m_messages = new string[maxFeedBackMessages];
-        for (int i = 0; i < maxFeedBackMessages;++i )
+        /*for (int i = 0; i < maxFeedBackMessages;++i )
         {
             m_messages[i] = "Menssage " + i;
-        }
+        }*/
+        m_messages[0] = "You need more GOLD!";
+        m_messages[1] = "You need more BEER!";
+        m_messages[2] = "You need more resources!";
         return true;
     }
 	// Use this for initialization
@@ -84,6 +88,7 @@ public class FeedbackMessagesManager : MonoBehaviour {
     }
     public void showCameraMessage(string message)
     {
+        changeState(STATES.STATE_APPEARING);
         m_cameraText.text = message;
     }
 
@@ -104,19 +109,23 @@ public class FeedbackMessagesManager : MonoBehaviour {
         {
             case STATES.STATE_APPEARING:
                 enabled = true;
-                m_cameraText.CrossFadeAlpha(1.0f, m_appearTime, true);
+                m_cameraText.CrossFadeAlpha(1.0f, m_appearTime, false);
                 m_remainingTime = m_appearTime;
                 break;
             case STATES.STATE_APPEARED:
                 m_remainingTime = m_visibleTime - m_appearTime;
                 break;
             case STATES.STATE_DISAPPEARING:
-                m_cameraText.CrossFadeAlpha(0.0f, m_disappearTime, true);
+                m_cameraText.CrossFadeAlpha(0.0f, m_disappearTime, false);
                 m_remainingTime = m_disappearTime;
                 break;
             case STATES.STATE_DISAPPEARED:
                 enabled = false;
                 break;
         }
+    }
+    public string getMessage(int message)
+    {
+        return m_messages[message];
     }
 }
