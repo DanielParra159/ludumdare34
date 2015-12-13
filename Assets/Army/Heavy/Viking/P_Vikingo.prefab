@@ -804,7 +804,7 @@ Transform:
   m_GameObject: {fileID: 195982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children:
   - {fileID: 22453082}
   - {fileID: 460232}
@@ -2061,15 +2061,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: .300000012
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: .300000012
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
-      value: .300000012
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_attackRange
