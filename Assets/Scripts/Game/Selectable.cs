@@ -90,6 +90,10 @@ public class Selectable : MonoBehaviour {
     {
         m_model.SetActive(true);
         m_selected = true;
+        if (m_selectedSound!=null)
+        {
+            SoundManager.instance.PlaySingleSelectedUnit(m_selectedSound);
+        }
         /*
         
         switch (m_type)
