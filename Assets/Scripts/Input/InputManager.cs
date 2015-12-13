@@ -57,27 +57,27 @@ public class InputManager : MonoBehaviour {
         Vector3 cameraDir = Vector3.zero;
         if (m_left.Contains(m_mousePosition) || Input.GetKey(KeyCode.LeftArrow))
         {
-            cameraDir.x = -1;
+            cameraDir.x = +1;
         }
         else if (m_right.Contains(m_mousePosition) || Input.GetKey(KeyCode.RightArrow))
         {
-            cameraDir.x = +1;
+            cameraDir.x = -1;
         }
         if (m_up.Contains(m_mousePosition) || Input.GetKey(KeyCode.DownArrow))
         {
-            cameraDir.z = -1; 
+            cameraDir.z = +1; 
         }
         else if (m_down.Contains(m_mousePosition) || Input.GetKey(KeyCode.UpArrow))
         {
-            cameraDir.z = +1;
+            cameraDir.z = -1;
         }
         if (Input.GetKey(KeyCode.PageDown) || Input.GetAxis("Mouse ScrollWheel") < 0.0f)
         {
-            cameraDir.y = -1;
+            cameraDir.y = +1;
         }
         else if (Input.GetKey(KeyCode.PageUp) || Input.GetAxis("Mouse ScrollWheel") > 0.0f)
         {
-            cameraDir.y = +1; 
+            cameraDir.y = -1; 
         }
         m_eventMoveCamera.m_dir = cameraDir.normalized;
         m_eventMoveCamera.SendEvent();
