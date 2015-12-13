@@ -6182,6 +6182,7 @@ MonoBehaviour:
     - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
     - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
     - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
+    - {fileID: 169632, guid: eab80bf3be214e741a5a3b348e24936d, type: 2}
     buildingsNumber: 050000000500000005000000050000000500000005000000
   - buildingsPrefab:
     - {fileID: 106898, guid: e0cf25861c413ff47a29d88bed816b34, type: 2}
@@ -6190,6 +6191,7 @@ MonoBehaviour:
     - {fileID: 119610, guid: 54b4d6ede5c2aec438ff3f2a697aa411, type: 2}
     - {fileID: 189168, guid: 80e7a8c26c34d754f9c4038d82d48d2c, type: 2}
     - {fileID: 137800, guid: 61c57beb19d744c41b432322e5b640e3, type: 2}
+    - {fileID: 145366, guid: 4a1d10c7074685d4d821069ceb45dc8d, type: 2}
     buildingsNumber: 050000000500000005000000050000000500000005000000
 --- !u!114 &11468508
 MonoBehaviour:

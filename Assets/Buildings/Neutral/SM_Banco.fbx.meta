@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 7752115832f716f4fa024f8f3882ec0a
+timeCreated: 1450049541
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Barras
+    100002: Barras_1
+    100004: Cartel
+    100006: Chimenea
+    100008: Chimenea_1
+    100010: Cube
+    100012: Cylinder
+    100014: Cylinder_1
+    100016: Cylinder_1_2
+    100018: Cylinder_2
+    100020: Cylinder_2_2
+    100022: Cylinder_2_3
+    100024: Edificio
+    100026: Local
+    100028: Marco_Corto
+    100030: Marco_Largo
+    100032: Physical_Sky
+    100034: Puerta
+    100036: Puerta_2
+    100038: Rotulo
+    100040: //RootNode
+    100042: Texto
+    100044: Texto_2
+    100046: Ventanas
+    100048: Vidrio_Corto
+    100050: Vidrio_Largo
+    100052: Vidrio_Puerta01
+    100054: Vidrio_Puerta02
+    400000: Barras
+    400002: Barras_1
+    400004: Cartel
+    400006: Chimenea
+    400008: Chimenea_1
+    400010: Cube
+    400012: Cylinder
+    400014: Cylinder_1
+    400016: Cylinder_1_2
+    400018: Cylinder_2
+    400020: Cylinder_2_2
+    400022: Cylinder_2_3
+    400024: Edificio
+    400026: Local
+    400028: Marco_Corto
+    400030: Marco_Largo
+    400032: Physical_Sky
+    400034: Puerta
+    400036: Puerta_2
+    400038: Rotulo
+    400040: //RootNode
+    400042: Texto
+    400044: Texto_2
+    400046: Ventanas
+    400048: Vidrio_Corto
+    400050: Vidrio_Largo
+    400052: Vidrio_Puerta01
+    400054: Vidrio_Puerta02
+    2300000: Chimenea
+    2300002: Chimenea_1
+    2300004: Cube
+    2300006: Cylinder
+    2300008: Cylinder_1
+    2300010: Cylinder_1_2
+    2300012: Cylinder_2
+    2300014: Cylinder_2_2
+    2300016: Cylinder_2_3
+    2300018: Edificio
+    2300020: Marco_Corto
+    2300022: Marco_Largo
+    2300024: Puerta_2
+    2300026: Rotulo
+    2300028: Texto_2
+    2300030: Vidrio_Corto
+    2300032: Vidrio_Largo
+    2300034: Vidrio_Puerta01
+    2300036: Vidrio_Puerta02
+    3300000: Chimenea
+    3300002: Chimenea_1
+    3300004: Cube
+    3300006: Cylinder
+    3300008: Cylinder_1
+    3300010: Cylinder_1_2
+    3300012: Cylinder_2
+    3300014: Cylinder_2_2
+    3300016: Cylinder_2_3
+    3300018: Edificio
+    3300020: Marco_Corto
+    3300022: Marco_Largo
+    3300024: Puerta_2
+    3300026: Rotulo
+    3300028: Texto_2
+    3300030: Vidrio_Corto
+    3300032: Vidrio_Largo
+    3300034: Vidrio_Puerta01
+    3300036: Vidrio_Puerta02
+    4300000: Texto_2
+    4300002: Cylinder_2
+    4300004: Cylinder_1
+    4300006: Cylinder
+    4300008: Cylinder_2_2
+    4300010: Cylinder_1_2
+    4300012: Cylinder_2_3
+    4300014: Cube
+    4300016: Vidrio_Largo
+    4300018: Vidrio_Corto
+    4300020: Marco_Corto
+    4300022: Marco_Largo
+    4300024: Vidrio_Puerta01
+    4300026: Vidrio_Puerta02
+    4300028: Puerta_2
+    4300030: Chimenea
+    4300032: Chimenea_1
+    4300034: Edificio
+    4300036: Rotulo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

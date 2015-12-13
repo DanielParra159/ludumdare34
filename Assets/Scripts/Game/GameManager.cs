@@ -224,10 +224,13 @@ public class GameManager : MonoBehaviour {
         {
             case SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL:
 
-                eventShowUnitPanel.m_type = (int)m_typeLeaderUnit.getType();
-                eventShowUnitPanel.m_damage = m_typeLeaderUnit.getDamage();
-                eventShowUnitPanel.m_life = m_typeLeaderUnit.getLife();
-                eventShowUnitPanel.SendEvent();
+                if (m_typeLeaderUnit != null)
+                {
+                    eventShowUnitPanel.m_type = (int)m_typeLeaderUnit.getType();
+                    eventShowUnitPanel.m_damage = m_typeLeaderUnit.getDamage();
+                    eventShowUnitPanel.m_life = m_typeLeaderUnit.getLife();
+                    eventShowUnitPanel.SendEvent();
+                }
 
                 m_selectRect.SetActive(false);
 
