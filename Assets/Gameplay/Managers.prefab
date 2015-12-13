@@ -2952,8 +2952,8 @@ MonoBehaviour:
   currentResources:
   - resourcesNum: 6400000064000000
   - resourcesNum: 6400000064000000
-  resource1: {fileID: 0}
-  resource2: {fileID: 0}
+  resource1: {fileID: 11489630}
+  resource2: {fileID: 11477074}
 --- !u!114 &11455464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5140,8 +5140,8 @@ RectTransform:
   - {fileID: 22425036}
   m_Father: {fileID: 22498844}
   m_RootOrder: 4
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 340, y: 100}
   m_SizeDelta: {x: 550, y: 250}
   m_Pivot: {x: .5, y: .5}
@@ -6044,8 +6044,8 @@ RectTransform:
   - {fileID: 22469404}
   m_Father: {fileID: 22498844}
   m_RootOrder: 7
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 340, y: 100}
   m_SizeDelta: {x: 550, y: 250}
   m_Pivot: {x: .5, y: .5}
@@ -6081,8 +6081,8 @@ RectTransform:
   - {fileID: 22401296}
   m_Father: {fileID: 22498844}
   m_RootOrder: 6
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 340, y: 100}
   m_SizeDelta: {x: 550, y: 250}
   m_Pivot: {x: .5, y: .5}
@@ -6123,8 +6123,8 @@ RectTransform:
   - {fileID: 22462624}
   m_Father: {fileID: 22498844}
   m_RootOrder: 5
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 340, y: 100}
   m_SizeDelta: {x: 550, y: 250}
   m_Pivot: {x: .5, y: .5}
