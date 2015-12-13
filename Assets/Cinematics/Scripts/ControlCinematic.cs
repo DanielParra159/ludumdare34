@@ -7,6 +7,14 @@ public class ControlCinematic : MonoBehaviour {
 	public GameObject canvasCinematico;
 
 
+
+	public void setCanvasCinematico(GameObject myCanvasCinematico){
+	
+			canvasCinematico = myCanvasCinematico;
+
+	}
+
+
 	public void enableCanvasCinematico(){
 
 		canvasCinematico.SetActive(true);
