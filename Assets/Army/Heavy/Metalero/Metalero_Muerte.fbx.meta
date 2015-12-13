@@ -1,0 +1,237 @@
+fileFormatVersion: 2
+guid: 88dbd41077b22344fa9774744e6a4e43
+timeCreated: 1449988293
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Brazo_Dch
+    100002: Brazo_Izq
+    100004: Brazos
+    100006: Cabeza
+    100008: Cabeza_2
+    100010: Cuerpo
+    100012: Mano_Dch
+    100014: Mano_Izq
+    100016: Metalero
+    100018: //RootNode
+    100020: Moon
+    100022: Ojo_Dch
+    100024: Ojo_Izq
+    100026: Oreja_Dch
+    100028: Oreja_Izq
+    100030: Pelo
+    100032: Perilla
+    100034: Physical_Sky
+    100036: Pierna_Dch
+    100038: Pierna_Izq
+    100040: Piernas
+    100042: Shadow_Plane
+    100044: Sky_Null
+    100046: Sun
+    400000: Brazo_Dch
+    400002: Brazo_Izq
+    400004: Brazos
+    400006: Cabeza
+    400008: Cabeza_2
+    400010: Cuerpo
+    400012: Mano_Dch
+    400014: Mano_Izq
+    400016: Metalero
+    400018: //RootNode
+    400020: Moon
+    400022: Ojo_Dch
+    400024: Ojo_Izq
+    400026: Oreja_Dch
+    400028: Oreja_Izq
+    400030: Pelo
+    400032: Perilla
+    400034: Physical_Sky
+    400036: Pierna_Dch
+    400038: Pierna_Izq
+    400040: Piernas
+    400042: Shadow_Plane
+    400044: Sky_Null
+    400046: Sun
+    2300000: Brazo_Dch
+    2300002: Brazo_Izq
+    2300004: Cabeza_2
+    2300006: Cuerpo
+    2300008: Mano_Dch
+    2300010: Mano_Izq
+    2300012: Ojo_Dch
+    2300014: Ojo_Izq
+    2300016: Oreja_Dch
+    2300018: Oreja_Izq
+    2300020: Pelo
+    2300022: Perilla
+    2300024: Pierna_Dch
+    2300026: Pierna_Izq
+    3300000: Brazo_Dch
+    3300002: Brazo_Izq
+    3300004: Cabeza_2
+    3300006: Cuerpo
+    3300008: Mano_Dch
+    3300010: Mano_Izq
+    3300012: Ojo_Dch
+    3300014: Ojo_Izq
+    3300016: Oreja_Dch
+    3300018: Oreja_Izq
+    3300020: Pelo
+    3300022: Perilla
+    3300024: Pierna_Dch
+    3300026: Pierna_Izq
+    4300000: Pierna_Dch
+    4300002: Pierna_Izq
+    4300004: Cuerpo
+    4300006: Pelo
+    4300008: Ojo_Izq
+    4300010: Ojo_Dch
+    4300012: Cabeza_2
+    4300014: Perilla
+    4300016: Oreja_Izq
+    4300018: Oreja_Dch
+    4300020: Brazo_Dch
+    4300022: Mano_Dch
+    4300024: Brazo_Izq
+    4300026: Mano_Izq
+    7400000: Muerte
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Muerte
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Metalero
+        weight: 1
+      - path: Metalero/Cuerpo
+        weight: 1
+      - path: Metalero/Cuerpo/Brazos
+        weight: 1
+      - path: Metalero/Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Metalero/Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Metalero/Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Metalero/Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Metalero/Cuerpo/Cabeza
+        weight: 1
+      - path: Metalero/Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Metalero/Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Metalero/Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Metalero/Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Metalero/Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Metalero/Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Metalero/Cuerpo/Cabeza/Perilla
+        weight: 1
+      - path: Metalero/Piernas
+        weight: 1
+      - path: Metalero/Piernas/Pierna_Dch
+        weight: 1
+      - path: Metalero/Piernas/Pierna_Izq
+        weight: 1
+      - path: Physical_Sky
+        weight: 1
+      - path: Physical_Sky/Shadow_Plane
+        weight: 1
+      - path: Physical_Sky/Sky_Null
+        weight: 1
+      - path: Physical_Sky/Sky_Null/Moon
+        weight: 1
+      - path: Physical_Sky/Sky_Null/Sun
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

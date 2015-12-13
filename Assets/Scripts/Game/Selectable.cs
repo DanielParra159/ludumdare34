@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 using System.Collections;
 
 [RequireComponent(typeof(Team))]
@@ -10,12 +11,11 @@ public class Selectable : MonoBehaviour {
         SELECTABLE_TYPE_UNIT, SELECTABLE_TYPE_BUILDING, SELECTABLE_TYPE_OTHER, MAX_SELECTABLE_TYPES
     }
 
-    public Transform modelTransform;
+    public GameObject m_model;
     public AudioClip m_selectedSound;
     //private static EventPlaySound eventSound; //estatico para que todos los objetos reciclen el evento
 
     private SELECTABLE_TYPES m_type;
-    private Renderer m_model;
     private int m_numOfMaterials;
     private float m_outlineWidth;
     private Color m_origColor;
@@ -37,7 +37,10 @@ public class Selectable : MonoBehaviour {
         m_selected = false;
         //Transform transformTemp = transform.FindChild("Model");
 
-        if (modelTransform != null)
+        //Assert.IsNotNull(m_model, "No has asignado el circulo de seleccion de: " + gameObject.name);
+        m_model.SetActive(false);
+
+        /*if (modelTransform != null)
         {
             m_model = modelTransform.GetComponent<Renderer>();//Se puede reemplazar por una variable publica
         }
@@ -75,7 +78,7 @@ public class Selectable : MonoBehaviour {
                 m_type = SELECTABLE_TYPES.SELECTABLE_TYPE_OTHER;
                 m_origColor = m_model.material.color;
             }
-        }
+        }*/
 	}
 	
 	// Update is called once per frame
@@ -85,15 +88,14 @@ public class Selectable : MonoBehaviour {
 
     public void SetSelected()
     {
+        m_model.SetActive(true);
         m_selected = true;
+        /*
+        
         switch (m_type)
         {
             case SELECTABLE_TYPES.SELECTABLE_TYPE_UNIT:
                 m_model.material.SetFloat("_Outline", m_outlineWidth);
-                /*for (int i = 0; i < numOfMaterials; ++i)
-                {
-                    model.materials[i].SetColor("_OutlineColor", m_teamColor);
-                }*/
                 break;
             case SELECTABLE_TYPES.SELECTABLE_TYPE_BUILDING:
                 this.m_model.material.SetColor("_DiffuseColor", m_teamColor);
@@ -101,19 +103,16 @@ public class Selectable : MonoBehaviour {
             case SELECTABLE_TYPES.SELECTABLE_TYPE_OTHER:
                 this.m_model.material.color = new Color(m_teamColor.r + 0.4f, m_teamColor.g + 0.4f, m_teamColor.b + 0.4f);
                 break;
-        }
+        }*/
     }
     public void SetDeselect()
     {
+        m_model.SetActive(false);
         m_selected = false;
-        switch (m_type)
+        /*switch (m_type)
         {
             case SELECTABLE_TYPES.SELECTABLE_TYPE_UNIT:
                 m_model.material.SetFloat("_Outline", 0.0f);
-                /*for (int i = 0; i < numOfMaterials; ++i)
-                {
-                    model.materials[i].SetColor("_OutlineColor", Color.black);
-                }*/
                 break;
             case SELECTABLE_TYPES.SELECTABLE_TYPE_BUILDING:
                 m_model.material.SetColor("_DiffuseColor", m_origColor);
@@ -121,7 +120,7 @@ public class Selectable : MonoBehaviour {
             case SELECTABLE_TYPES.SELECTABLE_TYPE_OTHER:
                 m_model.material.color = m_origColor;
                 break;
-        }
+        }*/
     }
 
     public bool isSelected()

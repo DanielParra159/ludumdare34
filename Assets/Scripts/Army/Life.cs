@@ -30,11 +30,11 @@ public class Life : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        reset();
+        init();
         m_feedbackMessagesManager = FeedbackMessagesManager.instance;
         m_slider.transform.parent.transform.parent = null;
     }
-    void reset()
+    public void init()
     {
         m_currentLife = m_maxLife;
         if (m_slider)
@@ -55,7 +55,7 @@ public class Life : MonoBehaviour
         }
         if (m_slider)
         {
-            m_slider.transform.parent.position = gameObject.transform.position;
+            m_slider.transform.parent.position = gameObject.transform.position + Vector3.forward * 1.0f;
             m_slider.value = m_currentLife;
         }
     }

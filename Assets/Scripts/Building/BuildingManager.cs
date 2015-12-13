@@ -76,7 +76,7 @@ public class BuildingManager : MonoBehaviour {
         Vector3 center = (endPosition - startPosition);
         center.y += 0.1f;
         Vector3 centerAux = startPosition + center * 0.5f;
-        Bounds selectBounds = new Bounds(centerAux, new Vector3(Mathf.Abs(center.x), 10.0f, Mathf.Abs(center.z)));
+        Bounds selectBounds = new Bounds(centerAux, new Vector3(Mathf.Abs(center.x), 20.0f, Mathf.Abs(center.z)));
         if (selectBounds.size.x < 1.5f || selectBounds.size.z < 1.5f)
         {
             selectBounds.size = selectBounds.size + new Vector3(1.5f, 0.0f, 1.5f);

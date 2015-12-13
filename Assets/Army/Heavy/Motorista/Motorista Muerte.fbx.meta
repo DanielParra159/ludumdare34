@@ -1,0 +1,346 @@
+fileFormatVersion: 2
+guid: 506cacb48caff6442b854b4028d2242d
+timeCreated: 1449988292
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Asiento
+    100002: Brazo_Dch
+    100004: Brazo_Izq
+    100006: Brazos
+    100008: Cabeza
+    100010: Cabeza_2
+    100012: Cadena
+    100014: Chasis
+    100016: Cuerpo
+    100018: Cuerpo_2
+    100020: Cylinder
+    100022: Cylinder_1
+    100024: Cylinder_1_2
+    100026: Cylinder_2
+    100028: Cylinder_2_2
+    100030: Cylinder_3
+    100032: Cylinder_3_2
+    100034: Manillas
+    100036: Mano_Dch
+    100038: Mano_Izq
+    100040: Moto_2
+    100042: Motor
+    100044: Motorista
+    100046: //RootNode
+    100048: Ojo_Dch
+    100050: Ojo_Dch_1
+    100052: Ojo_Izq
+    100054: Oreja_Dch
+    100056: Oreja_Izq
+    100058: Pelo
+    100060: Pierna_Dch
+    100062: Pierna_Izq
+    100064: Piernas
+    100066: Rueda_Frontal
+    100068: Rueda_Trasera
+    100070: Symmetry
+    100072: Torus
+    100074: Torus_1
+    100076: Torus_1_2
+    100078: Torus_2
+    400000: Asiento
+    400002: Brazo_Dch
+    400004: Brazo_Izq
+    400006: Brazos
+    400008: Cabeza
+    400010: Cabeza_2
+    400012: Cadena
+    400014: Chasis
+    400016: Cuerpo
+    400018: Cuerpo_2
+    400020: Cylinder
+    400022: Cylinder_1
+    400024: Cylinder_1_2
+    400026: Cylinder_2
+    400028: Cylinder_2_2
+    400030: Cylinder_3
+    400032: Cylinder_3_2
+    400034: Manillas
+    400036: Mano_Dch
+    400038: Mano_Izq
+    400040: Moto_2
+    400042: Motor
+    400044: Motorista
+    400046: //RootNode
+    400048: Ojo_Dch
+    400050: Ojo_Dch_1
+    400052: Ojo_Izq
+    400054: Oreja_Dch
+    400056: Oreja_Izq
+    400058: Pelo
+    400060: Pierna_Dch
+    400062: Pierna_Izq
+    400064: Piernas
+    400066: Rueda_Frontal
+    400068: Rueda_Trasera
+    400070: Symmetry
+    400072: Torus
+    400074: Torus_1
+    400076: Torus_1_2
+    400078: Torus_2
+    2300000: Asiento
+    2300002: Brazo_Dch
+    2300004: Brazo_Izq
+    2300006: Cabeza_2
+    2300008: Cadena
+    2300010: Chasis
+    2300012: Cuerpo
+    2300014: Cuerpo_2
+    2300016: Cylinder
+    2300018: Cylinder_1
+    2300020: Cylinder_1_2
+    2300022: Cylinder_2
+    2300024: Cylinder_2_2
+    2300026: Cylinder_3
+    2300028: Cylinder_3_2
+    2300030: Mano_Dch
+    2300032: Mano_Izq
+    2300034: Ojo_Dch
+    2300036: Ojo_Dch_1
+    2300038: Ojo_Izq
+    2300040: Oreja_Dch
+    2300042: Oreja_Izq
+    2300044: Pelo
+    2300046: Pierna_Dch
+    2300048: Pierna_Izq
+    2300050: Torus
+    2300052: Torus_1
+    2300054: Torus_1_2
+    2300056: Torus_2
+    3300000: Asiento
+    3300002: Brazo_Dch
+    3300004: Brazo_Izq
+    3300006: Cabeza_2
+    3300008: Cadena
+    3300010: Chasis
+    3300012: Cuerpo
+    3300014: Cuerpo_2
+    3300016: Cylinder
+    3300018: Cylinder_1
+    3300020: Cylinder_1_2
+    3300022: Cylinder_2
+    3300024: Cylinder_2_2
+    3300026: Cylinder_3
+    3300028: Cylinder_3_2
+    3300030: Mano_Dch
+    3300032: Mano_Izq
+    3300034: Ojo_Dch
+    3300036: Ojo_Dch_1
+    3300038: Ojo_Izq
+    3300040: Oreja_Dch
+    3300042: Oreja_Izq
+    3300044: Pelo
+    3300046: Pierna_Dch
+    3300048: Pierna_Izq
+    3300050: Torus
+    3300052: Torus_1
+    3300054: Torus_1_2
+    3300056: Torus_2
+    4300000: Pierna_Dch
+    4300002: Pierna_Izq
+    4300004: Cuerpo
+    4300006: Brazo_Dch
+    4300008: Mano_Dch
+    4300010: Brazo_Izq
+    4300012: Mano_Izq
+    4300014: Pelo
+    4300016: Ojo_Izq
+    4300018: Ojo_Dch
+    4300020: Cabeza_2
+    4300022: Oreja_Izq
+    4300024: Oreja_Dch
+    4300026: Ojo_Dch_1
+    4300028: Cadena
+    4300030: Cylinder_3
+    4300032: Cylinder_1
+    4300034: Cylinder
+    4300036: Cylinder_2
+    4300038: Asiento
+    4300040: Cuerpo_2
+    4300042: Chasis
+    4300044: Cylinder_1_2
+    4300046: Cylinder_2_2
+    4300048: Torus_1
+    4300050: Torus
+    4300052: Cylinder_3_2
+    4300054: Torus_1_2
+    4300056: Torus_2
+    7400000: Muerte
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Muerte
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Manillas
+        weight: 1
+      - path: Manillas/Symmetry
+        weight: 1
+      - path: Manillas/Symmetry/Cylinder_1_2
+        weight: 1
+      - path: Moto_2
+        weight: 1
+      - path: Moto_2/Asiento
+        weight: 1
+      - path: Moto_2/Chasis
+        weight: 1
+      - path: Moto_2/Cuerpo_2
+        weight: 1
+      - path: Motor
+        weight: 1
+      - path: Motor/Cadena
+        weight: 1
+      - path: Motor/Cylinder
+        weight: 1
+      - path: Motor/Cylinder_1
+        weight: 1
+      - path: Motor/Cylinder_2
+        weight: 1
+      - path: Motor/Cylinder_3
+        weight: 1
+      - path: Motorista
+        weight: 1
+      - path: Motorista/Cuerpo
+        weight: 1
+      - path: Motorista/Cuerpo/Brazos
+        weight: 1
+      - path: Motorista/Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Motorista/Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Motorista/Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Motorista/Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Motorista/Cuerpo/Cabeza
+        weight: 1
+      - path: Motorista/Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Motorista/Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Motorista/Cuerpo/Cabeza/Ojo_Dch_1
+        weight: 1
+      - path: Motorista/Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Motorista/Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Motorista/Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Motorista/Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Motorista/Piernas
+        weight: 1
+      - path: Motorista/Piernas/Pierna_Dch
+        weight: 1
+      - path: Motorista/Piernas/Pierna_Izq
+        weight: 1
+      - path: Rueda_Frontal
+        weight: 1
+      - path: Rueda_Frontal/Cylinder_2_2
+        weight: 1
+      - path: Rueda_Frontal/Torus
+        weight: 1
+      - path: Rueda_Frontal/Torus_1
+        weight: 1
+      - path: Rueda_Trasera
+        weight: 1
+      - path: Rueda_Trasera/Cylinder_3_2
+        weight: 1
+      - path: Rueda_Trasera/Torus_1_2
+        weight: 1
+      - path: Rueda_Trasera/Torus_2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

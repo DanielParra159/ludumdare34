@@ -53,6 +53,12 @@ public class Unit : MonoBehaviour {
     protected float m_enemyDetectionRadius = 8.0f;
     protected float m_enemyDetectionRadius2;
 
+    [SerializeField]
+    [Tooltip("Radio de detección sobre los enemigos")]
+    [Range(1,20)]
+    protected float m_dyingTime = 2;
+    protected float m_currentTime;
+
     protected Map m_map;
     protected Vector2 m_mapPos;
     protected GameObject m_target;
@@ -70,6 +76,7 @@ public class Unit : MonoBehaviour {
     protected Buildng buildingToRepair;
     protected StopRepairingBuilding stopRepairingBuilding;
     protected Animator m_animator;
+    protected Life m_life;
 
     void Awake()
     {
@@ -87,9 +94,9 @@ public class Unit : MonoBehaviour {
         TimeManager.registerChangedTime(onTimeChanged);
 
         m_team = gameObject.GetComponent<Team>().m_team;
-        Life lifeTemp = gameObject.GetComponent<Life>();
-        lifeTemp.registerOnDead(onDead);
-        lifeTemp.registerOnDamage(onDamage);
+        m_life = gameObject.GetComponent<Life>();
+        m_life.registerOnDead(onDead);
+        m_life.registerOnDamage(onDamage);
 
         m_selectable = GetComponent<Selectable>();
         m_map = Map.instance;
@@ -104,6 +111,18 @@ public class Unit : MonoBehaviour {
         m_initialized = true;
         m_map = Map.instance;
         m_map.addObjectToMap(m_transform.position, gameObject);
+
+        Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
+        if (m_animator != null)
+        {
+            m_animator.SetBool("dead", false);
+        }
+
+        if (m_life != null)
+        {
+            m_life.gameObject.SetActive(true);
+            m_life.init();
+        }
     }
 
 	// Update is called once per frame
@@ -149,11 +168,11 @@ public class Unit : MonoBehaviour {
     }
     protected void updateGoing()
     {
-        if ( m_navMeshAgent.destination == null )
+        /*if (m_navMeshAgent.pathStatus == NavMeshPathStatus.)
         {
             changeState(UNIT_STATES.UNIT_STATE_IDLE);
         }
-        else
+        else*/
         {
             m_map.moveObjectToMap((int)m_mapPos.x, (int)m_mapPos.y, m_transform.position, gameObject);
         }
@@ -216,7 +235,15 @@ public class Unit : MonoBehaviour {
         }
         changeState(UNIT_STATES.UNIT_STATE_IDLE);
     }
-    protected void updateDying() { }
+    protected void updateDying() {
+        m_currentTime -= Time.deltaTime * TimeManager.currentTimeFactor;
+        if (m_currentTime < 0.0f)
+        {
+            changeState(UNIT_STATES.UNIT_STATE_IDLE);
+            m_initialized = false;
+            gameObject.SetActive(false);
+        }
+    }
     protected void updatePatrolling() 
     {   
         //GITANADA PARA EVITAR LA COORD Y|MODIFICAR PARA HACER UNA COMPROBACIÓN MÁS PROFESIONAL
@@ -259,10 +286,13 @@ public class Unit : MonoBehaviour {
                 }
                 break;
             case UNIT_STATES.UNIT_STATE_DYING:
+                m_map.remObjectToMap((int)m_mapPos.x, (int)m_mapPos.y, gameObject);
                 if (m_animator != null)
                 {
-                    m_animator.SetBool("walking", false);
+                    m_animator.SetBool("dead", true);
                 }
+                m_life.gameObject.SetActive(false);
+                m_currentTime = m_dyingTime;
                 break;
             case UNIT_STATES.UNIT_STATE_PATROLLING:
                 changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
@@ -301,7 +331,8 @@ public class Unit : MonoBehaviour {
     {
         m_navMeshAgent.SetDestination(position);
         changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
-        changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_NORMAL);
+        //DEBERIA DE SER NORMAL PERO NO HAY FORMA DE QUE ATAQUE...
+        changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_AGGRESSIVE);
     }
     public void goToTarget(GameObject target)
     {
@@ -341,6 +372,7 @@ public class Unit : MonoBehaviour {
     public void onDead()
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
+        changeState(UNIT_STATES.UNIT_STATE_DYING);
     }
     public void onPause()
     {
