@@ -322,8 +322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ace401977a36249a3dcf91994f7c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  m_type: 3
   m_meetingPoint: {fileID: 463102}
+  m_radius: 2
 --- !u!114 &11425520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -635,6 +636,10 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_type
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -84,4 +84,10 @@ public class GUIManager : MonoBehaviour {
         Buildng selected = m_buildingManager.isSelectedAnyBuilding();
         selected.GetComponent<UnitSpawn>().buildUnit();
     }
+
+    public void barrackUnits(int unit)
+    {
+        Buildng selected = m_buildingManager.isSelectedAnyBuilding();
+        selected.GetComponent<UnitSpawn>().barrackUnits(unit);
+    }
 }

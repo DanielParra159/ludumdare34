@@ -17,9 +17,6 @@ public class InputManager : MonoBehaviour {
     private static EventMouseClick m_eventMouseClick;
     private static EventMoveCamera m_eventMoveCamera;
 
-    private float m_limitDown;
-    private float m_limitUp;
-
     void OnGUI()
     {
         GUI.Button(m_left, "");

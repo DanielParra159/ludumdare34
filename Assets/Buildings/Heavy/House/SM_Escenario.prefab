@@ -68829,8 +68829,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ace401977a36249a3dcf91994f7c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  m_type: 1
   m_meetingPoint: {fileID: 455244}
+  m_radius: 2
 --- !u!114 &11480592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69065,6 +69066,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

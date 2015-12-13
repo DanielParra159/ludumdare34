@@ -4099,7 +4099,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159722}
-  m_LocalRotation: {x: .58911401, y: -.546142876, z: -.293530703, w: .51818198}
+  m_LocalRotation: {x: .589113951, y: -.546142817, z: -.293530673, w: .51818192}
   m_LocalPosition: {x: -.670719564, y: .503590345, z: -.217572525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12130,7 +12130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160e016507ac28f4c9fe22bbd5e07a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_unitToSpawn: {fileID: 11421286, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
+  m_unitToSpawn: {fileID: 11419854, guid: 4af6ca97c79b7d4458bc0fd1528882d4, type: 2}
 --- !u!114 &11450270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12228,7 +12228,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_unitToSpawn
+      value: 
+      objectReference: {fileID: 11419854, guid: 4af6ca97c79b7d4458bc0fd1528882d4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 179656}
