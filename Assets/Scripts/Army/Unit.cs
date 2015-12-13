@@ -120,7 +120,7 @@ public class Unit : MonoBehaviour {
 
         if (m_life != null)
         {
-            m_life.gameObject.SetActive(true);
+            m_life.SetActive(true);
             m_life.init();
         }
     }
@@ -291,7 +291,7 @@ public class Unit : MonoBehaviour {
                 {
                     m_animator.SetBool("dead", true);
                 }
-                m_life.gameObject.SetActive(false);
+                m_life.SetActive(false);
                 m_currentTime = m_dyingTime;
                 break;
             case UNIT_STATES.UNIT_STATE_PATROLLING:

@@ -137,4 +137,8 @@ public class Life : MonoBehaviour
     {
         m_regeneration = regeneration;
     }
+    public void SetActive(bool active)
+    {
+        m_slider.gameObject.SetActive(active);
+    }
 }
