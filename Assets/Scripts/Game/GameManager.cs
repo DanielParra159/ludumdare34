@@ -361,6 +361,7 @@ public class GameManager : MonoBehaviour {
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_MEETING)
             {
                 m_buildingManager.setMeetingPoint(position);
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
             }
         }
 
@@ -394,10 +395,7 @@ public class GameManager : MonoBehaviour {
                     m_buildingManager.unselectBuilding();
                 }
                 changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
-            } /*if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
-            {
-                //construimos si es posible
-            }*/
+            }
             if (m_typeLeaderBuilding != null)
             {
                 Buildng.BUILDING_TYPES building = m_typeLeaderBuilding.getType();
