@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 27d274dc13e4c954a887fa990be36158
+timeCreated: 1450024210
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Edificio
+    100002: Escaparate01
+    100004: Escaparate02
+    100006: FondoEscaparate
+    100008: Gafas
+    100010: Gafas_1
+    100012: Gafas_2
+    100014: Gafas_2_2
+    100016: Gafas_3
+    100018: Gafas_4
+    100020: Gafas_5
+    100022: Gafas_6
+    100024: Gafas_7
+    100026: Gafas_8
+    100028: Puerta
+    100030: Puerta_2
+    100032: Rotulo
+    100034: Rotulo_2
+    100036: //RootNode
+    100038: Toldo01
+    100040: Toldo02
+    100042: Vidrio_Puerta01
+    100044: Vidrio_Puerta02
+    400000: Edificio
+    400002: Escaparate01
+    400004: Escaparate02
+    400006: FondoEscaparate
+    400008: Gafas
+    400010: Gafas_1
+    400012: Gafas_2
+    400014: Gafas_2_2
+    400016: Gafas_3
+    400018: Gafas_4
+    400020: Gafas_5
+    400022: Gafas_6
+    400024: Gafas_7
+    400026: Gafas_8
+    400028: Puerta
+    400030: Puerta_2
+    400032: Rotulo
+    400034: Rotulo_2
+    400036: //RootNode
+    400038: Toldo01
+    400040: Toldo02
+    400042: Vidrio_Puerta01
+    400044: Vidrio_Puerta02
+    2300000: Edificio
+    2300002: Escaparate01
+    2300004: Escaparate02
+    2300006: FondoEscaparate
+    2300008: Gafas_1
+    2300010: Gafas_2
+    2300012: Gafas_2_2
+    2300014: Gafas_3
+    2300016: Gafas_4
+    2300018: Gafas_5
+    2300020: Gafas_6
+    2300022: Gafas_7
+    2300024: Gafas_8
+    2300026: Puerta_2
+    2300028: Rotulo_2
+    2300030: Toldo01
+    2300032: Toldo02
+    2300034: Vidrio_Puerta01
+    2300036: Vidrio_Puerta02
+    3300000: Edificio
+    3300002: Escaparate01
+    3300004: Escaparate02
+    3300006: FondoEscaparate
+    3300008: Gafas_1
+    3300010: Gafas_2
+    3300012: Gafas_2_2
+    3300014: Gafas_3
+    3300016: Gafas_4
+    3300018: Gafas_5
+    3300020: Gafas_6
+    3300022: Gafas_7
+    3300024: Gafas_8
+    3300026: Puerta_2
+    3300028: Rotulo_2
+    3300030: Toldo01
+    3300032: Toldo02
+    3300034: Vidrio_Puerta01
+    3300036: Vidrio_Puerta02
+    4300000: Vidrio_Puerta01
+    4300002: Vidrio_Puerta02
+    4300004: Puerta_2
+    4300006: Gafas_8
+    4300008: Gafas_7
+    4300010: Gafas_6
+    4300012: Gafas_5
+    4300014: Gafas_4
+    4300016: Gafas_3
+    4300018: Gafas_2
+    4300020: Gafas_1
+    4300022: Gafas_2_2
+    4300024: Rotulo_2
+    4300026: Toldo02
+    4300028: Toldo01
+    4300030: Escaparate01
+    4300032: Escaparate02
+    4300034: FondoEscaparate
+    4300036: Edificio
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

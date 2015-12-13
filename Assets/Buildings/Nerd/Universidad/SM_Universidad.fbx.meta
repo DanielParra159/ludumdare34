@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: ae9f699b90b50ad4390e53d4c1a70dee
+timeCreated: 1450024212
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Chimenea01
+    100002: Chimenea02
+    100004: Chimenea03
+    100006: Chimenea04
+    100008: Chimenea05
+    100010: Columnas
+    100012: Edificio
+    100014: Escaleras
+    100016: Fronton
+    100018: Moon
+    100020: Physical_Sky
+    100022: Portico
+    100024: Puerta
+    100026: Shadow_Plane
+    100028: Sky_Null
+    100030: //RootNode
+    100032: Sun
+    100034: Universidad
+    400000: Chimenea01
+    400002: Chimenea02
+    400004: Chimenea03
+    400006: Chimenea04
+    400008: Chimenea05
+    400010: Columnas
+    400012: Edificio
+    400014: Escaleras
+    400016: Fronton
+    400018: Moon
+    400020: Physical_Sky
+    400022: Portico
+    400024: Puerta
+    400026: Shadow_Plane
+    400028: Sky_Null
+    400030: //RootNode
+    400032: Sun
+    400034: Universidad
+    2300000: Chimenea01
+    2300002: Chimenea02
+    2300004: Chimenea03
+    2300006: Chimenea04
+    2300008: Chimenea05
+    2300010: Columnas
+    2300012: Edificio
+    2300014: Escaleras
+    2300016: Fronton
+    2300018: Puerta
+    3300000: Chimenea01
+    3300002: Chimenea02
+    3300004: Chimenea03
+    3300006: Chimenea04
+    3300008: Chimenea05
+    3300010: Columnas
+    3300012: Edificio
+    3300014: Escaleras
+    3300016: Fronton
+    3300018: Puerta
+    4300000: Escaleras
+    4300002: Columnas
+    4300004: Fronton
+    4300006: Edificio
+    4300008: Puerta
+    4300010: Chimenea01
+    4300012: Chimenea02
+    4300014: Chimenea03
+    4300016: Chimenea04
+    4300018: Chimenea05
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

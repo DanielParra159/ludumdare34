@@ -25,6 +25,7 @@ public class FeedbackMessagesManager : MonoBehaviour {
     [Tooltip("Tiempo que serán visibles los mensajes")]
     [Range(1, 20)]
     public float m_visibleTime;
+    private float m_visibleTimeAux;
     private float m_remainingTime; //tiempo restante del mensaje
     [Tooltip("Componente en el que se muestra el texto")]
     public Text m_cameraTextCenter;
@@ -34,10 +35,10 @@ public class FeedbackMessagesManager : MonoBehaviour {
     public Text m_cameraTextRight;
     private Text m_currentText;
     [Tooltip("Tiempo que tarda en aparecer el texto, alfa = 1")]
-    [Range(1, 5)]
+    [Range(0, 5)]
     public float m_appearTime;
     [Tooltip("Tiempo que tarda en desaparecer el texto, alfa = 0")]
-    [Range(1, 5)]
+    [Range(0, 5)]
     public float m_disappearTime;
     private STATES m_currentState;
     private string [] m_messages; //array con todos los textos, se debe de cargar de algún archivo
@@ -63,6 +64,7 @@ public class FeedbackMessagesManager : MonoBehaviour {
             m_worldMessages.Init();
 
             m_currentText = m_cameraTextCenter;
+            m_visibleTimeAux = m_visibleTime;
         }
         else if (instance != this)
         {
@@ -95,13 +97,24 @@ public class FeedbackMessagesManager : MonoBehaviour {
         }
 	}
 
-    public void showCameraMessage(FEEDBACK_MESSAGES message, POSITIONS position)
+    public void showCameraMessage(FEEDBACK_MESSAGES message, POSITIONS position, bool inf = false)
     {
-        showCameraMessage(m_messages[(int)message], position);
+        showCameraMessage(m_messages[(int)message], position, inf);
     }
-    public void showCameraMessage(string message, POSITIONS position)
+    public void hideCameraMessage()
     {
-        
+        m_currentText.CrossFadeAlpha(0,1,true);
+    }
+    public void showCameraMessage(string message, POSITIONS position, bool inf = false)
+    {
+        if (inf)
+        {
+            m_visibleTimeAux = float.MaxValue;
+        }
+        else
+        {
+            m_visibleTimeAux = m_visibleTime;
+        }
         switch(position)
         {
             case POSITIONS.POSITION_LEFT:
