@@ -32043,14 +32043,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 32.1500015
+  - time: 32.0499992
     functionName: FadeScreenToBlack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 34.9166679
+  - time: 33.9000015
     functionName: enableHUD
     data: 
     objectReferenceParameter: {fileID: 0}
