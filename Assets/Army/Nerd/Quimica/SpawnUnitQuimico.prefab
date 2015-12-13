@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &103746
+--- !u!1 &123856
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 490206}
+  - 4: {fileID: 430544}
   m_Layer: 0
   m_Name: MeetingPoint
   m_TagString: Untagged
@@ -15,61 +15,61 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &144164
+--- !u!1 &149438
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 442070}
-  - 114: {fileID: 11403512}
+  - 4: {fileID: 404688}
+  - 114: {fileID: 11458974}
   m_Layer: 0
-  m_Name: SpawnUnitMetalero
+  m_Name: SpawnUnitQuimico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &442070
+--- !u!4 &404688
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144164}
+  m_GameObject: {fileID: 149438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 57.9000015, y: 0, z: 50.0999985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 490206}
+  - {fileID: 430544}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &490206
+--- !u!4 &430544
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 103746}
+  m_GameObject: {fileID: 123856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.3599997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 442070}
+  m_Father: {fileID: 404688}
   m_RootOrder: 0
---- !u!114 &11403512
+--- !u!114 &11458974
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144164}
+  m_GameObject: {fileID: 149438}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b4bc9f1d6ce1344b780e4c28648cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_unitToSpawn: {fileID: 11453994, guid: 2c9be3d146cef7f469b778ba5be72b0e, type: 2}
+  m_unitToSpawn: {fileID: 11459138, guid: 1e3699ef5c48a424c841ec6055bf0397, type: 2}
   m_remainingTimeToSpawn: 1
-  m_meetingPoint: {fileID: 490206}
+  m_meetingPoint: {fileID: 430544}
   m_spawnType: 0
   m_unitsToSpawnBarracks: []
 --- !u!1001 &100100000
@@ -82,13 +82,9 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_unitToSpawn
       value: 
-      objectReference: {fileID: 11453994, guid: 2c9be3d146cef7f469b778ba5be72b0e,
+      objectReference: {fileID: 11459138, guid: 1e3699ef5c48a424c841ec6055bf0397,
         type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 144164}
+  m_RootGameObject: {fileID: 149438}
   m_IsPrefabParent: 1

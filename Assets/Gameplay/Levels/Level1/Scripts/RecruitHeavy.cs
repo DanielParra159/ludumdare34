@@ -14,6 +14,7 @@ public class RecruitHeavy : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other) {
 			
+			Debug.Log ("Triggeren enter");
 		
 		if (other.tag.Equals("Unit") && !eventStarted  ) {
 			Debug.Log ("entered unit");

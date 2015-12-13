@@ -6,25 +6,22 @@ public class HelpViking : MonoBehaviour {
 	private bool eventStarted = false;
 	private ControlCinematic controlCinematic;
 	public GameObject canvas;
-	public GameObject spawnMetalero;
+	public Sprite vikingRetrato;
 	
-	void Start() {
-		ControlCinematic controlCinematic = gameObject.GetComponent<ControlCinematic> ();
-		controlCinematic.setCanvasCinematico (canvas);
-	}
+
 	void OnTriggerEnter(Collider other) {
-		
+		Debug.Log ("triggered enter");
 		
 		if (other.tag.Equals("Unit") && !eventStarted  ) {
 			Debug.Log ("entered unit");
 			eventStarted = true;
 			
 			canvas.SetActive(true);
-			
+			Image m_image = canvas.transform.Find("Panel/Retrato").GetComponent<Image>();
+			m_image.overrideSprite = vikingRetrato;
 			
 			Text m_texto = canvas.transform.Find("Panel/Texto").GetComponent<Text>();
-			m_texto.text = "BROOOO!! Lets kick some poser's ass!!";
-			
+			m_texto.text = "The fucking junkies man, they stabbed me and took my jacket. Find t them kick their asses, they went south of here";
 			StartCoroutine(disableCanvasOntime());
 			
 		}
@@ -33,10 +30,8 @@ public class HelpViking : MonoBehaviour {
 	IEnumerator disableCanvasOntime()
 	{
 		Debug.Log("Disabling");
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(8f);
 		canvas.SetActive (false);
-		spawnMetalero.SetActive(true);
-		gameObject.SetActive(false);
 		Debug.Log("Disabled");
 		
 		

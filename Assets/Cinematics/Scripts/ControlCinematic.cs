@@ -5,14 +5,47 @@ using UnityEngine.UI;
 public class ControlCinematic : MonoBehaviour {
 
 	public GameObject canvasCinematico;
+	public GameObject HUD;
+	public GameObject MainCamera;
+	private GameObject[] units;
 
 
+	public void destroyUnitsForCinematic()
+	{
+	
+		units = GameObject.FindGameObjectsWithTag ("Unit");
+		foreach (GameObject unit in units) {
+
+			unit.SetActive (false);
+		}
+	}
 
 	public void setCanvasCinematico(GameObject myCanvasCinematico){
 	
 			canvasCinematico = myCanvasCinematico;
 
 	}
+
+	
+	public void enableHUD(){
+		
+		HUD.SetActive(true);
+		
+	}
+
+	public void disableHUD(){
+		
+		HUD.SetActive(false);
+		
+	}
+
+	public void enableMainCamera(){
+		
+		MainCamera.SetActive(true);
+		
+	}
+
+	
 
 
 	public void enableCanvasCinematico(){
@@ -62,14 +95,17 @@ public class ControlCinematic : MonoBehaviour {
 		{
 			Debug.Log ("current alpha: "+alpha);
 			
-			alpha += 0.01f;
+			alpha += 0.02f;
 			c.a = alpha;
 			m_image.color = c;
 			yield return new WaitForSeconds(0.025f);
 		}
 
 		canvasCinematico.SetActive (false);
+		c.a = 0;
+		m_image.color = c;
 		GameObject.Find ("CinemaController").SetActive (false);
+		GameObject.Find ("HUD").SetActive (true);
 	}
 
 
