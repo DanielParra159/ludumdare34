@@ -63,7 +63,7 @@ public class Resource : MonoBehaviour {
     public void addUnit()
     {
         ++m_currentUnitsGetingResources;
-        Assert.IsFalse(m_currentUnitsGetingResources < m_numUnitsGetResourcesAtTime);
+        Assert.IsTrue(m_currentUnitsGetingResources < m_numUnitsGetResourcesAtTime);
     }
     /*
      * La unidd notifica que ya no está cogiendo recursos
@@ -71,6 +71,6 @@ public class Resource : MonoBehaviour {
     public void remUnit()
     {
         --m_currentUnitsGetingResources;
-        Assert.IsFalse(m_currentUnitsGetingResources > -1);
+        Assert.IsTrue(m_currentUnitsGetingResources > -1);
     }
 }

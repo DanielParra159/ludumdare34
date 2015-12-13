@@ -273,29 +273,27 @@ public class Unit : MonoBehaviour {
     protected void updatePatrolling() 
     {   
         //GITANADA PARA EVITAR LA COORD Y|MODIFICAR PARA HACER UNA COMPROBACIÓN MÁS PROFESIONAL
-        if (gameObject.transform.position.x == m_positionInitial.x && gameObject.transform.position.z == m_positionInitial.z)
+        if (m_currentSubState == UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING && m_resourceRecolected.amount > 0)
         {
-            if (m_currentSubState == UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING)
+            //sumamos recursos y volvemos
+            m_navMeshAgent.SetDestination(m_positionFinal);
+            eventAddResource.m_amount = m_resourceRecolected.amount;
+            eventAddResource.m_type = m_resourceRecolected.type;
+            eventAddResource.SendEvent();
+            Color color = Color.green;
+            if (eventAddResource.m_type == ResourcesManager.RESOURCES_TYPES.RESOURCE_TYPE_ONE)
             {
-                //sumamos recursos y volvemos
-                m_navMeshAgent.SetDestination(m_positionFinal);
-                eventAddResource.m_amount = m_resourceRecolected.amount;
-                eventAddResource.m_type = m_resourceRecolected.type;
-                eventAddResource.SendEvent();
-                FeedbackMessagesManager.instance.showWorldMessage(m_transform.position + Vector3.up, "" + m_resourceRecolected.amount);
+                color = Color.yellow;
             }
-            else
-            {
-                m_navMeshAgent.SetDestination(m_positionFinal);
-                //m_navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete;
-            }
+            FeedbackMessagesManager.instance.showWorldMessage(m_transform.position + Vector3.up, "" + m_resourceRecolected.amount, color);
+            m_resourceRecolected.amount = 0;
         }
-        else if (gameObject.transform.position.x == m_positionFinal.x && gameObject.transform.position.z == m_positionFinal.z)
+        else if ((m_positionFinal - gameObject.transform.position).sqrMagnitude < m_radius2)
         {
             if (m_currentSubState == UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING)
             {
                 //esperamos a que nos den los recursos y volvemos
-                if (!m_resourceRecolected.recolecting && m_resourceToRecolect.hasResources() && m_resourceToRecolect.canGetResources())
+                if (m_resourceRecolected.amount < 1 && !m_resourceRecolected.recolecting && m_resourceToRecolect.hasResources() && m_resourceToRecolect.canGetResources())
                 {
                     m_resourceToRecolect.addUnit();
                     m_resourceRecolected.recolecting = true;
@@ -310,6 +308,7 @@ public class Unit : MonoBehaviour {
                         m_resourceRecolected.amount = m_resourceToRecolect.getResources(m_AmountToRecolect);
                         m_resourceRecolected.recolecting = false;
                         m_resourceToRecolect.remUnit();
+                        m_positionInitial = m_positionFinal;
                         m_navMeshAgent.SetDestination(m_positionInitial);
                     }
                 }
@@ -323,6 +322,13 @@ public class Unit : MonoBehaviour {
                 m_navMeshAgent.SetDestination(m_positionInitial);
             }
         }
+        else if ((m_positionInitial-gameObject.transform.position).sqrMagnitude < m_radius2)
+        //if (gameObject.transform.position.x == m_positionInitial.x && gameObject.transform.position.z == m_positionInitial.z)
+        {
+            m_navMeshAgent.SetDestination(m_positionFinal);
+            //m_navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete;
+        }
+        
     }
 
     protected void changeState(UNIT_STATES nextState)

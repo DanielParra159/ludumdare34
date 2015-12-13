@@ -176,6 +176,13 @@ public class ArmyManager : MonoBehaviour {
             m_selectedUnits[i].goToPatrol(position);
         }
     }
+    public void goToRecollect(Vector3 position, Resource resource)
+    {
+        for (int i = 0; i < m_selectedUnits.Count; ++i)
+        {
+            m_selectedUnits[i].goToRecollect(position, resource);
+        }
+    }
     public void goToRepair(Buildng building)
     {
         for (int i = 0; i < m_selectedUnits.Count; ++i)

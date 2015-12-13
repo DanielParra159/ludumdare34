@@ -278,16 +278,20 @@ public class GameManager : MonoBehaviour {
                 //tenemos seleccionado alguna unidad? comprobamos si se ha pulsado sobre una unidad, sobre un edificio o sobre suelo
                 if ((buildingAux = m_buildingManager.isPressedAnyEnemyBuilding(position)) != null)
                 {
-                    //comprobamos el equipo
-                    if (buildingAux.getTeam() == unitAuxPressed.getTeam())
+                    
+                    m_armyManager.goToAttack(buildingAux.getPosition());
+                }
+                else if ((buildingAux = m_buildingManager.isPressedAnyAllyBuilding(position)) != null)
+                {
+                    Resource resourceAux;
+                    //goto
+                    if ((resourceAux = buildingAux.GetComponent<Resource>()) != null)
                     {
-                        //goto
-                        m_armyManager.goTo(position);
+                        m_armyManager.goToRecollect(buildingAux.getPosition(), resourceAux);
                     }
                     else
                     {
-                        //attack
-                        m_armyManager.goToAttack(buildingAux.getPosition());
+                        m_armyManager.goTo(position);
                     }
                 }
                 else if ((unitTargetAux = m_armyManager.isPressedAnyEnemyUnit(position)) != null)
@@ -298,7 +302,9 @@ public class GameManager : MonoBehaviour {
                 {
                     m_armyManager.goTo(position);
                 }
+            
             }
+
             //nos movemos con la selección o movemos el punto de encuentro si es un edificio, además si es un aldeado cancelamos la construcción
             //SI SE HACE LA LINEA DE ABAJO SE PIERDE EL PANEL DE LOS EDIFICIOS SELECCIONADOS AL ASIGNAR UN MEETING POINT
             //changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL); //@todo: se tiene que notificar al aldeano para que cambie su interfaz?
