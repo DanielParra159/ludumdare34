@@ -30,6 +30,8 @@ public class GUIManager : MonoBehaviour {
     [Tooltip("Para añadir los diferentes paneles a activar y desactivar")]
     public GameObject[] panels = null;
 
+    protected int m_toBuild;
+
     void Awake ()
     {
         if (instance == null)
@@ -89,5 +91,15 @@ public class GUIManager : MonoBehaviour {
     {
         Buildng selected = m_buildingManager.isSelectedAnyBuilding();
         selected.GetComponent<UnitSpawn>().barrackUnits(unit);
+    }
+
+    public void build(int building)
+    {
+        m_toBuild = building;
+    }
+    
+    public int getToBuild()
+    {
+        return m_toBuild;
     }
 }

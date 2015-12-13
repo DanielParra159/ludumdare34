@@ -290,6 +290,10 @@ public class GameManager : MonoBehaviour {
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
             {
+                //MOSTRAR REPRESENTACION GRISACEA DEL EDIFICIO A CONSTRUIR
+                //COMPROBAR SI LA ZONA EN LA QUE SE QUIERE COLOCAR ES VÁLIDA
+                m_guiManager.getToBuild();
+                //LLAMAR A JERARQUÍA Y OBTENER UN ELEMENTO DEL TIPO DE EDIFICIO SI QUEDA/CASO CONTRARIO SE CREA UNO
                 //al levantar construiremos
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_MOVE_ATTACKING_WHERE)

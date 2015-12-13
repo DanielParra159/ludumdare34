@@ -380,7 +380,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 496756, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11447014, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: panels.Array.data[4]
