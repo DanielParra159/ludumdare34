@@ -4651,14 +4651,16 @@ MonoBehaviour:
     - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
     - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
     - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
-    buildingsNumber: 0500000005000000050000000500000005000000
+    - {fileID: 135258, guid: 225653d1733408d469ad0c2699d04ce1, type: 2}
+    buildingsNumber: 050000000500000005000000050000000500000005000000
   - buildingsPrefab:
     - {fileID: 196802, guid: 4af6ca97c79b7d4458bc0fd1528882d4, type: 2}
     - {fileID: 162302, guid: 485a0146c4854344586d2303e594d89d, type: 2}
     - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
     - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
     - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
-    buildingsNumber: 0500000005000000050000000500000005000000
+    - {fileID: 135258, guid: 225653d1733408d469ad0c2699d04ce1, type: 2}
+    buildingsNumber: 050000000500000005000000050000000500000005000000
 --- !u!114 &11468508
 MonoBehaviour:
   m_ObjectHideFlags: 1

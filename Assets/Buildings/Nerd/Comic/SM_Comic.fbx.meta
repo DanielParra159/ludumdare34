@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: 34b0b046fd41c724ba187424c3f2d659
+timeCreated: 1450024211
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Barras
+    100002: Barras_1
+    100004: Chimenea
+    100006: Chimenea_1
+    100008: Comics
+    100010: Cylinder
+    100012: Cylinder_1
+    100014: Cylinder_1_2
+    100016: Cylinder_2
+    100018: Cylinder_2_2
+    100020: Cylinder_2_3
+    100022: Edificio
+    100024: Extrude
+    100026: Extrude_2
+    100028: Marco_Corto
+    100030: Marco_Largo
+    100032: Moon
+    100034: Physical_Sky
+    100036: Puerta
+    100038: Puerta_2
+    100040: Rotulo
+    100042: Shadow_Plane
+    100044: Sky_Null
+    100046: //RootNode
+    100048: Sun
+    100050: Toldo
+    100052: Ventanas
+    100054: Vidrio_Corto
+    100056: Vidrio_Largo
+    100058: Vidrio_Puerta01
+    100060: Vidrio_Puerta02
+    400000: Barras
+    400002: Barras_1
+    400004: Chimenea
+    400006: Chimenea_1
+    400008: Comics
+    400010: Cylinder
+    400012: Cylinder_1
+    400014: Cylinder_1_2
+    400016: Cylinder_2
+    400018: Cylinder_2_2
+    400020: Cylinder_2_3
+    400022: Edificio
+    400024: Extrude
+    400026: Extrude_2
+    400028: Marco_Corto
+    400030: Marco_Largo
+    400032: Moon
+    400034: Physical_Sky
+    400036: Puerta
+    400038: Puerta_2
+    400040: Rotulo
+    400042: Shadow_Plane
+    400044: Sky_Null
+    400046: //RootNode
+    400048: Sun
+    400050: Toldo
+    400052: Ventanas
+    400054: Vidrio_Corto
+    400056: Vidrio_Largo
+    400058: Vidrio_Puerta01
+    400060: Vidrio_Puerta02
+    2300000: Chimenea
+    2300002: Chimenea_1
+    2300004: Cylinder
+    2300006: Cylinder_1
+    2300008: Cylinder_1_2
+    2300010: Cylinder_2
+    2300012: Cylinder_2_2
+    2300014: Cylinder_2_3
+    2300016: Edificio
+    2300018: Extrude
+    2300020: Extrude_2
+    2300022: Marco_Corto
+    2300024: Marco_Largo
+    2300026: Puerta_2
+    2300028: Rotulo
+    2300030: Toldo
+    2300032: Vidrio_Corto
+    2300034: Vidrio_Largo
+    2300036: Vidrio_Puerta01
+    2300038: Vidrio_Puerta02
+    3300000: Chimenea
+    3300002: Chimenea_1
+    3300004: Cylinder
+    3300006: Cylinder_1
+    3300008: Cylinder_1_2
+    3300010: Cylinder_2
+    3300012: Cylinder_2_2
+    3300014: Cylinder_2_3
+    3300016: Edificio
+    3300018: Extrude
+    3300020: Extrude_2
+    3300022: Marco_Corto
+    3300024: Marco_Largo
+    3300026: Puerta_2
+    3300028: Rotulo
+    3300030: Toldo
+    3300032: Vidrio_Corto
+    3300034: Vidrio_Largo
+    3300036: Vidrio_Puerta01
+    3300038: Vidrio_Puerta02
+    4300000: Extrude_2
+    4300002: Cylinder_2
+    4300004: Cylinder_1
+    4300006: Cylinder
+    4300008: Cylinder_2_2
+    4300010: Cylinder_1_2
+    4300012: Cylinder_2_3
+    4300014: Extrude
+    4300016: Vidrio_Largo
+    4300018: Vidrio_Corto
+    4300020: Marco_Corto
+    4300022: Marco_Largo
+    4300024: Vidrio_Puerta01
+    4300026: Vidrio_Puerta02
+    4300028: Puerta_2
+    4300030: Toldo
+    4300032: Chimenea
+    4300034: Chimenea_1
+    4300036: Edificio
+    4300038: Rotulo
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
