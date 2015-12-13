@@ -33,6 +33,13 @@ public class ControlCinematic : MonoBehaviour {
 		
 	}
 
+		
+	public void loadLevel(){
+		
+		Application.LoadLevel ("SC_Levels_Richard_01");
+		
+	}
+
 	public void disableHUD(){
 		
 		HUD.SetActive(false);

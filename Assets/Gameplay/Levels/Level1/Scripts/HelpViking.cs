@@ -23,6 +23,10 @@ public class HelpViking : MonoBehaviour {
 			Text m_texto = canvas.transform.Find("Panel/Texto").GetComponent<Text>();
 			m_texto.text = "The fucking junkies man, they stabbed me and took my jacket. Find t them kick their asses, they went south of here";
 			StartCoroutine(disableCanvasOntime());
+
+			Text m_nombre = canvas.transform.Find("Panel/Nombre").GetComponent<Text>();
+			m_nombre.text = "Viking";
+			StartCoroutine(disableCanvasOntime());
 			
 		}
 	}
