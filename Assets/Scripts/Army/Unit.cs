@@ -74,9 +74,26 @@ public class Unit : MonoBehaviour {
 
     protected ReadyToRepairBuilding readyToRepairBuilding;
     protected Buildng buildingToRepair;
+    protected Resource m_resourceToRecolect;
+    public struct STR_RESOURCE{
+        public int amount;
+        public ResourcesManager.RESOURCES_TYPES type;
+        public bool recolecting;
+    };
+    STR_RESOURCE m_resourceRecolected;
+    [SerializeField]
+    [Tooltip("Tiempo que tarda en recolectar")]
+    [Range(1, 10)]
+    protected float m_timeToRecolect;
+    [SerializeField]
+    [Tooltip("Cantidad a recolectar")]
+    [Range(1, 100)]
+    protected int m_AmountToRecolect;
     protected StopRepairingBuilding stopRepairingBuilding;
     protected Animator m_animator;
     protected Life m_life;
+
+    protected static EventAddResource eventAddResource;
 
     void Awake()
     {
@@ -88,12 +105,18 @@ public class Unit : MonoBehaviour {
         m_radius2 = m_radius * m_radius;
         m_enemyDetectionRadius2 = m_enemyDetectionRadius * m_enemyDetectionRadius;
         m_animator = GetComponentInChildren<Animator>();
+
+        
     }
 
 	void Start () {
         TimeManager.registerChangedTime(onTimeChanged);
+        Team teamAux = gameObject.GetComponent<Team>();
+        m_team = teamAux.m_team;
 
-        m_team = gameObject.GetComponent<Team>().m_team;
+        eventAddResource = new EventAddResource();
+        eventAddResource.m_team = teamAux.m_myTeam;
+
         m_life = gameObject.GetComponent<Life>();
         m_life.registerOnDead(onDead);
         m_life.registerOnDamage(onDamage);
@@ -249,12 +272,53 @@ public class Unit : MonoBehaviour {
         //GITANADA PARA EVITAR LA COORD Y|MODIFICAR PARA HACER UNA COMPROBACIÓN MÁS PROFESIONAL
         if (gameObject.transform.position.x == m_positionInitial.x && gameObject.transform.position.z == m_positionInitial.z)
         {
-            m_navMeshAgent.SetDestination(m_positionFinal);
-            //m_navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete;
+            if (m_currentSubState == UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING)
+            {
+                //sumamos recursos y volvemos
+                m_navMeshAgent.SetDestination(m_positionFinal);
+                eventAddResource.m_amount = m_resourceRecolected.amount;
+                eventAddResource.m_type = m_resourceRecolected.type;
+                eventAddResource.SendEvent();
+                FeedbackMessagesManager.instance.showWorldMessage(m_transform.position + Vector3.up, "" + m_resourceRecolected.amount);
+            }
+            else
+            {
+                m_navMeshAgent.SetDestination(m_positionFinal);
+                //m_navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete;
+            }
         }
         else if (gameObject.transform.position.x == m_positionFinal.x && gameObject.transform.position.z == m_positionFinal.z)
         {
-            m_navMeshAgent.SetDestination(m_positionInitial);
+            if (m_currentSubState == UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING)
+            {
+                //esperamos a que nos den los recursos y volvemos
+                if (!m_resourceRecolected.recolecting && m_resourceToRecolect.hasResources() && m_resourceToRecolect.canGetResources())
+                {
+                    m_resourceToRecolect.addUnit();
+                    m_resourceRecolected.recolecting = true;
+                    m_currentTime = m_timeToRecolect;
+                    m_resourceRecolected.type = m_resourceToRecolect.m_type;
+                }
+                else if (m_resourceRecolected.recolecting)
+                {
+                    m_currentTime -= Time.deltaTime * TimeManager.currentTimeFactor;
+                    if (m_currentTime < 0.0f)
+                    {
+                        m_resourceRecolected.amount = m_resourceToRecolect.getResources(m_AmountToRecolect);
+                        m_resourceRecolected.recolecting = false;
+                        m_resourceToRecolect.remUnit();
+                        m_navMeshAgent.SetDestination(m_positionInitial);
+                    }
+                }
+                else if (!m_resourceToRecolect.hasResources())
+                {
+                    goTo(m_positionInitial);
+                }
+            }
+            else
+            {
+                m_navMeshAgent.SetDestination(m_positionInitial);
+            }
         }
     }
 
@@ -353,6 +417,14 @@ public class Unit : MonoBehaviour {
         m_positionInitial = gameObject.transform.position;
         m_positionFinal = position;
         changeState(UNIT_STATES.UNIT_STATE_PATROLLING);
+    }
+    public void goToRecollect(Vector3 position, Resource resource)
+    {
+        m_positionInitial = gameObject.transform.position;
+        m_positionFinal = position;
+        changeState(UNIT_STATES.UNIT_STATE_PATROLLING);
+        changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_RECOLLECTING);
+        m_resourceToRecolect = resource;
     }
     public void goToRepair(Buildng building)
     {

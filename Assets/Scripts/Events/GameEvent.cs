@@ -36,6 +36,13 @@ public class EventSpawnBuilding : GameEvent
     public Vector3 m_position;
     public EventSpawnBuilding() { type = EventManager.EVENTS.EVENT_SPAWN_BUILDING; }
 }
+public class EventAddResource : GameEvent
+{
+    public TeamManager.TEAMS m_team;
+    public ResourcesManager.RESOURCES_TYPES m_type;
+    public int m_amount;
+    public EventAddResource() { type = EventManager.EVENTS.EVENT_ADD_RESOURCE; }
+}
 public class EventActionButtonClicked : GameEvent
 {
     public GUIManager.ACTION_TYPES m_actionType;
