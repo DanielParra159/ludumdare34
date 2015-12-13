@@ -458,7 +458,7 @@ public class GameManager : MonoBehaviour {
     }
     public void moveCamera(Vector3 dir)
     {
-        Camera.main.transform.Translate(dir * Time.deltaTime * m_cameraSpeed);
+        Camera.main.transform.parent.Translate(dir * Time.deltaTime * m_cameraSpeed);
     }
     public void meetingPoint()
     {
