@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: M_Disco_Fuera
+  m_Name: M_Disco_FueraEnemy
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 5
@@ -136,4 +136,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .270697713, g: .908163249, b: .127593189, a: .859335482}
+        second: {r: .908163249, g: .127593204, b: .127593204, a: .859335482}

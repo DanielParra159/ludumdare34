@@ -103,7 +103,7 @@ ModelImporter:
     4300030: Brazo_Izq
     4300032: Mano_Izq
     4300034: Escuadra
-    7400000: C4D Animation Take
+    7400000: Muerte
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -124,7 +124,77 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Muerte
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cuerpo
+        weight: 1
+      - path: Cuerpo/Brazos
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch/Mano_Dch
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Dch/Mano_Dch/Regla
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq/Mano_Izq
+        weight: 1
+      - path: Cuerpo/Brazos/Brazo_Izq/Mano_Izq/Escuadra
+        weight: 1
+      - path: Cuerpo/Cabeza
+        weight: 1
+      - path: Cuerpo/Cabeza/Cabeza_2
+        weight: 1
+      - path: Cuerpo/Cabeza/Gafas
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Ojo_Izq_1
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Dch
+        weight: 1
+      - path: Cuerpo/Cabeza/Oreja_Izq
+        weight: 1
+      - path: Cuerpo/Cabeza/Pelo
+        weight: 1
+      - path: Cuerpo/Pajarita
+        weight: 1
+      - path: Piernas
+        weight: 1
+      - path: Piernas/Pierna_Dch
+        weight: 1
+      - path: Piernas/Pierna_Izq
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
