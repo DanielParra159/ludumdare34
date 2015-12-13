@@ -361,6 +361,8 @@ public class GameManager : MonoBehaviour {
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_MEETING)
             {
                 m_buildingManager.setMeetingPoint(position);
+				changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
+
             }
         }
 

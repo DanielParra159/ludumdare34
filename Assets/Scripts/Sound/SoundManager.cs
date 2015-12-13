@@ -9,7 +9,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource [] m_sfxSources;
     [Tooltip("AudioSource donde se reproduciran los sonidos al seleccionar una unidad")]
     public AudioSource m_sfxSourceSelectedUnit;
-
+    [Tooltip("AudioSource donde se puede reproducir música")]
+    public AudioSource [] m_musicSources;
 
     void Awake()
     {
