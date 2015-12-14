@@ -269,22 +269,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 435568, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: .445676178
-      objectReference: {fileID: 0}
-    - target: {fileID: 435568, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: .548974276
-      objectReference: {fileID: 0}
-    - target: {fileID: 435568, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -.445676327
-      objectReference: {fileID: 0}
-    - target: {fileID: 435568, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: .548974156
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
   m_IsPrefabParent: 0
@@ -403,47 +387,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1542959822 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 178690, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
-  m_PrefabInternal: {fileID: 758877312}
---- !u!114 &1542959823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1542959822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7ce8f35a8dea8342ac91d50f3f638bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_cameraSpeed: 20
 --- !u!1 &2085798217
 GameObject:
   m_ObjectHideFlags: 0
