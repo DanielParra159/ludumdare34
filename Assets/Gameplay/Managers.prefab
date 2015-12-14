@@ -1655,8 +1655,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129226}
-  m_LocalRotation: {x: -1.15202326e-07, y: -.707106709, z: .707106829, w: -1.15202312e-07}
-  m_LocalPosition: {x: 59.2000008, y: 451.399994, z: 42.4000015}
+  m_LocalRotation: {x: -.0103261657, y: -.707031667, z: .707031071, w: -.0103258751}
+  m_LocalPosition: {x: 76.0299988, y: 451.399994, z: 51.0099983}
   m_LocalScale: {x: 1, y: 2.6339488, z: 1}
   m_Children: []
   m_Father: {fileID: 496756}
@@ -1826,7 +1826,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 60.9000015
+  orthographic size: 70.9000015
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -3563,13 +3563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56c7d8132147044fba24c47c71d0469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xCell: 15
-  m_zCell: 10
+  m_xCell: 20
+  m_zCell: 15
   m_xSize: 8
   m_zSize: 8
   m_xFogCell: 4
   m_zFogCell: 4
-  draw: 1
+  draw: 0
   fogQuad: {fileID: 133960, guid: 8488c65c422bafb49b956842762a9bfb, type: 2}
   fogQuadScale: 1.5
 --- !u!114 &11429964
@@ -5134,9 +5134,9 @@ MonoBehaviour:
     m_swordmanRes1: 130
     m_swordmanRes2: 0
     m_archerRes1: 150
-    m_archerRes2: 0
+    m_archerRes2: 50
     m_lancerRes1: 200
-    m_lancerRes2: 0
+    m_lancerRes2: 50
 --- !u!114 &11455464
 MonoBehaviour:
   m_ObjectHideFlags: 1
