@@ -78,8 +78,8 @@ public class FeedbackMessagesManager : MonoBehaviour {
         {
             m_messages[i] = "Menssage " + i;
         }*/
-        m_messages[0] = "You need more GOLD!";
-        m_messages[1] = "You need more BEER!";
+        m_messages[0] = "You need more BEER! Send guitarists to the bar";
+        m_messages[1] = "You need more MONEY!";
         m_messages[2] = "You need more resources!";
         return true;
     }
