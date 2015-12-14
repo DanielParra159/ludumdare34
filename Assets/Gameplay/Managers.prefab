@@ -2517,7 +2517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: House
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11403364
 MonoBehaviour:
@@ -2760,7 +2760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Stop
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11410002
 MonoBehaviour:
@@ -2774,7 +2774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Move & Attack
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11411064
 MonoBehaviour:
@@ -3548,7 +3548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Tower
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11429744
 MonoBehaviour:
@@ -3561,8 +3561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56c7d8132147044fba24c47c71d0469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xCell: 12
-  m_zCell: 6
+  m_xCell: 15
+  m_zCell: 10
   m_xSize: 8
   m_zSize: 8
   m_xFogCell: 4
@@ -3582,7 +3582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Viking
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11430144
 MonoBehaviour:
@@ -3750,7 +3750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Poser (Constructor)
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11433290
 MonoBehaviour:
@@ -3848,7 +3848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Repair
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11434412
 MonoBehaviour:
@@ -3973,7 +3973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Rocker
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11436526
 MonoBehaviour:
@@ -4014,7 +4014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Harder Rock
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11438206
 MonoBehaviour:
@@ -4250,7 +4250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Bike shop (Upgrade center)
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11441508
 MonoBehaviour:
@@ -4834,7 +4834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Patrol
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11448536
 MonoBehaviour:
@@ -4880,7 +4880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Rally Point
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11450482
 MonoBehaviour:
@@ -5924,7 +5924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Rally Point
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11466318
 MonoBehaviour:
@@ -6530,7 +6530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Move & Attack
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11472310
 MonoBehaviour:
@@ -6667,7 +6667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Spiked bike
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11473906
 MonoBehaviour:
@@ -6887,7 +6887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Build
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11479178
 MonoBehaviour:
@@ -6948,7 +6948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Music shop (Barracks)
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11480716
 MonoBehaviour:
@@ -7009,7 +7009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Beer (Resources)
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11482410
 MonoBehaviour:
@@ -7087,7 +7087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Stop
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11483902
 MonoBehaviour:
@@ -7197,7 +7197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Rider
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11486242
 MonoBehaviour:
@@ -7934,7 +7934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: SkullRocker (Urban Center)
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11499640
 MonoBehaviour:
@@ -7975,7 +7975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Patrol
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11499880
 MonoBehaviour:
@@ -7989,7 +7989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Steel Axe
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11499930
 MonoBehaviour:
