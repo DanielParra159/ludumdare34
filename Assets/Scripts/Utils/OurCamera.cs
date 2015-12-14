@@ -39,7 +39,7 @@ public class OurCamera : MonoBehaviour {
     {
         Camera.main.transform.parent.Translate(dir * Time.deltaTime * m_cameraSpeed);
         if(dir.y < 0){
-            if(Camera.main.transform.parent.position.y < 20)
+            if (Camera.main.transform.parent.position.y < m_valoresLimiteEyeY.m_limiteBajo)
             {
                 Camera.main.transform.parent.position = new Vector3(Camera.main.transform.parent.position.x,
                                                                     m_valoresLimiteEyeY.m_limiteBajo,
@@ -49,7 +49,7 @@ public class OurCamera : MonoBehaviour {
         }
         else if(dir.y > 0)
         {
-            if(Camera.main.transform.parent.position.y > 30)
+            if (Camera.main.transform.parent.position.y > m_valoresLimiteEyeY.m_limiteAlto)
             {
                 Camera.main.transform.parent.position = new Vector3(Camera.main.transform.parent.position.x,
                                                                     m_valoresLimiteEyeY.m_limiteAlto,
