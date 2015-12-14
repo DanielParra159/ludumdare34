@@ -6553,8 +6553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_unitToSpawn: {fileID: 0}
   m_remainingTimeToSpawn: 10
-  m_meetingPoint: {fileID: 403446, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
-  m_spawnType: 0
+  m_meetingPoint: {fileID: 425870}
+  m_spawnType: 1
   m_unitsToSpawnBarracks:
   - {fileID: 11453994, guid: 2c9be3d146cef7f469b778ba5be72b0e, type: 2}
   - {fileID: 11417894, guid: 35912fefde9a53344812161a2c184c28, type: 2}
@@ -6885,6 +6885,14 @@ Prefab:
       propertyPath: m_type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_spawnType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_meetingPoint
+      value: 
+      objectReference: {fileID: 425870}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135258}
