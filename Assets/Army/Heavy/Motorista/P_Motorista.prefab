@@ -2518,7 +2518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_model: {fileID: 184118}
-  m_selectedSound: {fileID: 0}
+  m_selectedSound: {fileID: 8300000, guid: cfbc0c0807d44a44789b1daed66f495e, type: 3}
 --- !u!114 &11486860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2772,6 +2772,10 @@ Prefab:
       propertyPath: m_delayBetweenAttacks
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_selectedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: cfbc0c0807d44a44789b1daed66f495e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135428}

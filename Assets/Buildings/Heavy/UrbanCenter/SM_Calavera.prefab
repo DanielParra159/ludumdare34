@@ -6457,7 +6457,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117870}
-  m_LocalRotation: {x: .589113951, y: -.546142817, z: -.293530673, w: .51818192}
+  m_LocalRotation: {x: .58911401, y: -.546142876, z: -.293530703, w: .51818198}
   m_LocalPosition: {x: -.670719564, y: .503590345, z: -.217572525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12882,6 +12882,8 @@ MonoBehaviour:
   m_maxLife: 100
   m_regeneration: 0
   m_yPositionOfDamageMessage: 1
+  m_onDamageSound: {fileID: 0}
+  m_onDeadSound: {fileID: 0}
   m_slider: {fileID: 11478662}
 --- !u!114 &11455236
 MonoBehaviour:
@@ -13030,7 +13032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_model: {fileID: 171404}
-  m_selectedSound: {fileID: 0}
+  m_selectedSound: {fileID: 8300000, guid: cfbc0c0807d44a44789b1daed66f495e, type: 3}
 --- !u!114 &11488702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13236,6 +13238,10 @@ Prefab:
       propertyPath: m_model
       value: 
       objectReference: {fileID: 171404}
+    - target: {fileID: 0}
+      propertyPath: m_selectedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: cfbc0c0807d44a44789b1daed66f495e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196802}

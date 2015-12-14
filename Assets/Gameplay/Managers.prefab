@@ -572,6 +572,8 @@ GameObject:
   - 222: {fileID: 22203218}
   - 114: {fileID: 11458762}
   - 114: {fileID: 11415034}
+  - 114: {fileID: 11476540}
+  - 114: {fileID: 11459808}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -2673,7 +2675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 2000
 --- !u!114 &11406572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3507,7 +3509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  text: Texto prueba
+  text: Repair
   color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11427382
 MonoBehaviour:
@@ -5567,6 +5569,20 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &11459808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db46f5910177702488ab486585c861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  text: Calcel
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11459816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6824,7 +6840,54 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 2000
+--- !u!114 &11476540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11459808}
+          m_MethodName: OnMouseEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11459808}
+          m_MethodName: OnMouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &11477074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8725,8 +8788,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -33, y: -3.81469999e-06}
-  m_SizeDelta: {x: 65, y: 50}
+  m_AnchoredPosition: {x: 23.1000004, y: -3.81469999e-06}
+  m_SizeDelta: {x: 177.199997, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22415946
 RectTransform:
@@ -9647,8 +9710,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -33, y: -3.81469999e-06}
-  m_SizeDelta: {x: 65, y: 50}
+  m_AnchoredPosition: {x: 23.1000004, y: -3.81469999e-06}
+  m_SizeDelta: {x: 177.199997, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22483614
 RectTransform:
