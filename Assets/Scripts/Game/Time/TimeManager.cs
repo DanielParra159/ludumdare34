@@ -23,18 +23,18 @@ public class TimeManager : MonoBehaviour {
     void Awake()
     {
         Assert.AreEqual((int)TIME_FACTORS.MAX_TIME_FACTORS, m_timeFactors.Length, "Factores de tiempo no asignados");
-        if (TimeManager.instance == null)
+        //if (TimeManager.instance == null)
         {
             TimeManager.instance = this;
-            DontDestroyOnLoad(instance);
+        //    DontDestroyOnLoad(instance);
 
             TimeManager.currentTimeFactor = m_timeFactors[(int)currentFactor];
 
         }
-        else if (instance != this)
+        /*else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 
     public static void increasesSpeed()

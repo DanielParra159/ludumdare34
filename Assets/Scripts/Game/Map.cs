@@ -27,10 +27,10 @@ public class Map : MonoBehaviour {
 
     void Awake()
     {
-        if (instance == null)
+        //if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+        //    DontDestroyOnLoad(instance);
 
             execution = true;
 
@@ -79,10 +79,10 @@ public class Map : MonoBehaviour {
                 position.x += fogQuadScale;
             }
         }
-        else if (instance != this)
+        /*else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 	// Use this for initialization
 	void Start () {

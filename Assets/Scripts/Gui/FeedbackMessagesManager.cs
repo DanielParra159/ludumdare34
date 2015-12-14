@@ -54,10 +54,10 @@ public class FeedbackMessagesManager : MonoBehaviour {
         Assert.IsNotNull(m_cameraTextLeft, "Componente Text no asignado en FeedbackMessagesManager");
         Assert.IsNotNull(m_cameraTextRight, "Componente Text no asignado en FeedbackMessagesManager");
         
-        if (instance == null)
+       // if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+        //    DontDestroyOnLoad(instance);
             
             loadMessages();
             m_worldMessages = new PoolManager(m_prefabWoldMessage, m_numWoldMessage);
@@ -66,10 +66,10 @@ public class FeedbackMessagesManager : MonoBehaviour {
             m_currentText = m_cameraTextCenter;
             m_visibleTimeAux = m_visibleTime;
         }
-        else if (instance != this)
+        /*else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
     private bool loadMessages()
     {

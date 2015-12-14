@@ -41,15 +41,15 @@ public class ArmyManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        if (instance == null)
+        //if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+         //   DontDestroyOnLoad(instance);
         }
-        else if (instance != this)
+        /*else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
 	}
 
     void Start()

@@ -71,16 +71,16 @@ public class ResourcesManager : MonoBehaviour {
         Assert.IsTrue(currentResources[1].resourcesNum.Length == maxResourceTypes, "Tama�o de currentResources[1] distinto a maxResourceTypes");
         Assert.IsNotNull(resource1, "resource1 no asignado");
         Assert.IsNotNull(resource2, "resource1 no asignado");
-        if (instance == null)
+        //if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+         //   DontDestroyOnLoad(instance);
 
         }
-        else if (instance != this)
+        /*else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 
 	// Use this for initialization

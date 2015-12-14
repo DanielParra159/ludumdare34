@@ -28,10 +28,10 @@ public class InputManager : MonoBehaviour {
 
     void Awake()
     {
-        if (instance == null)
+       // if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+         //   DontDestroyOnLoad(instance);
 
             m_eventMouseClick = new EventMouseClick();
             m_eventMoveCamera = new EventMoveCamera();
@@ -43,10 +43,10 @@ public class InputManager : MonoBehaviour {
 
             m_actionRect = new Rect(new Vector2(0, 0), new Vector2(Screen.width, Screen.height - Screen.height * 0.26f));
         }
-        else if (instance != this)
+       /* else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 
 	

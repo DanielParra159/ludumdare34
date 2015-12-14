@@ -11,7 +11,7 @@ using System.Collections;
 [RequireComponent(typeof(SoundManager))]
 [RequireComponent(typeof(GUIManager))]
 [RequireComponent(typeof(Map))]
-[RequireComponent(typeof(ResourcesManager))]
+
 
 public class GameManager : MonoBehaviour {
 
@@ -66,10 +66,10 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        if (instance == null)
+        //if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+        //    DontDestroyOnLoad(instance);
 
             m_lastState = m_currentState;
             m_lastSubLevelState = m_currentSubLevelState;
@@ -77,10 +77,10 @@ public class GameManager : MonoBehaviour {
             eventShowUnitPanel = new EventShowUnitPanel();
             eventHidUnitPanel = new EventHideUnitPanel();
         }
-        else if (instance != this)
+       /* else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
         for (int i = 0; i < m_inBuildProcess.Length; ++i )
         {
             m_inBuildProcess[i] = Instantiate<GameObject>(m_inBuildProcess[i]);
