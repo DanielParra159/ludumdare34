@@ -1708,9 +1708,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552a6fd3bfcc5cb4ab603d0288bc364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damage: 35
+  m_damage: 15
   m_delayBetweenAttacks: 3
-  m_attackRange: 8
+  m_attackRange: 6
+  m_onAttackSound: {fileID: 0}
 --- !u!114 &11417894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1795,6 +1796,8 @@ MonoBehaviour:
   m_maxLife: 100
   m_regeneration: 0
   m_yPositionOfDamageMessage: 1
+  m_onDamageSound: {fileID: 0}
+  m_onDeadSound: {fileID: 0}
   m_slider: {fileID: 11451252}
 --- !u!114 &11451252
 MonoBehaviour:
@@ -2073,7 +2076,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_attackRange
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
@@ -2081,7 +2084,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_damage
-      value: 35
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_delayBetweenAttacks
