@@ -1019,27 +1019,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 11429744, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_xCell
@@ -1048,6 +1048,98 @@ Prefab:
     - target: {fileID: 11429744, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_zCell
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432138, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Poser (Constructor)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449082, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Rally Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 11477586, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Build
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499858, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Patrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 11407670, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410002, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Move & Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433600, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Repair
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447126, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Patrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482804, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 11472226, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Move & Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499112, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: SkullRocker (Urban Center)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402196, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: House
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480484, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Music shop (Barracks)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440868, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Bike shop (Upgrade center)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428608, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482004, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Beer (Resources)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436282, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Rocker
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429964, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Viking
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485476, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Rider
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465892, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Rally Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438106, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Harder Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499880, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Steel Axe
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473782, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: text
+      value: Spiked bike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
@@ -11450,7 +11542,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481464, guid: c64eb83b107ce2241b9f141eb89b23e9, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.707106888
+      value: -.690882444
       objectReference: {fileID: 0}
     - target: {fileID: 481464, guid: c64eb83b107ce2241b9f141eb89b23e9, type: 2}
       propertyPath: m_LocalRotation.z
@@ -11458,11 +11550,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481464, guid: c64eb83b107ce2241b9f141eb89b23e9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .707106769
+      value: .722967088
       objectReference: {fileID: 0}
     - target: {fileID: 481464, guid: c64eb83b107ce2241b9f141eb89b23e9, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c64eb83b107ce2241b9f141eb89b23e9, type: 2}
