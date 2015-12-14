@@ -703,7 +703,6 @@ GameObject:
   - 114: {fileID: 11417684}
   - 114: {fileID: 11461164}
   - 114: {fileID: 11480848}
-  - 114: {fileID: 11444424}
   m_Layer: 0
   m_Name: P_Musica
   m_TagString: Untagged
@@ -6566,20 +6565,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11444424
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4334fe05fa1c15448e138687dd15f9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_maxNumOfResources: 1000
-  m_type: 0
-  m_numUnitsGetResourcesAtTime: 5
 --- !u!114 &11461164
 MonoBehaviour:
   m_ObjectHideFlags: 1
