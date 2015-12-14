@@ -314,7 +314,13 @@ public class GameManager : MonoBehaviour {
                 {
                     m_armyManager.goTo(position);
                 }
+
+            } 
             
+            if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD)
+            {
+                changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_CHOOSE_TO_BUILD);
+                m_inBuildProcess[(int)m_typeBuilding].SetActive(false);
             }
 
             //nos movemos con la selección o movemos el punto de encuentro si es un edificio, además si es un aldeado cancelamos la construcción

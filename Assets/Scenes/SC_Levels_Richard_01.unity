@@ -1019,27 +1019,47 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 70
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468306, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: buildingPrefabs.Array.data[0].buildingsPrefab.Array.data[6]
+      value: 
+      objectReference: {fileID: 164054, guid: 90921613677f140429191d66dfb0c318, type: 2}
+    - target: {fileID: 2086848, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: orthographic size
+      value: 60.9000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 403664, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 59.2000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 403664, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 42.4000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 403664, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.6339488
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}

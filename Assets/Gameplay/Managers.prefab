@@ -1656,8 +1656,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129226}
   m_LocalRotation: {x: -1.15202326e-07, y: -.707106709, z: .707106829, w: -1.15202312e-07}
-  m_LocalPosition: {x: 79.6999969, y: 451.399994, z: 50.7900009}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 59.2000008, y: 451.399994, z: 42.4000015}
+  m_LocalScale: {x: 1, y: 2.6339488, z: 1}
   m_Children: []
   m_Father: {fileID: 496756}
   m_RootOrder: 12
@@ -1826,7 +1826,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 81.1999969
+  orthographic size: 60.9000015
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -6221,7 +6221,7 @@ MonoBehaviour:
     - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
     - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
     - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
-    - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
+    - {fileID: 164054, guid: 90921613677f140429191d66dfb0c318, type: 2}
     buildingsNumber: 05000000050000000500000005000000050000000500000005000000
   - buildingsPrefab:
     - {fileID: 106898, guid: e0cf25861c413ff47a29d88bed816b34, type: 2}
