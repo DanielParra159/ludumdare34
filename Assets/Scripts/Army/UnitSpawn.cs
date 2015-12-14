@@ -20,7 +20,7 @@ public class UnitSpawn : MonoBehaviour {
 
     public Unit[] m_unitsToSpawnBarracks;
 
-    public ResourcesManager m_resourceManager;
+    private ResourcesManager m_resourceManager;
 
     void Start()
     {
