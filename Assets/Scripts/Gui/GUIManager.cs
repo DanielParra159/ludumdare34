@@ -32,8 +32,9 @@ public class GUIManager : MonoBehaviour {
     [Tooltip("Para añadir los diferentes paneles a activar y desactivar")]
     public GameObject[] panels = null;
     [Tooltip("Para añadir los diferentes paneles de las unidades para activar y desactivar")]
-    public GameManager[] unitsPanels;
-    public Image[] unitsImage;
+    public GameObject unitsPanel;
+    private GameObject currentUnitsPanels;
+    public Sprite[] unitsImage;
 
     public GameObject m_meetingPoint;
 
@@ -43,7 +44,7 @@ public class GUIManager : MonoBehaviour {
         {
             instance = this;
             DontDestroyOnLoad(instance);
-
+            currentUnitsPanels = unitsPanel;
         }
         else if (instance != this)
         {
@@ -103,12 +104,41 @@ public class GUIManager : MonoBehaviour {
         Buildng selected = m_buildingManager.isSelectedAnyBuilding();
         selected.GetComponent<UnitSpawn>().barrackUnits(unit);
     }
-    public void showUnitPanel(int unit)
+    public void showUnitPanel(int unit, int damage, int life)
     {
-        unitsPanels[unit].transform.GetChild(0).GetComponent<Image>().sprite = unitsImage[unit].sprite;
+        currentUnitsPanels.SetActive(false);
+        for (int i = 0; i < unitsPanel.transform.childCount; ++i )
+        {
+            if (unitsPanel.transform.GetChild(i).name.Equals("UnitImage"))
+            {
+                unitsPanel.transform.GetChild(i).GetComponent<Image>().sprite = unitsImage[unit];
+            }
+            else if (unitsPanel.transform.GetChild(i).name.Equals("PanelDamage"))
+            {
+                for (int j = 0; j < unitsPanel.transform.GetChild(i).childCount; ++j)
+                {
+                    if (unitsPanel.transform.GetChild(i).GetChild(j).name.Equals("Text"))
+                    {
+                        unitsPanel.transform.GetChild(i).GetChild(j).GetComponent<Text>().text = "" + damage;
+                    }
+                }
+            }
+            else if (unitsPanel.transform.GetChild(i).name.Equals("PanelLife"))
+            {
+                for (int j = 0; j < unitsPanel.transform.GetChild(i).childCount; ++j)
+                {
+                    if (unitsPanel.transform.GetChild(i).GetChild(j).name.Equals("Text"))
+                    {
+                        unitsPanel.transform.GetChild(i).GetChild(j).GetComponent<Text>().text = "" + life;
+                    }
+                }
+            }
+        }
+        unitsPanel.SetActive(true);
+        currentUnitsPanels = unitsPanel;
     }
     public void hideUnitPanel()
     {
-
+        currentUnitsPanels.SetActive(false);
     }
 }

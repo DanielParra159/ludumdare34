@@ -58,4 +58,8 @@ public class Attack : MonoBehaviour {
     {
         return m_currentTime < 0.0f;
     }
+    public int getDamage()
+    {
+        return (int)m_damage;
+    }
 }

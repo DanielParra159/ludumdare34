@@ -72,3 +72,14 @@ public class EventMeetingPointClicked : GameEvent
 {
     public EventMeetingPointClicked() { type = EventManager.EVENTS.EVENT_MEETING_POINT; }
 }
+public class EventShowUnitPanel : GameEvent
+{
+    public int m_type;
+    public int m_damage;
+    public int m_life;
+    public EventShowUnitPanel() { type = EventManager.EVENTS.EVENT_SHOW_UNIT_PANEL; }
+}
+public class EventHideUnitPanel : GameEvent
+{
+    public EventHideUnitPanel() { type = EventManager.EVENTS.EVENT_HIDE_UNIT_PANEL; }
+}

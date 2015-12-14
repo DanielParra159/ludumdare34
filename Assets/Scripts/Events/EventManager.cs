@@ -16,6 +16,8 @@ public class EventManager {
         EVENT_STOP_REPAIRING,
         EVENT_MOVE_CAMERA,
         EVENT_MEETING_POINT,
+        EVENT_SHOW_UNIT_PANEL,
+        EVENT_HIDE_UNIT_PANEL,
 		MAX_EVENTS
 	};
 
@@ -114,6 +116,12 @@ public class EventManager {
         {
             EventMeetingPointClicked meetingPointClicked = (EventMeetingPointClicked)hEvent;
             gameManager.meetingPoint();
+            break;
+        }
+            case EVENTS.EVENT_SHOW_UNIT_PANEL:
+        {
+            EventShowUnitPanel eventShowUnitPanel = (EventShowUnitPanel)hEvent;
+            GUIManager.instance.showUnitPanel(eventShowUnitPanel.m_type, eventShowUnitPanel.m_damage, eventShowUnitPanel.m_life);
             break;
         }
 		}

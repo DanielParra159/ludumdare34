@@ -519,6 +519,14 @@ public class Unit : MonoBehaviour {
     {
         return m_enemyDetectionRadius2;
     }
+    public int getDamage()
+    {
+        return m_attack.getDamage();
+    }
+    public int getLife()
+    {
+        return (int)m_life.getLife();
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
