@@ -34,6 +34,7 @@ public class EventSpawnBuilding : GameEvent
     public TeamManager.TEAMS m_team;
     public Buildng.BUILDING_TYPES m_type;
     public Vector3 m_position;
+    public Quaternion m_rotation;
     public EventSpawnBuilding() { type = EventManager.EVENTS.EVENT_SPAWN_BUILDING; }
 }
 public class EventAddResource : GameEvent

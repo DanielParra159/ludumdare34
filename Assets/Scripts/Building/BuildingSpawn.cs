@@ -16,6 +16,7 @@ public class BuildingSpawn : MonoBehaviour {
 	void Update () {
         m_eventSpawnBuilding = new EventSpawnBuilding();
         m_eventSpawnBuilding.m_position = transform.position;
+        m_eventSpawnBuilding.m_rotation = transform.rotation;
         m_eventSpawnBuilding.m_team = m_unitToSpawn.GetComponent<Team>().m_myTeam;
         m_eventSpawnBuilding.m_type = m_unitToSpawn.getType();
         m_eventSpawnBuilding.SendEvent();

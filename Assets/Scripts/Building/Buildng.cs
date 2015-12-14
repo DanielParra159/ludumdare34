@@ -151,6 +151,10 @@ public class Buildng : MonoBehaviour
         m_meetingPoint.position = position;
     }
 
+    public void setRotation(Quaternion rotation)
+    {
+        m_transform.rotation = rotation;
+    }
     public void setPosition(Vector3 position)
     {
         m_transform.position = position;

@@ -154,4 +154,13 @@ public class BuildingManager : MonoBehaviour {
         buildingAux.setPosition(position);
         buildings[teamAux].Add(buildingAux);
     }
+    public void spawnBuilding(TeamManager.TEAMS team, Buildng.BUILDING_TYPES type, Vector3 position, Quaternion rotation)
+    {
+        int teamAux = (int)team;
+        Buildng buildingAux = poolOfBuildings[teamAux][(int)type].getObject(true).GetComponent<Buildng>();
+        buildingAux.init();
+        buildingAux.setPosition(position);
+        buildingAux.setRotation(rotation);
+        buildings[teamAux].Add(buildingAux);
+    }
 }

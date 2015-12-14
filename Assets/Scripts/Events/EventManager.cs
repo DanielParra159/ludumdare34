@@ -73,7 +73,7 @@ public class EventManager {
             case EVENTS.EVENT_SPAWN_BUILDING:
         {
             EventSpawnBuilding eventSpawnBuilding = (EventSpawnBuilding)hEvent;
-            buildingManager.spawnBuilding(eventSpawnBuilding.m_team, eventSpawnBuilding.m_type, eventSpawnBuilding.m_position);
+            buildingManager.spawnBuilding(eventSpawnBuilding.m_team, eventSpawnBuilding.m_type, eventSpawnBuilding.m_position, eventSpawnBuilding.m_rotation);
             break;
         }
             case EVENTS.EVENT_ADD_RESOURCE:
