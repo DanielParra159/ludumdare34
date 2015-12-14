@@ -1015,7 +1015,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 496756, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_AnchorMin.y
@@ -1040,106 +1040,6 @@ Prefab:
     - target: {fileID: 22432036, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
       propertyPath: m_SizeDelta.y
       value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 11429744, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: m_xCell
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 11429744, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: m_zCell
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11432138, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Poser (Constructor)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11449082, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Rally Point
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477586, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Build
-      objectReference: {fileID: 0}
-    - target: {fileID: 11499858, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Patrol
-      objectReference: {fileID: 0}
-    - target: {fileID: 11407670, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Stop
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410002, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Move & Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 11433600, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Repair
-      objectReference: {fileID: 0}
-    - target: {fileID: 11447126, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Patrol
-      objectReference: {fileID: 0}
-    - target: {fileID: 11482804, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Stop
-      objectReference: {fileID: 0}
-    - target: {fileID: 11472226, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Move & Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 11499112, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: SkullRocker (Urban Center)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11402196, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: House
-      objectReference: {fileID: 0}
-    - target: {fileID: 11480484, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Music shop (Barracks)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11440868, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Bike shop (Upgrade center)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11428608, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 11482004, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Beer (Resources)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436282, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Rocker
-      objectReference: {fileID: 0}
-    - target: {fileID: 11429964, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Viking
-      objectReference: {fileID: 0}
-    - target: {fileID: 11485476, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Rider
-      objectReference: {fileID: 0}
-    - target: {fileID: 11465892, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Rally Point
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438106, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Harder Rock
-      objectReference: {fileID: 0}
-    - target: {fileID: 11499880, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Steel Axe
-      objectReference: {fileID: 0}
-    - target: {fileID: 11473782, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
-      propertyPath: text
-      value: Spiked bike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01190835a9dbe964fab8d00a16b488bd, type: 2}
