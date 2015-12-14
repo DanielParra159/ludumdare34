@@ -29,10 +29,10 @@ public class BuildingManager : MonoBehaviour {
 
     void Awake()
     {
-        if (instance == null)
+        //if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+         //   DontDestroyOnLoad(instance);
 
             buildings = new List<Buildng>[TeamManager.maxTeams];
             for (int i = 0; i < TeamManager.maxTeams; ++i)
@@ -55,10 +55,10 @@ public class BuildingManager : MonoBehaviour {
                 }
             }
         }
-        else if (instance != this)
+        /*else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 	// Use this for initialization
 	void Start () {

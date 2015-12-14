@@ -17,16 +17,16 @@ public class TeamManager : MonoBehaviour {
 
     void Awake()
     {
-        if (instance == null)
+        //if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+        //    DontDestroyOnLoad(instance);
 
             Assert.AreEqual(maxTeams, m_teamColors.Length,"m_teamColors es distinto al n�mero de equipos");
         }
-        else if (instance != this)
+        /*else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 }

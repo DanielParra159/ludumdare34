@@ -40,16 +40,16 @@ public class GUIManager : MonoBehaviour {
 
     void Awake ()
     {
-        if (instance == null)
+        //if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+         //   DontDestroyOnLoad(instance);
             currentUnitsPanels = unitsPanel;
         }
-        else if (instance != this)
+        /*else if (instance != this)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 	// Use this for initialization
 	void Start () {
