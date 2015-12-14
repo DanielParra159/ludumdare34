@@ -64,6 +64,8 @@ public class ResourcesManager : MonoBehaviour {
 
     public UnitPrices m_unitPrices;
 
+    protected Pausable m_pausable;
+
     void Awake()
     {
         Assert.IsTrue(currentResources.Length == (int)TeamManager.TEAMS.TEAM_MAX, "Tama�o de currentResources distinto a TeamManager.TEAMS.TEAM_MAX");
@@ -71,6 +73,8 @@ public class ResourcesManager : MonoBehaviour {
         Assert.IsTrue(currentResources[1].resourcesNum.Length == maxResourceTypes, "Tama�o de currentResources[1] distinto a maxResourceTypes");
         Assert.IsNotNull(resource1, "resource1 no asignado");
         Assert.IsNotNull(resource2, "resource1 no asignado");
+
+        m_pausable = new Pausable();
         //if (instance == null)
         {
             instance = this;
@@ -90,6 +94,7 @@ public class ResourcesManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (m_pausable.Check()) return;
         resource1.text = "" + currentResources[0].resourcesNum[0];
         resource2.text = "" + currentResources[0].resourcesNum[1];
 	}

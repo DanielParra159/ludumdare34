@@ -22,9 +22,12 @@ public class UnitSpawn : MonoBehaviour {
 
     private ResourcesManager m_resourceManager;
 
+    protected Pausable m_pausable;
+
     void Start()
     {
         m_resourceManager = ResourcesManager.instance;
+        m_pausable = new Pausable();
     }
 	// Use this for initialization
 	void Awake () {
@@ -37,6 +40,7 @@ public class UnitSpawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (m_pausable.Check()) return;
         if (!m_spawnType)
         {
             m_remainingTimeToSpawn -= Time.deltaTime;

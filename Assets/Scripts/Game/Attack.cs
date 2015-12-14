@@ -18,14 +18,18 @@ public class Attack : MonoBehaviour {
     protected float m_attackRange2;
     public AudioClip m_onAttackSound;
     protected float m_currentTime;
+    protected Pausable m_pausable;
 	// Use this for initialization
 	void Awake () {
         m_attackRange2 = m_attackRange * m_attackRange;
         m_currentTime = m_delayBetweenAttacks; //@todo: necesita un init donde se reinicie
+
+        m_pausable = new Pausable();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (m_pausable.Check()) return;
         m_currentTime -= Time.deltaTime * TimeManager.currentTimeFactor;;
         if (m_currentTime< 0.0f)
         {

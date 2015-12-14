@@ -17,6 +17,8 @@ public class InputManager : MonoBehaviour {
     private static EventMouseClick m_eventMouseClick;
     private static EventMoveCamera m_eventMoveCamera;
 
+    protected Pausable m_pausable;
+
     /*void OnGUI()
     {
         GUI.Button(m_left, "");
@@ -42,6 +44,8 @@ public class InputManager : MonoBehaviour {
             m_down = new Rect(0, Screen.height - Screen.height * m_margin_Percentage, Screen.width, Screen.height * m_margin_Percentage);
 
             m_actionRect = new Rect(new Vector2(0, 0), new Vector2(Screen.width, Screen.height - Screen.height * 0.26f));
+
+            m_pausable = new Pausable();
         }
        /* else if (instance != this)
         {
@@ -52,6 +56,7 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (m_pausable.Check()) return;
         m_mousePosition = Input.mousePosition;
         m_eventMouseClick.m_screenPosition = m_mousePosition;
         Vector3 cameraDir = Vector3.zero;

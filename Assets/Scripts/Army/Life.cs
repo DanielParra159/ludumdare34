@@ -30,12 +30,14 @@ public class Life : MonoBehaviour
 
     private FeedbackMessagesManager m_feedbackMessagesManager;
 
+    protected Pausable m_pausable;
     // Use this for initialization
     void Start()
     {
         init();
         m_feedbackMessagesManager = FeedbackMessagesManager.instance;
         m_slider.transform.parent.transform.parent = null;
+        m_pausable = new Pausable();
     }
     public void init()
     {
@@ -50,6 +52,7 @@ public class Life : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_pausable.Check()) return;
         m_currentLife += m_regeneration * Time.deltaTime * TimeManager.currentTimeFactor;
         if ( m_currentLife > m_maxLife)
         {

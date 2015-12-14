@@ -24,11 +24,7 @@ public class Resource : MonoBehaviour {
         m_currentNumOfResources = m_maxNumOfResources;
         m_currentUnitsGetingResources = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 
     /*
      * Pide los recursos que quiere obtener y devuelve los que realmente puede tomar

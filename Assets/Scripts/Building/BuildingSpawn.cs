@@ -7,13 +7,17 @@ public class BuildingSpawn : MonoBehaviour {
     public Buildng m_unitToSpawn;
 
     private static EventSpawnBuilding m_eventSpawnBuilding;
+
+    protected Pausable m_pausable;
 	// Use this for initialization
 	void Start () {
-        
+        m_pausable = new Pausable();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (m_pausable.Check()) return;
         m_eventSpawnBuilding = new EventSpawnBuilding();
         m_eventSpawnBuilding.m_position = transform.position;
         m_eventSpawnBuilding.m_rotation = transform.rotation;

@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour {
     private EventShowUnitPanel eventShowUnitPanel;
     private EventHideUnitPanel eventHidUnitPanel;
 
+    private Pausable m_pausable;
+
 	// Use this for initialization
 	void Awake () {
         //if (instance == null)
@@ -97,10 +99,12 @@ public class GameManager : MonoBehaviour {
         m_guiManager = GUIManager.instance;
         m_resourceManager = ResourcesManager.instance;
         m_feedbackMessagesManager = FeedbackMessagesManager.instance;
+        m_pausable = new Pausable();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (m_pausable.Check()) return;
         //SACAR LAS COMPROBACIONES DEL UPDATE Y REALIZAR LAS ACCIONES INDIVIDUALES EN LOS EVENTOS
         switch (m_currentState)
         {

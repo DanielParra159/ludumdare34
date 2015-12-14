@@ -19,11 +19,6 @@ public class GUITooltip : MonoBehaviour {
         m_feedbackMessagesManager = FeedbackMessagesManager.instance;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void OnMouseEnter()
     {
         m_feedbackMessagesManager.showCameraMessage(text, position, color, true);

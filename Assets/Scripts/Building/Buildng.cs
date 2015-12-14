@@ -44,6 +44,7 @@ public class Buildng : MonoBehaviour
     private bool m_initialized = false; //@todo cuando muera se tiene que poner a false
     protected Life m_life;
 
+
     void Awake()
     {
         m_pausable = new Pausable(onPause, onResume);
@@ -62,6 +63,8 @@ public class Buildng : MonoBehaviour
         m_life.registerOnDamage(onDamage);
 
         m_team = gameObject.GetComponent<Team>().m_team;
+
+        m_pausable = new Pausable();
     }
 
     public void init()
@@ -72,6 +75,7 @@ public class Buildng : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_pausable.Check()) return;
         Assert.IsTrue(m_initialized, "no se ha inicializado el edificio " + this);
         if (m_pausable.Check()) return;
         switch (m_currentState)

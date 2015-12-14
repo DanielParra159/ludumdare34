@@ -27,16 +27,17 @@ public class FeedbackMessage : MonoBehaviour {
 
 
     private FeedbackMessagesManager.STATES m_currentState;
-
+    protected Pausable m_pausable;
 	// Use this for initialization
 	void Awake () {
         Assert.IsNotNull(m_text);
         m_transform = gameObject.GetComponent<Transform>();
-        
+        m_pausable = new Pausable();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (m_pausable.Check()) return;
         m_remainingTime -= Time.deltaTime * TimeManager.currentTimeFactor;
         m_remainingMovTime -= Time.deltaTime * TimeManager.currentTimeFactor;
         if (m_remainingMovTime > 0.0f)

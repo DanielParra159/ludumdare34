@@ -65,10 +65,6 @@ public class BuildingManager : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public Buildng selectBuilding(Vector3 startPosition, Vector3 endPosition)
     {

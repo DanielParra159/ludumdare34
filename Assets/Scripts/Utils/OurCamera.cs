@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class OurCamera : MonoBehaviour {
@@ -31,10 +31,6 @@ public class OurCamera : MonoBehaviour {
         }
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
     public void moveCamera(Vector3 dir)
     {
         Camera.main.transform.parent.Translate(dir * Time.deltaTime * m_cameraSpeed);

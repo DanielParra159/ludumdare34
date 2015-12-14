@@ -59,10 +59,6 @@ public class GUIManager : MonoBehaviour {
         m_buildingManager = BuildingManager.instance;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public void typeBuildingClicked(int buildingType)
     {

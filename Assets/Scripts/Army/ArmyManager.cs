@@ -38,6 +38,7 @@ public class ArmyManager : MonoBehaviour {
 
     private PoolManager[] poolOfNeutralUnits; //solo para los neutrales
     private List<Unit> neutralUnits; //solo para los neutrales
+    protected Pausable m_pausable;
 
 	// Use this for initialization
 	void Awake () {
@@ -54,8 +55,9 @@ public class ArmyManager : MonoBehaviour {
 
     void Start()
     {
+       
         Assert.AreEqual(TeamManager.maxTeams, maxUnitsInitially.Length, "maxUnitsInitially distinto a TeamManager.maxTeams");
-
+        m_pausable = new Pausable();
         //inicialización de estructura para todos los equipos
         units = new List<Unit>[TeamManager.maxTeams];
         m_selectedUnits = new List<Unit>(100);
@@ -193,6 +195,7 @@ public class ArmyManager : MonoBehaviour {
 
     void Update()
     {
+        if (m_pausable.Check()) return;
         Map map = Map.instance;
         for (int i = 0; i < units[0].Count;++i )
         {

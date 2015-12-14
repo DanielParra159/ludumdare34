@@ -465,10 +465,12 @@ public class Unit : MonoBehaviour {
     public void onPause()
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
+        m_navMeshAgent.Stop();
     }
     public void onResume()
     {
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
+        m_navMeshAgent.Resume();
     }
 
     public void onTimeChanged()
