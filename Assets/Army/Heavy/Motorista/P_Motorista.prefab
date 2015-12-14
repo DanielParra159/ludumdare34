@@ -2362,9 +2362,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac13791ab378ea24da931e498119b345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLife: 100
+  m_maxLife: 200
   m_regeneration: 0
   m_yPositionOfDamageMessage: 1
+  m_onDamageSound: {fileID: 0}
+  m_onDeadSound: {fileID: 0}
   m_slider: {fileID: 11445876}
 --- !u!114 &11412632
 MonoBehaviour:
@@ -2377,9 +2379,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552a6fd3bfcc5cb4ab603d0288bc364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damage: 70
-  m_delayBetweenAttacks: 4
-  m_attackRange: 5
+  m_damage: 20
+  m_delayBetweenAttacks: 3
+  m_attackRange: 3
+  m_onAttackSound: {fileID: 0}
 --- !u!114 &11425018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2752,6 +2755,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_radius
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxLife
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_delayBetweenAttacks
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

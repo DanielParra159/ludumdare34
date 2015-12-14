@@ -27,7 +27,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnUnitVikingo
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -70,6 +70,8 @@ MonoBehaviour:
   m_unitToSpawn: {fileID: 11417894, guid: 35912fefde9a53344812161a2c184c28, type: 2}
   m_remainingTimeToSpawn: 1
   m_meetingPoint: {fileID: 486940}
+  m_spawnType: 0
+  m_unitsToSpawnBarracks: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

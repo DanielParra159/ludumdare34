@@ -704,6 +704,7 @@ GameObject:
   - 114: {fileID: 11461164}
   - 114: {fileID: 11480848}
   - 114: {fileID: 11444424}
+  - 114: {fileID: 11424142}
   m_Layer: 0
   m_Name: P_Musica
   m_TagString: Untagged
@@ -6539,6 +6540,25 @@ MonoBehaviour:
   m_onDamageSound: {fileID: 0}
   m_onDeadSound: {fileID: 0}
   m_slider: {fileID: 11464544}
+--- !u!114 &11424142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b4bc9f1d6ce1344b780e4c28648cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_unitToSpawn: {fileID: 0}
+  m_remainingTimeToSpawn: 10
+  m_meetingPoint: {fileID: 425870}
+  m_spawnType: 1
+  m_unitsToSpawnBarracks:
+  - {fileID: 11453994, guid: 2c9be3d146cef7f469b778ba5be72b0e, type: 2}
+  - {fileID: 11417894, guid: 35912fefde9a53344812161a2c184c28, type: 2}
+  - {fileID: 11491266, guid: 4fc7e48eb27eca44895aac7a8f7c0de8, type: 2}
 --- !u!114 &11442154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6865,6 +6885,14 @@ Prefab:
       propertyPath: m_type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_spawnType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_meetingPoint
+      value: 
+      objectReference: {fileID: 425870}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135258}
