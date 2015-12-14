@@ -341,14 +341,14 @@ public class GameManager : MonoBehaviour {
                     {
                         changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
                         m_inBuildProcess[(int)m_typeBuilding].SetActive(false);
-                        Cursor.visible = true;
+                        //Cursor.visible = true;
                     }
                 }
                 else
                 {
                     changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_NORMAL);
                     m_inBuildProcess[(int)m_typeBuilding].SetActive(false);
-                    Cursor.visible = true;
+                    //Cursor.visible = true;
                 }
             }
             else if (m_currentSubLevelState == SUB_LEVEL_STATES.SUBGAME_STATE_MOVE_ATTACKING_WHERE)
@@ -463,7 +463,7 @@ public class GameManager : MonoBehaviour {
     {
         m_typeBuilding = buildingType;
         m_inBuildProcess[(int)buildingType].SetActive(true);
-        Cursor.visible = false;
+        //Cursor.visible = false;
         changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
     }
     public void meetingPoint()
