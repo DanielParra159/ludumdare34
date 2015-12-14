@@ -5129,14 +5129,14 @@ MonoBehaviour:
     m_resourceRes1: 125
     m_resourceRes2: 0
   m_unitPrices:
-    m_workerRes1: 50
+    m_workerRes1: 100
     m_workerRes2: 0
-    m_swordmanRes1: 125
+    m_swordmanRes1: 130
     m_swordmanRes2: 0
-    m_archerRes1: 100
-    m_archerRes2: 75
-    m_lancerRes1: 150
-    m_lancerRes2: 250
+    m_archerRes1: 150
+    m_archerRes2: 0
+    m_lancerRes1: 200
+    m_lancerRes2: 0
 --- !u!114 &11455464
 MonoBehaviour:
   m_ObjectHideFlags: 1
