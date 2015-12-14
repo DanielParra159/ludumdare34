@@ -20,6 +20,12 @@ public class UnitSpawn : MonoBehaviour {
 
     public Unit[] m_unitsToSpawnBarracks;
 
+    public ResourcesManager m_resourceManager;
+
+    void Start()
+    {
+        m_resourceManager = ResourcesManager.instance;
+    }
 	// Use this for initialization
 	void Awake () {
         m_eventSpawnUnit = new EventSpawnUnit();
@@ -48,25 +54,25 @@ public class UnitSpawn : MonoBehaviour {
 
     public void buildUnit()
     {
-        //COMPROBAR SI SE TIENEN LOS SUFICIENTES RECURSOS && CAP DE POBLACIÓN NO SOBREPASADO{
+        if(m_resourceManager.haveEnoughResources(Unit.UNIT_TYPES.UNIT_TYPE_WORKER)){
             m_eventSpawnUnit.m_position = transform.position;
             m_eventSpawnUnit.m_meetingPoint = m_meetingPoint.position;
             m_eventSpawnUnit.m_team = m_unitToSpawn.GetComponent<Team>().m_myTeam;
             m_eventSpawnUnit.m_type = m_unitToSpawn.getType();
             m_eventSpawnUnit.SendEvent();
             this.enabled = false;
-        //}
+        }
     }
 
     public void barrackUnits(int unit)
     {
-        //COMPROBAR SI SE TIENEN LOS SUFICIENTES RECURSOS && CAP DE POBLACIÓN NO SOBREPASADO{
+        if(m_resourceManager.haveEnoughResources((Unit.UNIT_TYPES) unit)){
             m_eventSpawnUnit.m_position = transform.position;
             m_eventSpawnUnit.m_meetingPoint = m_meetingPoint.position;
             m_eventSpawnUnit.m_team = m_unitsToSpawnBarracks[unit].GetComponent<Team>().m_myTeam;
             m_eventSpawnUnit.m_type = m_unitsToSpawnBarracks[unit].getType();
             m_eventSpawnUnit.SendEvent();
             this.enabled = false;
-        //}
+        }
     }
 }

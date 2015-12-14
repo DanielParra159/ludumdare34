@@ -404,7 +404,6 @@ public class Unit : MonoBehaviour {
     {
         m_navMeshAgent.SetDestination(position);
         changeState(UNIT_STATES.UNIT_STATE_GOING_TO);
-        //DEBERIA DE SER NORMAL PERO NO HAY FORMA DE QUE ATAQUE...
         changeSubState(UNIT_SUB_STATES.UNIT_SUB_STATE_NORMAL);
     }
     public void goToTarget(GameObject target)

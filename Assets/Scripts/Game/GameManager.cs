@@ -43,10 +43,6 @@ public class GameManager : MonoBehaviour {
     private SUB_LEVEL_STATES m_currentSubLevelState;
     private SUB_LEVEL_STATES m_lastSubLevelState;
 
-    [SerializeField]
-    [Range(0,100)]
-    private float m_cameraSpeed = 20;
-
     private BuildingManager m_buildingManager;
     private GUIManager m_guiManager;
     private ArmyManager m_armyManager;
@@ -453,10 +449,6 @@ public class GameManager : MonoBehaviour {
         m_inBuildProcess[(int)buildingType].SetActive(true);
         Cursor.visible = false;
         changeSubLevelState(SUB_LEVEL_STATES.SUBGAME_STATE_WHERE_TO_BUILD);
-    }
-    public void moveCamera(Vector3 dir)
-    {
-        Camera.main.transform.parent.Translate(dir * Time.deltaTime * m_cameraSpeed);
     }
     public void meetingPoint()
     {

@@ -24,6 +24,7 @@ public class EventManager {
     private static ArmyManager armyManager;
     private static BuildingManager buildingManager;
     private static ResourcesManager resourcesManager;
+    private static OurCamera ourCamera;
 
     // Use this for initialization
     public static void Start () {
@@ -32,6 +33,7 @@ public class EventManager {
         armyManager = ArmyManager.instance;
         buildingManager = BuildingManager.instance;
         resourcesManager = ResourcesManager.instance;
+        ourCamera = OurCamera.instance;
     }
 	
 	/*
@@ -105,7 +107,7 @@ public class EventManager {
             case EVENTS.EVENT_MOVE_CAMERA:
         {
             EventMoveCamera eventMoveCamera = (EventMoveCamera)hEvent;
-            gameManager.moveCamera(eventMoveCamera.m_dir);
+            ourCamera.moveCamera(eventMoveCamera.m_dir);
             break;
         }
             case EVENTS.EVENT_MEETING_POINT:
