@@ -3561,15 +3561,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56c7d8132147044fba24c47c71d0469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xCell: 20
-  m_zCell: 15
-  m_xSize: 8
-  m_zSize: 8
+  m_xCell: 12
+  m_zCell: 6
+  m_xSize: 9.89999962
+  m_zSize: 13.0900002
   m_xFogCell: 4
   m_zFogCell: 4
   draw: 1
   fogQuad: {fileID: 133960, guid: 8488c65c422bafb49b956842762a9bfb, type: 2}
-  fogQuadScale: 4
+  fogQuadScale: 2
 --- !u!114 &11429964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4675,7 +4675,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_currentState: 2
   m_currentSubLevelState: 0
-  m_cameraSpeed: 30
   m_selectRect: {fileID: 135936}
   m_inBuildProcess:
   - {fileID: 175918, guid: 109b0c0ee653d1c42af2a010e3f64b9b, type: 2}
@@ -5113,6 +5112,28 @@ MonoBehaviour:
   - resourcesNum: 6400000064000000
   resource1: {fileID: 11489630}
   resource2: {fileID: 11477074}
+  m_buildingPrices:
+    m_urbanCentreRes1: 300
+    m_urbanCentreRes2: 200
+    m_houseRes1: 50
+    m_houseRes2: 0
+    m_barracksRes1: 150
+    m_barracksRes2: 0
+    m_upgradeRes1: 100
+    m_upgradeRes2: 200
+    m_towerRes1: 75
+    m_towerRes2: 50
+    m_resourceRes1: 125
+    m_resourceRes2: 0
+  m_unitPrices:
+    m_workerRes1: 50
+    m_workerRes2: 0
+    m_swordmanRes1: 125
+    m_swordmanRes2: 0
+    m_archerRes1: 100
+    m_archerRes2: 75
+    m_lancerRes1: 150
+    m_lancerRes2: 250
 --- !u!114 &11455464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6178,13 +6199,12 @@ MonoBehaviour:
   buildingPrefabs:
   - buildingsPrefab:
     - {fileID: 196802, guid: 4af6ca97c79b7d4458bc0fd1528882d4, type: 2}
-    - {fileID: 162302, guid: 485a0146c4854344586d2303e594d89d, type: 2}
+    - {fileID: 104168, guid: 305de5fbdb205884ba7c9b2d0989c2fe, type: 2}
     - {fileID: 135258, guid: 225653d1733408d469ad0c2699d04ce1, type: 2}
     - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
     - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
     - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
-    - {fileID: 169632, guid: eab80bf3be214e741a5a3b348e24936d, type: 2}
-    buildingsNumber: 05000000050000000500000005000000050000000500000005000000
+    buildingsNumber: 050000000500000005000000050000000500000005000000
   - buildingsPrefab:
     - {fileID: 106898, guid: e0cf25861c413ff47a29d88bed816b34, type: 2}
     - {fileID: 132446, guid: bbede5f7de8d97040b1ce44a952318b3, type: 2}
@@ -6192,8 +6212,7 @@ MonoBehaviour:
     - {fileID: 119610, guid: 54b4d6ede5c2aec438ff3f2a697aa411, type: 2}
     - {fileID: 189168, guid: 80e7a8c26c34d754f9c4038d82d48d2c, type: 2}
     - {fileID: 137800, guid: 61c57beb19d744c41b432322e5b640e3, type: 2}
-    - {fileID: 145366, guid: 4a1d10c7074685d4d821069ceb45dc8d, type: 2}
-    buildingsNumber: 05000000050000000500000005000000050000000500000005000000
+    buildingsNumber: 050000000500000005000000050000000500000005000000
 --- !u!114 &11468508
 MonoBehaviour:
   m_ObjectHideFlags: 1
