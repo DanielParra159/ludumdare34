@@ -5117,15 +5117,15 @@ MonoBehaviour:
   resource2: {fileID: 11477074}
   m_buildingPrices:
     m_urbanCentreRes1: 300
-    m_urbanCentreRes2: 200
+    m_urbanCentreRes2: 0
     m_houseRes1: 50
     m_houseRes2: 0
     m_barracksRes1: 150
     m_barracksRes2: 0
     m_upgradeRes1: 100
-    m_upgradeRes2: 200
+    m_upgradeRes2: 0
     m_towerRes1: 75
-    m_towerRes2: 50
+    m_towerRes2: 0
     m_resourceRes1: 125
     m_resourceRes2: 0
   m_unitPrices:
