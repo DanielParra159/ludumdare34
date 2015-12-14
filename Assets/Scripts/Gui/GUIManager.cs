@@ -119,7 +119,7 @@ public class GUIManager : MonoBehaviour {
                 {
                     if (unitsPanel.transform.GetChild(i).GetChild(j).name.Equals("Text"))
                     {
-                        unitsPanel.transform.GetChild(i).GetChild(j).GetComponent<Text>().text = "" + damage;
+                        unitsPanel.transform.GetChild(i).GetChild(j).GetComponent<Text>().text = damage.ToString();
                     }
                 }
             }
@@ -129,7 +129,7 @@ public class GUIManager : MonoBehaviour {
                 {
                     if (unitsPanel.transform.GetChild(i).GetChild(j).name.Equals("Text"))
                     {
-                        unitsPanel.transform.GetChild(i).GetChild(j).GetComponent<Text>().text = "" + life;
+                        unitsPanel.transform.GetChild(i).GetChild(j).GetComponent<Text>().text = life.ToString();
                     }
                 }
             }
