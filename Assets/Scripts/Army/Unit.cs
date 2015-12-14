@@ -75,12 +75,12 @@ public class Unit : MonoBehaviour {
     protected ReadyToRepairBuilding readyToRepairBuilding;
     protected Buildng buildingToRepair;
     protected Resource m_resourceToRecolect;
-    public struct STR_RESOURCE{
+    public class STR_RESOURCE{
         public int amount;
         public ResourcesManager.RESOURCES_TYPES type;
         public bool recolecting;
-    };
-    STR_RESOURCE m_resourceRecolected;
+    }
+    protected STR_RESOURCE m_resourceRecolected;
     [SerializeField]
     [Tooltip("Tiempo que tarda en recolectar")]
     [Range(1, 10)]
@@ -93,7 +93,7 @@ public class Unit : MonoBehaviour {
     protected Animator m_animator;
     protected Life m_life;
 
-    protected static EventAddResource eventAddResource;
+    protected EventAddResource eventAddResource;
 
     void Awake()
     {
@@ -117,6 +117,10 @@ public class Unit : MonoBehaviour {
         eventAddResource = new EventAddResource();
         eventAddResource.m_team = teamAux.m_myTeam;
 
+        m_resourceRecolected = new STR_RESOURCE();
+        m_resourceRecolected.amount = 0;
+        m_resourceRecolected.recolecting = false;
+
         m_life = gameObject.GetComponent<Life>();
         m_life.registerOnDead(onDead);
         m_life.registerOnDamage(onDamage);
@@ -134,6 +138,10 @@ public class Unit : MonoBehaviour {
         m_initialized = true;
         m_map = Map.instance;
         m_map.addObjectToMap(m_transform.position, gameObject);
+
+        m_resourceRecolected = new STR_RESOURCE();
+        m_resourceRecolected.amount = 0;
+        m_resourceRecolected.recolecting = false;
 
         Assert.IsTrue(m_initialized, "no se ha inicializado la Unidad " + this);
         if (m_animator != null)

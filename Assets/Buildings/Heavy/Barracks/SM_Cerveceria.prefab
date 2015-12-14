@@ -2356,7 +2356,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 3, y: 9.99999975e-06, z: 3}
+  m_Extents: {x: 4, y: 9.99999975e-06, z: 4}
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 0
@@ -2551,6 +2551,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_numUnitsGetResourcesAtTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Extents.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Extents.z
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

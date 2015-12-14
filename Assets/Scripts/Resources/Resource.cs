@@ -41,6 +41,10 @@ public class Resource : MonoBehaviour {
             resources = m_currentNumOfResources;
             m_currentNumOfResources = 0;
         }
+        else
+        {
+            resources = resourcesToGet;
+        }
         return resources;
     }
     /*

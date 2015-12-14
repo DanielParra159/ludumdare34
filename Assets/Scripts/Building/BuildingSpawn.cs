@@ -19,6 +19,7 @@ public class BuildingSpawn : MonoBehaviour {
         m_eventSpawnBuilding.m_team = m_unitToSpawn.GetComponent<Team>().m_myTeam;
         m_eventSpawnBuilding.m_type = m_unitToSpawn.getType();
         m_eventSpawnBuilding.SendEvent();
-        gameObject.SetActive(false);
+        Destroy(gameObject);
+        //gameObject.SetActive(false);
 	}   
 }

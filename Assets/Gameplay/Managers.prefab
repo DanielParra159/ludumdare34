@@ -1653,8 +1653,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129226}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 50.7999992, y: 200, z: 54}
+  m_LocalRotation: {x: -1.15202326e-07, y: -.707106709, z: .707106829, w: -1.15202312e-07}
+  m_LocalPosition: {x: 79.6999969, y: 451.399994, z: 50.7900009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 496756}
@@ -1823,8 +1823,8 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 81.1999969
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -3563,13 +3563,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_xCell: 12
   m_zCell: 6
-  m_xSize: 9.89999962
-  m_zSize: 13.0900002
+  m_xSize: 8
+  m_zSize: 8
   m_xFogCell: 4
   m_zFogCell: 4
   draw: 1
   fogQuad: {fileID: 133960, guid: 8488c65c422bafb49b956842762a9bfb, type: 2}
-  fogQuadScale: 2
+  fogQuadScale: 1.5
 --- !u!114 &11429964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4682,6 +4682,7 @@ MonoBehaviour:
   - {fileID: 108216, guid: 9c942562972f96542b1b9ddc410dadcf, type: 2}
   - {fileID: 104912, guid: c4bc52a0094135847b88e0b4afe2b569, type: 2}
   - {fileID: 156968, guid: 9806487477f1de14d8f8820d79d89ce0, type: 2}
+  - {fileID: 171948, guid: 4ae4d78de141ce5498192c800c3aa0bb, type: 2}
   - {fileID: 171948, guid: 4ae4d78de141ce5498192c800c3aa0bb, type: 2}
 --- !u!114 &11446216
 MonoBehaviour:
@@ -6199,12 +6200,13 @@ MonoBehaviour:
   buildingPrefabs:
   - buildingsPrefab:
     - {fileID: 196802, guid: 4af6ca97c79b7d4458bc0fd1528882d4, type: 2}
-    - {fileID: 104168, guid: 305de5fbdb205884ba7c9b2d0989c2fe, type: 2}
+    - {fileID: 162302, guid: 485a0146c4854344586d2303e594d89d, type: 2}
     - {fileID: 135258, guid: 225653d1733408d469ad0c2699d04ce1, type: 2}
     - {fileID: 120620, guid: 396a940666cd8fb4f8ab593ea6b98958, type: 2}
     - {fileID: 128486, guid: a46aa3c850acd37449638e9063528d0b, type: 2}
     - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
-    buildingsNumber: 050000000500000005000000050000000500000005000000
+    - {fileID: 121752, guid: 49f0a43eee9cb454ab964d6b93362869, type: 2}
+    buildingsNumber: 05000000050000000500000005000000050000000500000005000000
   - buildingsPrefab:
     - {fileID: 106898, guid: e0cf25861c413ff47a29d88bed816b34, type: 2}
     - {fileID: 132446, guid: bbede5f7de8d97040b1ce44a952318b3, type: 2}
@@ -6212,7 +6214,8 @@ MonoBehaviour:
     - {fileID: 119610, guid: 54b4d6ede5c2aec438ff3f2a697aa411, type: 2}
     - {fileID: 189168, guid: 80e7a8c26c34d754f9c4038d82d48d2c, type: 2}
     - {fileID: 137800, guid: 61c57beb19d744c41b432322e5b640e3, type: 2}
-    buildingsNumber: 050000000500000005000000050000000500000005000000
+    - {fileID: 137800, guid: 61c57beb19d744c41b432322e5b640e3, type: 2}
+    buildingsNumber: 05000000050000000500000005000000050000000500000005000000
 --- !u!114 &11468508
 MonoBehaviour:
   m_ObjectHideFlags: 1
