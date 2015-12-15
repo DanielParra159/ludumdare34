@@ -2781,15 +2781,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 430966, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 430966, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 32.7999992
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 430966, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 59.4000015
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 430966, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2809,7 +2809,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430966, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 178690, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_Name
@@ -2833,23 +2833,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435568, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -20.2199993
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 435568, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 88.7600021
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 435568, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -27.3499985
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11402836, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_valoresLimiteEyeY.m_limiteAlto
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11402836, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
       propertyPath: m_valoresLimiteEyeY.m_limiteBajo
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37907bcf85a6e4b40b239deff8372901, type: 2}
